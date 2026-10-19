@@ -8,6 +8,7 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 
 // ---------- размеры ----------
 const L = 4541, FA = 935, RA = 3535, ZA = 316, ARCH = 375, TRACK = 1525;
@@ -261,7 +262,7 @@ function strip(id, sys, up, low, material, off = 3, rows = 10, n = 70) {
   const U = resample(up, n), D = resample(low, n);
   for (const side of [1, -1]) {
     const pos = [], idx = [], uv = [];
-    for (let i = 0; i < n; i++) for (let j = 0; j <= rows; j++) { const x = clamp(lerp(U[i][0], D[i][0], j / rows), 0, L - 2), s0 = section(x), z = clamp(lerp(U[i][1], D[i][1], j / rows), s0.zb + 8, s0.zt - 14), v = V(x, side * (Math.max(0, sideY(x, z)) + off), z); pos.push(v.x, v.y, v.z); uv.push(i / (n - 1), j / rows) }
+    for (let i = 0; i < n; i++) for (let j = 0; j <= rows; j++) { const x = clamp(lerp(U[i][0], D[i][0], j / rows), 0, L - 2), s0 = section(x), z = clamp(lerp(U[i][1], D[i][1], j / rows), s0.zb + 8, Math.min(s0.zt - 14, s0.zs - 6 - (rows - j) * 0)), v = V(x, side * (Math.max(0, sideY(x, z)) + off), z); pos.push(v.x, v.y, v.z); uv.push(i / (n - 1), j / rows) }
     for (let i = 0; i < n - 1; i++) for (let j = 0; j < rows; j++) { const a = i * (rows + 1) + j, b = a + rows + 1; side > 0 ? idx.push(a, b, a + 1, a + 1, b, b + 1) : idx.push(a, a + 1, b, a + 1, b + 1, b) }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); safeNormals(g);
     part(id, sys, new THREE.Mesh(g, material));
@@ -498,7 +499,7 @@ function space() {
   const plat = new THREE.Group(); scene.add(plat); S.plat = plat;
   const disc = new THREE.Mesh(new THREE.CircleGeometry(4.6, 96), new THREE.MeshStandardMaterial({ color: 0x07060e, metalness: .75, roughness: .5, transparent: true, opacity: .92 }));
   disc.rotation.x = -Math.PI / 2; plat.add(disc); S.disc = disc;
-  const ring = (r, w, c, op, th = Math.PI * 2, st = 0) => { const m = new THREE.Mesh(new THREE.RingGeometry(r, r + w, 160, 1, st, th), new THREE.MeshBasicMaterial({ color: new THREE.Color(c).multiplyScalar(3.4), transparent: true, opacity: op, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide })); m.rotation.x = -Math.PI / 2; m.position.y = .003; plat.add(m); return m };
+  const ring = (r, w, c, op, th = Math.PI * 2, st = 0) => { const m = new THREE.Mesh(new THREE.RingGeometry(r, r + w, 160, 1, st, th), new THREE.MeshBasicMaterial({ color: new THREE.Color(c).multiplyScalar(5), transparent: true, opacity: op, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide })); m.rotation.x = -Math.PI / 2; m.position.y = .003; plat.add(m); return m };
   S.rings = [ring(4.55, .03, 0x7b5cff, .9), ring(3.4, .012, 0x3edbf7, .7, Math.PI * 1.4), ring(3.9, .02, 0xff7ac6, .55, Math.PI * .6, 1), ring(2.95, .006, 0xffffff, .35), ring(4.2, .008, 0x3edbf7, .5, Math.PI * .3, 3)];
   const tick = new THREE.BufferGeometry(), tp = [];
   for (let i = 0; i < 144; i++) { const a = i / 144 * Math.PI * 2, r1 = 4.3, r2 = i % 12 ? 4.4 : 4.5; tp.push(Math.cos(a) * r1, .004, Math.sin(a) * r1, Math.cos(a) * r2, .004, Math.sin(a) * r2) }
@@ -535,7 +536,7 @@ function lights() {
     fragmentShader: `varying vec3 p; void main(){ vec3 c = mix(vec3(.02,.018,.04), vec3(.16,.14,.3), smoothstep(-.1,.9,p.y)); c += vec3(.25,.12,.4)*pow(max(0.,1.-abs(p.y)),6.)*.6; gl_FragColor = vec4(c,1.); }` })));
   const strip = (c, i, p, s) => { const m = new THREE.Mesh(new THREE.BoxGeometry(...s), new THREE.MeshBasicMaterial({ color: new THREE.Color(c).multiplyScalar(i) })); m.position.set(...p); env.add(m) };
   for (const z of [-1.6, 0, 1.6]) strip(0xffffff, 2.6, [0, 8, z], [16, .1, .35]);
-  strip(0x9a7bff, .9, [0, 2.2, 9], [18, .6, .1]); strip(0x3edbf7, 1.1, [0, 2.6, -9], [18, .5, .1]);
+  strip(0x9a7bff, .45, [0, 2.2, 9], [18, .6, .1]); strip(0x3edbf7, 1.1, [0, 2.6, -9], [18, .5, .1]);
   strip(0xffffff, 1.2, [-10, 3, 0], [.1, 3, 8]); strip(0xff7ac6, .8, [10, 2, 0], [.1, 2, 8]);
   scene.environment = pm.fromScene(env, .02).texture; scene.environmentIntensity = 1.35;
   const key = new THREE.DirectionalLight(0xffffff, 1.7); key.position.set(-3, 6, 4); scene.add(key);
@@ -627,7 +628,7 @@ function loop() {
   for (const w of wheels) { w.userData.spin.rotation.z -= w.userData.side * dt * (S.drive ? 14 : 0); w.position.z = Math.sign(w.position.z) * (TRACK / 2000 + S.explode * .5) }
   // режим «завести»
   const on = S.drive ? 1 : 0; S.beams.forEach(b => b.material.uniforms.o.value = lerp(b.material.uniforms.o.value, on, .06));
-  M.lamp.emissive.setScalar(lerp(M.lamp.emissive.r, on * 1.6, .08)); M.tail.emissive.setRGB(lerp(M.tail.emissive.r, .16 + on * 1.4, .08), 0, 0);
+  M.lamp.emissive.setScalar(lerp(M.lamp.emissive.r, on * 4, .08)); M.tail.emissive.setRGB(lerp(M.tail.emissive.r, .16 + on * 3.6, .08), 0, 0);
   if (S.drive) car.position.y = Math.sin(S.t * 90) * .0012;
   if (moved && ptr && !fly) { moved = false; const id = pick(); setHover(id, ptr) }
   composer.render();
@@ -645,7 +646,10 @@ export function init(container, o = {}) {
   car = new THREE.Group(); scene.add(car); space();
   buildBody(); lamps(); accessories(); buildWheels(); buildInternals();
   composer = new EffectComposer(renderer); composer.addPass(new RenderPass(scene, camera));
-  bloom = new UnrealBloomPass(new THREE.Vector2(512, 512), .5, .45, 2.2); composer.addPass(bloom); composer.addPass(new OutputPass());
+  // одиночные пересвеченные пиксели (зеркальные блики, NaN) bloom превращает в квадрат: ограничиваем яркость
+  composer.addPass(new ShaderPass({ uniforms: { tDiffuse: { value: null } }, vertexShader: `varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+    fragmentShader: `uniform sampler2D tDiffuse; varying vec2 vUv; void main(){ vec4 c = texture2D(tDiffuse, vUv); if (any(isnan(c)) || any(isinf(c))) c = vec4(0.,0.,0.,1.); gl_FragColor = vec4(min(c.rgb, vec3(5.)), c.a); }` }));
+  bloom = new UnrealBloomPass(new THREE.Vector2(512, 512), .5, .45, 3.2); composer.addPass(bloom); composer.addPass(new OutputPass());
   new ResizeObserver(resize).observe(container); resize();
   const el = renderer.domElement;
   el.addEventListener('pointermove', e => { const r = el.getBoundingClientRect(); ndc.set((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1); ptr = e; moved = true });
