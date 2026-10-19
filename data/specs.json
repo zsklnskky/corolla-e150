@@ -1,0 +1,1084 @@
+{
+ "car": {
+  "ru": "Toyota Corolla E150 седан, 2008, 1ZR-FE 1.6 бензин, робот MMT C50A (MultiMode, 5 ступеней), кузов ZRE151, европейская/российская спецификация",
+  "en": "Toyota Corolla E150 sedan, 2008, 1ZR-FE 1.6 petrol, MMT robotized gearbox C50A (MultiMode, 5-speed), chassis ZRE151, European/Russian spec"
+ },
+ "note": {
+  "ru": "verified:true - подтверждено хотя бы одним внешним источником при сборе; verified:false - по памяти или источники расходятся, сверить по VIN, наклейке на стойке двери или руководству.",
+  "en": "verified:true - confirmed by at least one external source during research; verified:false - from memory or sources disagree, check by VIN, door-pillar sticker or the manual."
+ },
+ "dimensions": [
+  {
+   "key": "length",
+   "value": "4540 mm",
+   "ru": "Длина",
+   "en": "Length",
+   "verified": true
+  },
+  {
+   "key": "width",
+   "value": "1760 mm",
+   "ru": "Ширина без зеркал",
+   "en": "Width without mirrors",
+   "verified": true
+  },
+  {
+   "key": "width_mirrors",
+   "value": "~2030 mm",
+   "ru": "Ширина с зеркалами (примерно)",
+   "en": "Width with mirrors (approx.)",
+   "verified": false
+  },
+  {
+   "key": "height",
+   "value": "1470 mm",
+   "ru": "Высота",
+   "en": "Height",
+   "verified": true
+  },
+  {
+   "key": "wheelbase",
+   "value": "2600 mm",
+   "ru": "Колёсная база",
+   "en": "Wheelbase",
+   "verified": true
+  },
+  {
+   "key": "overhangs",
+   "value": "935 / 1005 mm",
+   "ru": "Свес передний / задний",
+   "en": "Front / rear overhang",
+   "verified": true
+  },
+  {
+   "key": "track",
+   "value": "1525 / 1525 mm",
+   "ru": "Колея передняя / задняя (по cars-data; в других базах задняя 1520)",
+   "en": "Track front / rear (cars-data; other databases give rear 1520)",
+   "verified": true
+  },
+  {
+   "key": "ground_clearance",
+   "value": "150 mm",
+   "ru": "Дорожный просвет (клиренс)",
+   "en": "Ground clearance",
+   "verified": true
+  },
+  {
+   "key": "curb_weight",
+   "value": "1225-1300 kg",
+   "ru": "Снаряжённая масса (зависит от комплектации)",
+   "en": "Curb weight (depends on trim)",
+   "verified": true
+  },
+  {
+   "key": "gross_weight",
+   "value": "1735-1890 kg (1.6: ~1760 kg)",
+   "ru": "Полная масса",
+   "en": "Gross vehicle weight",
+   "verified": true
+  },
+  {
+   "key": "payload",
+   "value": "~440-540 kg",
+   "ru": "Грузоподъёмность",
+   "en": "Payload",
+   "verified": true
+  },
+  {
+   "key": "towing",
+   "value": "1200 / 450 kg",
+   "ru": "Масса прицепа с тормозами / без тормозов",
+   "en": "Trailer braked / unbraked: 1200 / 450 kg",
+   "verified": true
+  },
+  {
+   "key": "trunk",
+   "value": "450 L (VDA)",
+   "ru": "Объём багажника",
+   "en": "Trunk volume",
+   "verified": true
+  },
+  {
+   "key": "fuel_tank",
+   "value": "55 L",
+   "ru": "Топливный бак, бензин АИ-95",
+   "en": "Fuel tank, RON 95 petrol",
+   "verified": true
+  },
+  {
+   "key": "turning",
+   "value": "10.4 m / 11.0 m, R ~5.2 m",
+   "ru": "Диаметр разворота",
+   "en": "Turning circle: 10.4 m wall-to-wall by tyres / 11.0 m kerb-to-kerb, radius ~5.2 m",
+   "verified": true
+  },
+  {
+   "key": "tyres",
+   "value": "195/65 R15, 205/55 R16, 225/45 R17",
+   "ru": "Размеры шин",
+   "en": "Tyre sizes",
+   "verified": true
+  },
+  {
+   "key": "bolt_pattern",
+   "value": "5x114.3",
+   "ru": "Разболтовка",
+   "en": "Bolt pattern",
+   "verified": true
+  },
+  {
+   "key": "center_bore",
+   "value": "60.1 mm",
+   "ru": "Центральное отверстие (DIA)",
+   "en": "Center bore",
+   "verified": true
+  },
+  {
+   "key": "offset",
+   "value": "ET39 (15\"), ET45 (16\"), ET39-45 (17\")",
+   "ru": "Вылет диска",
+   "en": "Wheel offset",
+   "verified": true
+  },
+  {
+   "key": "rim_width",
+   "value": "6J x 15, 6.5J x 16",
+   "ru": "Ширина обода",
+   "en": "Rim width",
+   "verified": false
+  },
+  {
+   "key": "wheel_nut",
+   "value": "M12x1.5, 60°, 21 mm",
+   "ru": "Колёсные гайки (резьба M12x1.5 подтверждена, ключ 21 по памяти)",
+   "en": "Wheel nuts M12x1.5 (confirmed), 60° taper, 21 mm wrench (from memory)",
+   "verified": true
+  },
+  {
+   "key": "wheel_torque",
+   "value": "103 N·m",
+   "ru": "Момент затяжки колёсных гаек",
+   "en": "Wheel nut torque",
+   "verified": false
+  },
+  {
+   "key": "tyre_pressure",
+   "value": "2.2 / 2.2 bar",
+   "ru": "Давление в шинах",
+   "en": "Tyre pressure 2.2 bar front / rear (exact - on driver door-pillar sticker)",
+   "verified": true
+  },
+  {
+   "key": "performance",
+   "value": "195 km/h; 0-100 ~11.5-12.1 s; 8.4 / 5.7 L/100 km",
+   "ru": "Максималка, разгон, расход (данные для МКПП, у MMT близко)",
+   "en": "Top speed, 0-100, consumption (manual data, MMT is close)",
+   "verified": true
+  }
+ ],
+ "engine": {
+  "code": "1ZR-FE",
+  "displacement": {
+   "value": "1598 cm3",
+   "verified": true
+  },
+  "bore_stroke": {
+   "value": "80.5 x 78.5 mm",
+   "verified": true
+  },
+  "compression": {
+   "value": "10.2:1",
+   "verified": true
+  },
+  "power": {
+   "value": "124 hp / 91 kW @ 6000 rpm",
+   "verified": true
+  },
+  "torque": {
+   "value": "157 N·m @ 5200 rpm",
+   "verified": true
+  },
+  "redline": {
+   "value": "~6400-6500 rpm",
+   "verified": false
+  },
+  "layout": {
+   "ru": "Рядная четвёрка, поперечно, 16 клапанов, два распредвала (DOHC), гидрокомпенсаторы",
+   "en": "Inline-4, transverse, 16 valves, DOHC, hydraulic lash adjusters",
+   "verified": true
+  },
+  "vvt": {
+   "ru": "Dual VVT-i - изменение фаз и на впуске, и на выпуске. Клапан Valvematic на этом моторе нет (он у 1ZR-FAE с 2009)",
+   "en": "Dual VVT-i - variable timing on both intake and exhaust. No Valvematic (that is 1ZR-FAE from 2009)",
+   "verified": true
+  },
+  "timing_drive": {
+   "ru": "Цепь ГРМ, менять не по пробегу, а по растяжению (обычно 150-200 тыс. км)",
+   "en": "Timing chain, replaced on stretch, not mileage (usually 150-200k km)",
+   "verified": true
+  },
+  "firing_order": {
+   "value": "1-3-4-2",
+   "verified": false
+  },
+  "injection": {
+   "ru": "Распределённый впрыск во впускной коллектор (MPI), электронная дроссельная заслонка ETCS-i, впуск с изменяемой геометрией ACIS",
+   "en": "Multi-point port injection, ETCS-i electronic throttle, ACIS variable intake",
+   "verified": true
+  },
+  "block": {
+   "ru": "Алюминиевый блок с чугунными гильзами, алюминиевая головка",
+   "en": "Aluminium block with cast-iron liners, aluminium head",
+   "verified": true
+  },
+  "oil": {
+   "ru": "5W-30 (допускается 5W-20/0W-20) API SM/SN, ILSAC; объём с фильтром ~4.2 л (полная заправка сухого мотора 4.7 л)",
+   "en": "5W-30 (5W-20/0W-20 allowed) API SM/SN, ILSAC; capacity with filter ~4.2 L (dry fill 4.7 L)",
+   "verified": true
+  },
+  "oil_filter": {
+   "value": "Toyota 04152-37010",
+   "verified": false
+  },
+  "coolant": {
+   "ru": "Toyota Super Long Life Coolant (розовый, готовый 50/50), объём ~6.3 л",
+   "en": "Toyota Super Long Life Coolant (pink, premixed 50/50), ~6.3 L",
+   "verified": false
+  },
+  "spark_plugs": {
+   "ru": "Denso SC20HR11 (иридий) или NGK DF7H-11B, зазор 1.0-1.1 мм, замена 40-60 тыс. км. Много подделок SC20HR11 - брать у проверенных продавцов",
+   "en": "Denso SC20HR11 (iridium) or NGK DF7H-11B, gap 1.0-1.1 mm, replace every 40-60k km. Many fake SC20HR11 - buy from trusted sellers",
+   "verified": true
+  },
+  "fuel": {
+   "ru": "Бензин АИ-95",
+   "en": "RON 95 petrol",
+   "verified": true
+  }
+ },
+ "mmt": {
+  "code": "C50A",
+  "name": {
+   "ru": "MultiMode (MMT) - роботизированная механика, 5 ступеней",
+   "en": "MultiMode (MMT) - automated manual, 5-speed",
+   "verified": true
+  },
+  "years": {
+   "ru": "На Corolla E150 1.6 - с 03.2007 по 08.2009, затем заменён гидроавтоматом U340E",
+   "en": "On Corolla E150 1.6 - 03.2007 to 08.2009, then replaced by U340E torque-converter auto",
+   "verified": true
+  },
+  "max_torque": {
+   "value": "160 N·m max",
+   "verified": true
+  },
+  "how_it_works": {
+   "ru": "Внутри обычная механическая коробка и одно сухое сцепление, как на МКПП. Педали сцепления нет: сцепление выжимает электромотор с червячной передачей (актуатор сцепления), передачи выбирает и включает второй актуатор (два электромотора - выбор ряда и включение). Гидравлики в приводе нет. Всем управляет отдельный блок MMT ECU по сигналам от двигателя, датчиков скорости, положения селектора и педали тормоза. Пока передача переключается, машина на долю секунды теряет тягу - это не поломка, а особенность одного сцепления.",
+   "en": "Inside is a regular manual gearbox with a single dry clutch. There is no clutch pedal: an electric motor with a worm gear (clutch actuator) operates the clutch, and a second actuator (two electric motors - select and shift) engages gears. No hydraulics. A separate MMT ECU controls everything using engine, speed, selector and brake pedal signals. During each shift drive is briefly interrupted - this is normal for a single-clutch robot.",
+   "verified": true
+  },
+  "modes": {
+   "ru": "R - задний ход, N - нейтраль, E - автоматический режим (Easy), M - ручной: селектор + / -. На части комплектаций есть подрулевые лепестки и кнопка спортивного режима (Es). Позиции P нет - на стоянке ручник и передача.",
+   "en": "R - reverse, N - neutral, E - automatic mode (Easy), M - manual: selector + / -. Some trims have steering paddles and a sport button (Es). No P position - park with handbrake and a gear engaged.",
+   "verified": false
+  },
+  "oil": {
+   "ru": "Toyota Genuine MTG Oil LV 75W GL-4 (08885-81001), объём ~1.9-2.0 л, замена каждые ~80-85 тыс. км. Не ATF.",
+   "en": "Toyota Genuine MTG Oil LV 75W GL-4 (08885-81001), ~1.9-2.0 L, change every ~80-85k km. Not ATF.",
+   "verified": true
+  },
+  "calibration": {
+   "ru": "После замены сцепления, актуатора, блока или снятия АКБ нужно обучение: инициализация точки схватывания сцепления и калибровка положений передач. Правильно - сканером (Toyota Techstream или аналог с функцией MMT). Ручные процедуры с форумов работают не на всех версиях блока. Повторная адаптация без замены изношенного диска не лечит - только ускоряет износ.",
+   "en": "After replacing clutch, actuator, ECU or disconnecting the battery, run learning: clutch touch-point initialization and gear position calibration. Proper way - a scanner (Toyota Techstream or similar with MMT function). Manual forum procedures do not work on all ECU versions. Re-adapting a worn clutch does not fix it, only speeds up wear.",
+   "verified": true
+  },
+  "problems": [
+   {
+    "ru": "Износ актуатора сцепления (втулки, подшипник червяка): рывки, пробуксовка, ошибка P0810, самопроизвольный уход в нейтраль - главная слабость",
+    "en": "Clutch actuator wear (bushings, worm bearing): jerks, slipping, P0810 code, dropping into neutral - main weak spot",
+    "verified": true
+   },
+   {
+    "ru": "Быстрый износ диска и корзины в городских пробках, бывает уже к 50-60 тыс. км: пробуксовка, запах гари, вялый разгон",
+    "en": "Fast clutch disc/cover wear in city traffic, sometimes by 50-60k km: slipping, burning smell, sluggish acceleration",
+    "verified": true
+   },
+   {
+    "ru": "Ранние блоки MMT ECU: горит лампа MMT, пропадают передачи, лечится перезапуском; в 2009 была сервисная кампания (перепрошивка)",
+    "en": "Early MMT ECU: MMT light, lost gears, cured by restart; 2009 service campaign (reflash)",
+    "verified": true
+   },
+   {
+    "ru": "Актуатор выбора передач и синхронизаторы 2-3 передачи: тугое включение, хруст, вой, хуже при старом масле",
+    "en": "Gear select actuator and 2nd/3rd synchros: hard engagement, grinding, whine, worse with old oil",
+    "verified": true
+   }
+  ],
+  "driving_tips": [
+   {
+    "ru": "На светофоре дольше 10-20 секунд - ставить N, не держать сцепление выжатым на тормозе: так беречь выжимной подшипник и актуатор",
+    "en": "At lights longer than 10-20 s - shift to N instead of holding the clutch open on the brake, saves release bearing and actuator",
+    "verified": false
+   },
+   {
+    "ru": "Нет ползучести как у автомата: машина трогается только от газа. В пробке лучше подождать и проехать рывком, чем ползти по сантиметру - это жжёт сцепление",
+    "en": "No creep like an automatic: car moves only with throttle. In traffic, wait and move in one go rather than inching - inching burns the clutch",
+    "verified": true
+   },
+   {
+    "ru": "В горку - трогаться с ручника: держать ручник, дать газ, отпустить ручник когда машина начнёт тянуть. Не стоять на горке на газу",
+    "en": "On hills - start with handbrake: hold handbrake, apply throttle, release when car pulls. Never hold the car on a slope with throttle",
+    "verified": true
+   },
+   {
+    "ru": "На парковке - ручник + передача (E/1 или R), позиции P нет. Двигатель заводится только в N с нажатым тормозом",
+    "en": "When parking - handbrake + gear (E/1 or R), no P position. Engine starts only in N with brake pressed",
+    "verified": false
+   },
+   {
+    "ru": "Чтобы рывков было меньше - в режиме E отпускать газ в момент переключения, как на механике; в обгоне - заранее перейти в M",
+    "en": "To reduce jerks - in E mode lift off the throttle at shift moments like a manual; for overtaking switch to M in advance",
+    "verified": false
+   },
+   {
+    "ru": "Лампа MMT мигает или горит постоянно, машина уходит в нейтраль, не включает передачи - ехать на диагностику, при постоянной пробуксовке - эвакуатор",
+    "en": "MMT light flashing or on, dropping to neutral, refusing gears - go to diagnostics; if constant slipping - tow truck",
+    "verified": true
+   }
+  ]
+ },
+ "chassis": {
+  "drive": {
+   "ru": "Передний привод (FWD)",
+   "en": "Front-wheel drive (FWD)",
+   "verified": true
+  },
+  "front_suspension": {
+   "ru": "Независимая, McPherson, стабилизатор",
+   "en": "Independent MacPherson strut, anti-roll bar",
+   "verified": true
+  },
+  "rear_suspension": {
+   "ru": "Полузависимая, торсионная балка",
+   "en": "Semi-independent torsion beam",
+   "verified": true
+  },
+  "front_brakes": {
+   "ru": "Дисковые вентилируемые, ~275 мм",
+   "en": "Ventilated discs, ~275 mm",
+   "verified": false
+  },
+  "rear_brakes": {
+   "ru": "Дисковые невентилируемые (толщина 10 мм, диаметр ~259-270 мм) - на европейской 1.6 сзади диски, не барабаны",
+   "en": "Solid discs (10 mm thick, diameter ~259-270 mm) - European 1.6 has rear discs, not drums",
+   "verified": true
+  },
+  "parking_brake": {
+   "ru": "Ручной рычаг, тросы на задние колодки",
+   "en": "Hand lever, cables to rear calipers",
+   "verified": false
+  },
+  "steering": {
+   "ru": "Рейка с электроусилителем EPS на рулевой колонке (мотор под панелью, гидравлики нет). Известно: стуки карданчика вала, износ рулевых тяг, рваные пыльники рейки",
+   "en": "Rack with column-mounted electric power steering EPS (motor under dash, no hydraulics). Known: knocking steering shaft joint, worn tie rods, torn rack boots",
+   "verified": true
+  },
+  "safety_electronics": {
+   "ru": "ABS + EBD (распределение тормозных сил) + BA (помощь при экстренном торможении) - во всех; VSC (курсовая устойчивость) + TRC (противобуксовка) - на старших версиях MultiMode Sol/Prestige",
+   "en": "ABS + EBD + BA (brake assist) standard; VSC + TRC on upper MultiMode Sol/Prestige trims",
+   "verified": true
+  },
+  "airbags": {
+   "ru": "Фронтальные и боковые в базе; шторки и коленная водителя - на старших",
+   "en": "Front and side as standard; curtains and driver knee on upper trims",
+   "verified": true
+  }
+ },
+ "bulbs": [
+  {
+   "place": "front_low_beam",
+   "code": "HB4 (9006)",
+   "watts": "51-55",
+   "ru": "Ближний свет (галоген). На версиях с ксеноном - D4R 35 Вт",
+   "en": "Low beam (halogen). Xenon versions - D4R 35 W",
+   "verified": true
+  },
+  {
+   "place": "front_high_beam",
+   "code": "HB3 (9005)",
+   "watts": "60-65",
+   "ru": "Дальний свет, отдельный отражатель в фаре",
+   "en": "High beam, separate reflector in headlight",
+   "verified": true
+  },
+  {
+   "place": "front_position",
+   "code": "W5W (T10)",
+   "watts": "5",
+   "ru": "Передние габариты в фаре",
+   "en": "Front position lights in headlight",
+   "verified": true
+  },
+  {
+   "place": "front_turn",
+   "code": "WY21W (у части каталогов PY21W)",
+   "watts": "21",
+   "ru": "Передний поворотник в фаре, янтарная лампа",
+   "en": "Front turn signal in headlight, amber bulb",
+   "verified": true
+  },
+  {
+   "place": "side_repeater",
+   "code": "WY5W (T10 янтарная) или LED в зеркале",
+   "watts": "5",
+   "ru": "Боковой повторитель (на крыле или в зеркале - зависит от комплектации)",
+   "en": "Side repeater (fender or mirror - depends on trim)",
+   "verified": false
+  },
+  {
+   "place": "front_fog",
+   "code": "H11",
+   "watts": "55",
+   "ru": "Передние противотуманные фары в бампере",
+   "en": "Front fog lights in bumper",
+   "verified": true
+  },
+  {
+   "place": "drl",
+   "code": "-",
+   "watts": "-",
+   "ru": "Отдельных дневных ходовых огней на дорестайлинге 2008 нет",
+   "en": "No separate DRL on 2008 pre-facelift",
+   "verified": false
+  },
+  {
+   "place": "rear_tail_brake",
+   "code": "W21/5W (T20 двухнитевая)",
+   "watts": "21/5",
+   "ru": "Задний фонарь: стоп-сигнал + габарит",
+   "en": "Rear lamp: brake + tail",
+   "verified": true
+  },
+  {
+   "place": "rear_turn",
+   "code": "P21W (у части каталогов PY21W)",
+   "watts": "21",
+   "ru": "Задний поворотник в фонаре на крыле",
+   "en": "Rear turn signal in quarter lamp",
+   "verified": true
+  },
+  {
+   "place": "reverse",
+   "code": "W16W (T15)",
+   "watts": "16",
+   "ru": "Фонарь заднего хода (в фонаре на крышке багажника)",
+   "en": "Reverse light (in trunk-lid lamp)",
+   "verified": true
+  },
+  {
+   "place": "rear_fog",
+   "code": "W21W (T20)",
+   "watts": "21",
+   "ru": "Задний противотуманный фонарь (обычно один, со стороны водителя)",
+   "en": "Rear fog light (usually one, driver side)",
+   "verified": true
+  },
+  {
+   "place": "license_plate",
+   "code": "W5W (T10)",
+   "watts": "5",
+   "ru": "Подсветка номера, 2 шт",
+   "en": "License plate light, 2 pcs",
+   "verified": true
+  },
+  {
+   "place": "third_brake",
+   "code": "LED",
+   "watts": "-",
+   "ru": "Дополнительный стоп-сигнал, светодиодный, лампа не меняется отдельно",
+   "en": "High-mount stop light, LED, not serviceable separately",
+   "verified": false
+  },
+  {
+   "place": "front_map",
+   "code": "W5W (T10)",
+   "watts": "5",
+   "ru": "Передние плафоны / лампы для чтения у зеркала",
+   "en": "Front map / reading lights near mirror",
+   "verified": false
+  },
+  {
+   "place": "rear_dome",
+   "code": "C5W/C10W (festoon 31-37 мм)",
+   "watts": "8-10",
+   "ru": "Центральный (задний) плафон салона",
+   "en": "Center (rear) dome light",
+   "verified": false
+  },
+  {
+   "place": "trunk",
+   "code": "W5W или festoon 31 мм",
+   "watts": "5",
+   "ru": "Подсветка багажника",
+   "en": "Trunk light",
+   "verified": false
+  },
+  {
+   "place": "glovebox",
+   "code": "W5W / T5",
+   "watts": "1.2-5",
+   "ru": "Подсветка бардачка (не во всех комплектациях)",
+   "en": "Glovebox light (not on all trims)",
+   "verified": false
+  },
+  {
+   "place": "door_courtesy",
+   "code": "W5W",
+   "watts": "5",
+   "ru": "Подсветка дверей / порогов (только старшие комплектации)",
+   "en": "Door courtesy lights (upper trims only)",
+   "verified": false
+  },
+  {
+   "place": "vanity_mirror",
+   "code": "festoon 31 мм / T5",
+   "watts": "2-5",
+   "ru": "Подсветка зеркал в козырьках (если есть)",
+   "en": "Vanity mirror light (if fitted)",
+   "verified": false
+  },
+  {
+   "place": "dashboard",
+   "code": "LED / T5 (W1.2W)",
+   "watts": "1.2",
+   "ru": "Подсветка приборов: на версиях Optitron - светодиоды, на обычной панели - мелкие T5",
+   "en": "Instrument lighting: Optitron versions LED, standard cluster small T5",
+   "verified": false
+  },
+  {
+   "place": "gear_indicator",
+   "code": "LED / T5",
+   "watts": "-",
+   "ru": "Индикатор передачи MMT на селекторе и в щитке",
+   "en": "MMT gear indicator on selector and cluster",
+   "verified": false
+  },
+  {
+   "place": "clock_climate",
+   "code": "LED / T5",
+   "watts": "-",
+   "ru": "Часы, климат, кнопки - светодиоды или T5, меняются с разборкой блока",
+   "en": "Clock, climate, switches - LED or T5, replaced by disassembling the unit",
+   "verified": false
+  }
+ ],
+ "interior": {
+  "trims": {
+   "ru": "РФ/РБ для 1.6 MMT: Luna (база для 1.6), Sol (средняя), Prestige (топ). В Европе также Terra (самая простая, обычно 1.33/1.4). Названия зависят от рынка и года - точнее по VIN.",
+   "en": "RU/BY for 1.6 MMT: Luna (base for 1.6), Sol (mid), Prestige (top). Europe also had Terra (simplest, usually 1.33/1.4). Names vary by market and year - check by VIN.",
+   "verified": true
+  },
+  "seats": {
+   "ru": "Luna и Sol - ткань; Prestige - улучшенная ткань, кожа как опция или пакет. Подогрев передних сидений есть уже в базе. Ткань со временем протирается на боковых валиках водителя.",
+   "en": "Luna and Sol - cloth; Prestige - upgraded cloth, leather as option/pack. Heated front seats from base trim. Cloth wears on driver side bolster over time.",
+   "verified": false
+  },
+  "reupholstery": [
+   {
+    "part": "seats",
+    "ru": "Сиденья: экокожа (дёшево, практично, не дышит), экокожа + алькантара в центре (тепло зимой, не скользит), натуральная кожа (дороже, нужен уход), новая ткань (жаккард). Подогрев сохраняется - коврики остаются внутри. Подушки безопасности в боковинах спинок: при перетяжке нужна специальная разрывная строчка в шве - говорить мастеру.",
+    "en": "Seats: eco-leather (cheap, practical, does not breathe), eco-leather + alcantara inserts (warm, non-slip), genuine leather (expensive, needs care), new fabric (jacquard). Seat heaters stay. Seat-side airbags: retrim needs a special tear seam - tell the upholsterer."
+   },
+   {
+    "part": "steering_wheel",
+    "ru": "Руль: натуральная кожа или кожа + алькантара/перфорация, при перетяжке снимается подушка безопасности - только у мастера с отключённой АКБ",
+    "en": "Steering wheel: genuine leather or leather + alcantara/perforated, airbag removal required - specialist only, battery disconnected"
+   },
+   {
+    "part": "headliner",
+    "ru": "Потолок: перетяжка потолочной тканью на поролоне или алькантарой; потолок снимается целиком, мешают шторки безопасности на старших версиях",
+    "en": "Headliner: foam-backed headliner fabric or alcantara; panel removed whole, curtain airbags on upper trims require care"
+   },
+   {
+    "part": "door_cards_armrest",
+    "ru": "Вставки дверей, подлокотник, чехол рычага MMT - экокожа или алькантара в тон сидений",
+    "en": "Door inserts, armrest, MMT lever boot - eco-leather or alcantara to match seats"
+   },
+   {
+    "part": "dashboard",
+    "ru": "Торпедо - пластик, перетягивать не обязательно; возможна оклейка плёнкой вставок",
+    "en": "Dashboard - plastic, retrim optional; inserts can be wrapped with film"
+   }
+  ],
+  "dashboard_controls": [
+   {
+    "ru": "Щиток приборов: спидометр, тахометр, указатель топлива, температуры, индикатор передачи MMT, бортовой компьютер (расход, запас хода) в старших",
+    "en": "Cluster: speedometer, tachometer, fuel, temperature gauges, MMT gear indicator, trip computer (consumption, range) on upper trims"
+   },
+   {
+    "ru": "Левый подрулевой рычаг - фары, поворотники, ПТФ; правый - дворники и омыватель",
+    "en": "Left stalk - lights, turn signals, fogs; right stalk - wipers and washer"
+   },
+   {
+    "ru": "Селектор MMT на центральной консоли: R / N / E / M (+/-)",
+    "en": "MMT selector on center console: R / N / E / M (+/-)"
+   },
+   {
+    "ru": "Центр панели: аудиосистема, ниже климат-контроль (Sol/Prestige) или ручной кондиционер (Luna), кнопка аварийки",
+    "en": "Center: audio unit, below climate control (Sol/Prestige) or manual A/C (Luna), hazard button"
+   },
+   {
+    "ru": "Слева у колен: корректор фар, кнопка VSC OFF (если есть), зеркала",
+    "en": "Lower left: headlight leveling, VSC OFF button (if fitted), mirror controls"
+   },
+   {
+    "ru": "Кнопки на руле: аудио, круиз-контроль на старших",
+    "en": "Steering wheel buttons: audio, cruise control on upper trims"
+   }
+  ]
+ },
+ "warning_lights": [
+  {
+   "code": "CHECK ENGINE",
+   "color": "amber",
+   "ru": "Ошибка двигателя или системы выхлопа. Горит постоянно - ехать на диагностику; мигает - пропуски зажигания, сбросить нагрузку и не ездить далеко",
+   "en": "Engine or emission fault. Steady - get diagnosed; flashing - misfire, reduce load, do not drive far"
+  },
+  {
+   "code": "MMT",
+   "color": "amber/red",
+   "ru": "Неисправность робота MMT. Возможны рывки и уход в нейтраль - на диагностику, при пробуксовке эвакуатор",
+   "en": "MMT gearbox fault. Possible jerks and drop to neutral - get diagnosed, tow if slipping"
+  },
+  {
+   "code": "OIL",
+   "color": "red",
+   "ru": "Низкое давление масла - немедленно заглушить двигатель и проверить уровень. По данным toyota-club, на части E150 этой лампы нет - проверять щуп регулярно",
+   "en": "Low oil pressure - stop the engine immediately and check level. Per toyota-club some E150 lack this lamp - check dipstick regularly",
+   "verified": false
+  },
+  {
+   "code": "BATTERY",
+   "color": "red",
+   "ru": "Не идёт зарядка - генератор или ремень. Отключить лишних потребителей и ехать в сервис",
+   "en": "No charging - alternator or belt. Switch off loads and drive to service"
+  },
+  {
+   "code": "BRAKE",
+   "color": "red",
+   "ru": "Затянут ручник или низкий уровень тормозной жидкости / сбой EBD. Если горит при опущенном ручнике - не ездить",
+   "en": "Handbrake on or low brake fluid / EBD fault. If on with handbrake released - do not drive"
+  },
+  {
+   "code": "ABS",
+   "color": "amber",
+   "ru": "Отключена ABS, тормоза работают как обычные. Проверить датчики колёс",
+   "en": "ABS disabled, normal brakes still work. Check wheel sensors"
+  },
+  {
+   "code": "SRS AIRBAG",
+   "color": "red",
+   "ru": "Ошибка подушек безопасности, они могут не сработать. Часто - разъём под сиденьем",
+   "en": "Airbag fault, they may not deploy. Often a connector under the seat"
+  },
+  {
+   "code": "VSC / slip",
+   "color": "amber",
+   "ru": "Мигает - система курсовой устойчивости работает (скользко). Горит постоянно - неисправность VSC/TRC",
+   "en": "Flashing - stability control active (slippery). Steady - VSC/TRC fault"
+  },
+  {
+   "code": "VSC OFF / TRC OFF",
+   "color": "amber",
+   "ru": "Система отключена кнопкой",
+   "en": "System switched off by button"
+  },
+  {
+   "code": "EPS",
+   "color": "red/amber",
+   "ru": "Неисправность электроусилителя руля, руль станет тяжёлым",
+   "en": "Electric power steering fault, steering becomes heavy"
+  },
+  {
+   "code": "COOLANT TEMP",
+   "color": "red",
+   "ru": "Перегрев (или стрелка в красной зоне) - остановиться, заглушить, не открывать горячий бачок",
+   "en": "Overheating (or gauge in red) - stop, switch off, do not open hot reservoir"
+  },
+  {
+   "code": "FUEL",
+   "color": "amber",
+   "ru": "Остаток топлива ~7-8 л, заправиться",
+   "en": "About 7-8 L of fuel left, refuel",
+   "verified": false
+  },
+  {
+   "code": "DOOR",
+   "color": "red",
+   "ru": "Открыта дверь или багажник",
+   "en": "Door or trunk open"
+  },
+  {
+   "code": "SEAT BELT",
+   "color": "red",
+   "ru": "Не пристёгнут ремень",
+   "en": "Seat belt unfastened"
+  },
+  {
+   "code": "SECURITY / KEY",
+   "color": "red",
+   "ru": "Иммобилайзер; мигает при выключенном зажигании - норма",
+   "en": "Immobilizer; flashing with ignition off - normal"
+  },
+  {
+   "code": "INDICATORS",
+   "color": "green/blue",
+   "ru": "Зелёные - поворотники, габариты, ПТФ, круиз; синяя - дальний свет; жёлтая - задняя ПТФ",
+   "en": "Green - turn signals, position, fogs, cruise; blue - high beam; amber - rear fog"
+  }
+ ],
+ "fluids": [
+  {
+   "key": "engine_oil",
+   "ru": "Моторное масло 5W-30 (или 0W-20/5W-20) API SM/SN, ~4.2 л с фильтром",
+   "en": "Engine oil 5W-30 (or 0W-20/5W-20) API SM/SN, ~4.2 L with filter",
+   "verified": true
+  },
+  {
+   "key": "coolant",
+   "ru": "Toyota Super Long Life Coolant, розовый, готовый 50/50, ~6.3 л. Не смешивать с зелёным/синим",
+   "en": "Toyota Super Long Life Coolant, pink, premixed 50/50, ~6.3 L. Do not mix with green/blue",
+   "verified": false
+  },
+  {
+   "key": "brake_fluid",
+   "ru": "Тормозная жидкость DOT 3 по допуску Toyota, DOT 4 полностью совместима и обычно лучше; замена раз в 2 года. Сцепление MMT электрическое, тормозная жидкость только в тормозах",
+   "en": "Brake fluid: Toyota spec DOT 3, DOT 4 fully compatible and usually better; change every 2 years. MMT clutch is electric - brake fluid is only for brakes",
+   "verified": false
+  },
+  {
+   "key": "gearbox_oil",
+   "ru": "Коробка C50A: Toyota MTG LV 75W GL-4 (08885-81001), ~1.9-2.0 л, замена ~80-85 тыс. км",
+   "en": "Gearbox C50A: Toyota MTG LV 75W GL-4 (08885-81001), ~1.9-2.0 L, change ~80-85k km",
+   "verified": true
+  },
+  {
+   "key": "power_steering",
+   "ru": "Не нужна - усилитель электрический",
+   "en": "None needed - electric power steering",
+   "verified": true
+  },
+  {
+   "key": "ac_refrigerant",
+   "ru": "Хладагент R134a, ~430-470 г + масло ND-OIL 8 (точно - на наклейке под капотом)",
+   "en": "Refrigerant R134a, ~430-470 g + ND-OIL 8 compressor oil (exact - on under-hood label)",
+   "verified": false
+  },
+  {
+   "key": "washer",
+   "ru": "Омывающая жидкость, бачок ~2.5-4.5 л (больше с омывателями фар); зимой незамерзайка -20...-30",
+   "en": "Washer fluid, reservoir ~2.5-4.5 L (larger with headlamp washers); in winter -20...-30 °C antifreeze fluid",
+   "verified": false
+  },
+  {
+   "key": "fuel",
+   "ru": "Бензин АИ-95, бак 55 л",
+   "en": "RON 95 petrol, tank 55 L",
+   "verified": true
+  }
+ ],
+ "weak_points": [
+  {
+   "area": "engine",
+   "ru": "Повышенный расход масла и нагар на машинах первых лет (2007-2008), позже исправлено. Мерить расход щупом каждые 1000 км",
+   "en": "Oil consumption and carbon buildup on early cars (2007-2008), fixed later. Check dipstick every 1000 km",
+   "verified": true
+  },
+  {
+   "area": "engine",
+   "ru": "Помпа (водяной насос) - течь бывает уже к 50 тыс. км: розовые потёки справа на моторе, падение уровня в бачке",
+   "en": "Water pump leaks, sometimes by 50k km: pink traces on right side of engine, falling coolant level",
+   "verified": true
+  },
+  {
+   "area": "engine",
+   "ru": "Растяжение цепи ГРМ и треск муфты VVT-i на холодном пуске (1-2 секунды треска - звоночек), залипание клапанов VVT-i (OCV)",
+   "en": "Timing chain stretch and VVT-i phaser rattle on cold start (1-2 s rattle is a warning), sticking VVT-i oil control valves",
+   "verified": true
+  },
+  {
+   "area": "engine",
+   "ru": "Плавающие обороты холостого хода - грязная дроссельная заслонка, чистка + обучение холостого хода",
+   "en": "Fluctuating idle - dirty throttle body, clean + idle relearn",
+   "verified": true
+  },
+  {
+   "area": "engine",
+   "ru": "Термостат: долгий прогрев зимой или холодная печка - заклинил открытым",
+   "en": "Thermostat: slow warm-up in winter or cold heater - stuck open",
+   "verified": false
+  },
+  {
+   "area": "engine",
+   "ru": "Течи: клапанная крышка, натяжитель цепи, датчик давления масла, уплотнители форсунок",
+   "en": "Leaks: valve cover, chain tensioner, oil pressure sensor, injector seals",
+   "verified": true
+  },
+  {
+   "area": "mmt",
+   "ru": "Актуатор сцепления, сцепление в пробках, ранние блоки MMT, синхронизаторы 2-3 - см. раздел mmt",
+   "en": "Clutch actuator, clutch in traffic, early MMT ECU, 2nd/3rd synchros - see mmt section",
+   "verified": true
+  },
+  {
+   "area": "steering",
+   "ru": "Стук рулевого карданчика, износ тяг, рваные пыльники рейки",
+   "en": "Steering shaft joint knock, worn tie rods, torn rack boots",
+   "verified": true
+  },
+  {
+   "area": "body",
+   "ru": "Тонкая краска и коррозия от реагентов, залипание педали газа на дорестайлинге (была отзывная кампания - проверить по VIN)",
+   "en": "Thin paint and road-salt corrosion; pre-facelift accelerator pedal sticking (recall - check by VIN)",
+   "verified": true
+  },
+  {
+   "area": "interior",
+   "ru": "Протирается ткань сидений и стираются надписи на кнопках",
+   "en": "Seat cloth wears and button markings rub off",
+   "verified": true
+  }
+ ],
+ "maintenance": [
+  {
+   "item": "engine_oil_filter",
+   "interval": {
+    "ru": "10 000 km / 1 год (в РБ при городской езде лучше 7-8 тыс.)",
+    "en": "10 000 km / 1 year (7-8k km for city driving)"
+   },
+   "ru": "Масло и фильтр двигателя",
+   "en": "Engine oil and filter",
+   "verified": true
+  },
+  {
+   "item": "air_filter",
+   "interval": {
+    "ru": "30 000 km",
+    "en": "30 000 km"
+   },
+   "ru": "Воздушный фильтр",
+   "en": "Air filter",
+   "verified": true
+  },
+  {
+   "item": "cabin_filter",
+   "interval": {
+    "ru": "15 000 km / 1 год",
+    "en": "15 000 km / 1 year"
+   },
+   "ru": "Фильтр салона",
+   "en": "Cabin filter",
+   "verified": false
+  },
+  {
+   "item": "spark_plugs",
+   "interval": {
+    "ru": "40 000-60 000 km",
+    "en": "40 000-60 000 km"
+   },
+   "ru": "Свечи зажигания",
+   "en": "Spark plugs",
+   "verified": true
+  },
+  {
+   "item": "fuel_filter",
+   "interval": {
+    "ru": "80 000 km (в баке, с насосом)",
+    "en": "80 000 km (in tank, with pump)"
+   },
+   "ru": "Топливный фильтр",
+   "en": "Fuel filter (in tank)",
+   "verified": true
+  },
+  {
+   "item": "drive_belt",
+   "interval": {
+    "ru": "100 000 km или по трещинам",
+    "en": "100 000 km or when cracked"
+   },
+   "ru": "Приводной ремень навесного",
+   "en": "Accessory drive belt",
+   "verified": true
+  },
+  {
+   "item": "coolant",
+   "interval": {
+    "ru": "5 лет / 100 000 km",
+    "en": "5 years / 100 000 km"
+   },
+   "ru": "Охлаждающая жидкость",
+   "en": "Coolant",
+   "verified": true
+  },
+  {
+   "item": "brake_fluid",
+   "interval": {
+    "ru": "2 года / 40 000 km",
+    "en": "2 years / 40 000 km"
+   },
+   "ru": "Тормозная жидкость",
+   "en": "Brake fluid",
+   "verified": false
+  },
+  {
+   "item": "gearbox_oil",
+   "interval": {
+    "ru": "80 000-85 000 km",
+    "en": "80 000-85 000 km"
+   },
+   "ru": "Масло в коробке C50A",
+   "en": "Gearbox oil C50A",
+   "verified": true
+  },
+  {
+   "item": "mmt_check",
+   "interval": {
+    "ru": "раз в год / при рывках",
+    "en": "yearly / when jerks appear"
+   },
+   "ru": "Диагностика MMT: износ сцепления в процентах по сканеру, ошибки, при необходимости адаптация",
+   "en": "MMT check: clutch wear % via scanner, codes, adaptation if needed",
+   "verified": false
+  },
+  {
+   "item": "timing_chain",
+   "interval": {
+    "ru": "по состоянию, обычно 150 000-200 000 km",
+    "en": "on condition, usually 150 000-200 000 km"
+   },
+   "ru": "Цепь ГРМ, натяжитель, звёзды VVT-i",
+   "en": "Timing chain, tensioner, VVT-i sprockets",
+   "verified": true
+  }
+ ],
+ "drive_flow": [
+  {
+   "step": 1,
+   "ru": "Топливный бак 55 л",
+   "en": "Fuel tank 55 L"
+  },
+  {
+   "step": 2,
+   "ru": "Электрический бензонасос в баке (с фильтром и регулятором давления)",
+   "en": "Electric fuel pump in tank (with filter and pressure regulator)"
+  },
+  {
+   "step": 3,
+   "ru": "Топливная рампа и 4 форсунки - впрыск во впускной коллектор перед клапанами",
+   "en": "Fuel rail and 4 injectors - port injection before intake valves"
+  },
+  {
+   "step": 4,
+   "ru": "Цилиндры: смесь воздуха и бензина сжимается, свеча поджигает, газы толкают поршень (порядок 1-3-4-2)",
+   "en": "Cylinders: air-fuel mix compressed, spark plug ignites, gases push piston (order 1-3-4-2)"
+  },
+  {
+   "step": 5,
+   "ru": "Шатуны крутят коленчатый вал",
+   "en": "Connecting rods turn the crankshaft"
+  },
+  {
+   "step": 6,
+   "ru": "Маховик на конце коленвала",
+   "en": "Flywheel on crankshaft end"
+  },
+  {
+   "step": 7,
+   "ru": "Сухое сцепление - его замыкает и размыкает электрический актуатор MMT",
+   "en": "Dry clutch - engaged and released by MMT electric actuator"
+  },
+  {
+   "step": 8,
+   "ru": "Коробка C50A: 5 передач + задний ход, передачи включает актуатор",
+   "en": "C50A gearbox: 5 gears + reverse, shifted by actuator"
+  },
+  {
+   "step": 9,
+   "ru": "Главная пара и дифференциал внутри коробки - делят момент между левым и правым колесом на поворотах",
+   "en": "Final drive and differential inside gearbox - split torque between left and right wheels in turns"
+  },
+  {
+   "step": 10,
+   "ru": "Приводные валы с ШРУСами (гранатами) - внутренний и наружный на каждом",
+   "en": "Drive shafts with CV joints - inner and outer on each"
+  },
+  {
+   "step": 11,
+   "ru": "Передние колёса - ведущие (передний привод). Задние просто катятся",
+   "en": "Front wheels are driven (FWD). Rear wheels just roll"
+  }
+ ],
+ "sources": [
+  {
+   "title": "akppcenter.com - Toyota C50A",
+   "url": "https://akppcenter.com/toyota/c50a"
+  },
+  {
+   "title": "otoba.ru - C50A",
+   "url": "https://otoba.ru/transmissii/toyota/c50a.html"
+  },
+  {
+   "title": "otoba.ru - 1ZR-FE",
+   "url": "https://otoba.ru/dvigatel/toyota/1zr-fe.html"
+  },
+  {
+   "title": "toyota-club.net - Corolla E150",
+   "url": "https://toyota-club.net/files/2021/21-03-20_mod_d_corolla-150.htm"
+  },
+  {
+   "title": "drom.ru - Corolla E150 2006-2010 catalog",
+   "url": "https://www.drom.ru/catalog/toyota/corolla/g_2006_7763/"
+  },
+  {
+   "title": "cars-data.com - Corolla 1.6 2007 specs",
+   "url": "https://cars-data.com/en/toyota/corolla/2007/1-6-16v-vvt-i-executive-46719--46719/specs"
+  },
+  {
+   "title": "autokatalog.pl - Corolla X E140/E150",
+   "url": "https://autokatalog.pl/toyota/corolla/x-e140-e150/dane-techniczne"
+  },
+  {
+   "title": "auto.ru - Corolla 1.6 124 hp specs",
+   "url": "https://auto.ru/catalog/cars/toyota/corolla/2309501/2309502/specifications/2309502__20784024/"
+  },
+  {
+   "title": "koleso.ee - Corolla E150 wheels",
+   "url": "https://koleso.ee/en/valuveljed/toyota/corolla/4347/e150-2007-2010/8834"
+  },
+  {
+   "title": "tirewheelguide.com - Corolla tyre sizes",
+   "url": "https://tirewheelguide.com/sizes/toyota/corolla/2011/"
+  },
+  {
+   "title": "xenonshop.ru - Corolla X E150 bulbs",
+   "url": "https://www.xenonshop.ru/podbor/toyota/toyota-corolla/x-2006-2010/blizhnij-svet/"
+  },
+  {
+   "title": "drive2.ru - MMT oil change (Corolla 150 1.6 2008)",
+   "url": "https://www.drive2.ru/l/471548652389663442/"
+  },
+  {
+   "title": "drive2.ru - spark plugs 1ZR-FE",
+   "url": "https://www.drive2.ru/l/576495113115533685/"
+  },
+  {
+   "title": "Bilstein/Blue Print - MMT clutch replacement",
+   "url": "https://www.techtips.ie/Blue-Print/toyota-multi-mode-transmission-mmt-clutch-replacement.pdf"
+  },
+  {
+   "title": "podbor.ravenol.ru - Corolla E15 1.6 fluids",
+   "url": "https://podbor.ravenol.ru/1-cars/535-toyota/2191-corolla-e15/6075-corolla-1-6-16v-vvt-i-91-kvt/"
+  }
+ ]
+}

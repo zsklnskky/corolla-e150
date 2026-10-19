@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Моя Corolla E150</title>
+<meta name="description" content="Интерактивный разбор Toyota Corolla E150 1.6 с роботом MMT: как устроена и едет, детали, цены в Беларуси, лампочки, размеры, тюнинг.">
+<meta property="og:title" content="Моя Corolla E150 - разбор по деталям">
+<meta property="og:description" content="Приближай машину, наводи на деталь: название, что делает, цена в BYN и где купить в Беларуси.">
+<meta name="theme-color" content="#161325">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 24%27%3E%3Cpath d=%27M3 17c0-3 2-5 6-6l6-5c3-2 11-2 14 0l4 5c3 0 4 2 4 5v2H3z%27 fill=%27%23FF9F43%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Nunito:wght@400;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="orbs" aria-hidden="true"></canvas>
+<div id="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="brand" href="#/car" data-go="car">
+    <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M3 17c0-3 2-5 6-6l6-5c3-2 11-2 14 0l4 5c3 0 4 2 4 5v2H3z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><circle cx="11" cy="19" r="3.2" fill="currentColor"/><circle cx="30" cy="19" r="3.2" fill="currentColor"/></svg>
+    <span><b>Corolla E150</b><small><t-ru>1.6 бензин, робот MMT, 2008</t-ru><t-en>1.6 petrol, MMT robot, 2008</t-en></small></span>
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#/car" data-go="car"><t-ru>Машина</t-ru><t-en>The car</t-en></a>
+    <a href="#/drive" data-go="drive"><t-ru>Как едет</t-ru><t-en>How it moves</t-en></a>
+    <a href="#/engine" data-go="engine"><t-ru>Двигатель</t-ru><t-en>Engine</t-en></a>
+    <a href="#/mmt" data-go="mmt"><t-ru>Робот MMT</t-ru><t-en>MMT robot</t-en></a>
+    <a href="#/salon" data-go="salon"><t-ru>Салон и свет</t-ru><t-en>Cabin & lights</t-en></a>
+    <a href="#/size" data-go="size"><t-ru>Размеры</t-ru><t-en>Dimensions</t-en></a>
+    <a href="#/mods" data-go="mods"><t-ru>Ништяки</t-ru><t-en>Upgrades</t-en></a>
+    <a href="#/service" data-go="service"><t-ru>Обслуживание</t-ru><t-en>Service</t-en></a>
+    <span class="nav-blob" aria-hidden="true"></span>
+  </nav>
+  <div class="top-tools">
+    <button class="pill" id="langBtn" aria-label="Language">EN</button>
+    <button class="pill burger" id="menuBtn" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="app">
+
+<!-- ================= МАШИНА ================= -->
+<section class="page" data-page="car">
+  <div class="stage" id="stage">
+    <div class="stage-hint" id="hint">
+      <t-ru>Крути колёсико или разведи пальцами - приблизить. Наведи на деталь - название. Нажми - цена и где купить.</t-ru>
+      <t-en>Scroll or pinch to zoom. Hover a part to see its name. Tap it for price and where to buy.</t-en>
+    </div>
+    <svg id="carSvg" class="carsvg" viewBox="40 40 1500 540" role="img" aria-label="Toyota Corolla E150">
+      <defs>
+        <linearGradient id="paintG" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" style="stop-color:color-mix(in srgb,var(--paint) 55%,#fff)"/>
+          <stop offset=".42" style="stop-color:var(--paint)"/>
+          <stop offset=".44" style="stop-color:color-mix(in srgb,var(--paint) 82%,#000)"/>
+          <stop offset="1" style="stop-color:color-mix(in srgb,var(--paint) 55%,#000)"/>
+        </linearGradient>
+        <linearGradient id="glassG" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#9fb4ff" stop-opacity=".55"/>
+          <stop offset=".45" stop-color="#2a2f4a" stop-opacity=".9"/>
+          <stop offset=".6" stop-color="#cfd8ff" stop-opacity=".35"/>
+          <stop offset="1" stop-color="#1b1e30" stop-opacity=".95"/>
+        </linearGradient>
+        <radialGradient id="tyreG"><stop offset=".62" stop-color="#2b2b33"/><stop offset=".9" stop-color="#121217"/><stop offset="1" stop-color="#26262e"/></radialGradient>
+        <radialGradient id="rimG"><stop offset="0" stop-color="#f4f5f8"/><stop offset=".7" stop-color="#a9adb8"/><stop offset="1" stop-color="#6c707c"/></radialGradient>
+        <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
+        <clipPath id="bodyClip"><path id="bodyPathC" d="M128,440 C118,410 116,372 121,342 C126,314 140,300 172,293 L300,277 C400,266 470,259 525,253 C590,192 650,124 722,90 C820,72 960,74 1052,88 C1122,128 1190,186 1266,230 C1332,235 1400,237 1448,243 C1470,249 1478,262 1481,290 L1485,398 C1484,430 1474,447 1452,452 L1289.6,452 A108,108 0 1 0 1080.4,452 L509.6,452 A108,108 0 1 0 300.4,452 L162,452 C144,450 133,447 128,440 Z"/></clipPath>
+        <g id="wheelArt">
+          <circle r="95" fill="url(#tyreG)"/>
+          <circle r="80" fill="none" stroke="#3a3a44" stroke-width="2"/>
+          <circle r="65" fill="#20212a"/>
+          <circle class="disc-art" r="52" fill="#5b5e68"/>
+          <g fill="url(#rimG)" stroke="#555a66" stroke-width="1">
+            <circle r="65" fill="none" stroke="url(#rimG)" stroke-width="7"/>
+            <path d="M-7,-14 L-11,-60 C-4,-63 4,-63 11,-60 L7,-14Z"/>
+            <path d="M-7,-14 L-11,-60 C-4,-63 4,-63 11,-60 L7,-14Z" transform="rotate(72)"/>
+            <path d="M-7,-14 L-11,-60 C-4,-63 4,-63 11,-60 L7,-14Z" transform="rotate(144)"/>
+            <path d="M-7,-14 L-11,-60 C-4,-63 4,-63 11,-60 L7,-14Z" transform="rotate(216)"/>
+            <path d="M-7,-14 L-11,-60 C-4,-63 4,-63 11,-60 L7,-14Z" transform="rotate(288)"/>
+            <circle r="16"/>
+          </g>
+          <circle r="6" fill="#7b808c"/>
+        </g>
+      </defs>
+
+      <ellipse cx="800" cy="522" rx="720" ry="16" fill="#000" opacity=".55" filter="url(#soft)"/>
+
+      <!-- ============ КУЗОВ ============ -->
+      <g id="bodyLayer">
+        <path class="paint" d="M128,440 C118,410 116,372 121,342 C126,314 140,300 172,293 L300,277 C400,266 470,259 525,253 C590,192 650,124 722,90 C820,72 960,74 1052,88 C1122,128 1190,186 1266,230 C1332,235 1400,237 1448,243 C1470,249 1478,262 1481,290 L1485,398 C1484,430 1474,447 1452,452 L1289.6,452 A108,108 0 1 0 1080.4,452 L509.6,452 A108,108 0 1 0 300.4,452 L162,452 C144,450 133,447 128,440 Z" fill="url(#paintG)"/>
+        <!-- панели (зоны наведения) -->
+        <g clip-path="url(#bodyClip)" class="panels">
+          <path class="part p-body" data-id="bumper_front" d="M90,322 L252,318 C272,360 294,394 304,424 L300,480 L90,480Z"/>
+          <path class="part p-body" data-id="hood" d="M140,270 L545,220 L545,259 C470,265 380,272 262,288 L140,306Z"/>
+          <path class="part p-body" data-id="fender_front" d="M262,288 C380,272 470,265 548,259 C540,300 538,340 546,452 L509,452 L509,480 L300,480 L304,424 C294,394 272,360 252,318Z"/>
+          <path class="part p-body" data-id="door_front" d="M552,256 L862,247 L864,452 L546,452 C538,340 540,300 552,256Z"/>
+          <path class="part p-body" data-id="door_rear" d="M862,247 L1186,236 C1150,280 1130,320 1100,350 C1086,365 1081,395 1080,452 L864,452Z"/>
+          <path class="part p-body" data-id="quarter" d="M1186,236 L1266,230 C1332,235 1400,237 1448,243 L1470,252 L1478,318 C1420,322 1360,326 1300,330 L1292,452 L1080,452 C1081,395 1086,365 1100,350 C1130,320 1150,280 1186,236Z"/>
+          <path class="part p-body" data-id="trunk_lid" d="M1240,215 L1490,215 L1490,256 C1420,250 1320,244 1262,236Z"/>
+          <path class="part p-body" data-id="bumper_rear" d="M1300,330 C1360,326 1420,322 1490,316 L1490,480 L1292,480 L1292,452Z"/>
+          <path class="part p-body" data-id="roof" d="M700,60 L1070,60 L1046,100 C960,86 820,84 726,100Z"/>
+        </g>
+        <!-- стёкла -->
+        <path d="M552,254 C615,190 668,130 726,100 C820,84 960,86 1046,100 C1110,140 1170,190 1232,232 Z" fill="#0c0e18"/>
+        <path class="part p-glass" data-id="windshield" d="M527,252 C590,192 650,124 722,90 L732,101 C670,134 615,192 556,253Z"/>
+        <path class="part p-glass" data-id="side_glass" d="M568,249 C620,196 672,142 730,112 L850,107 L850,246Z M874,246 L874,107 L1030,111 C1085,143 1135,185 1182,234Z"/>
+        <path class="part p-glass" data-id="rear_glass" d="M1052,88 C1122,128 1190,186 1266,230 L1238,232 C1172,190 1112,141 1047,100Z"/>
+        <!-- линии кузова -->
+        <g class="seams" fill="none">
+          <path d="M262,288 C380,272 470,264 548,258"/>
+          <path d="M252,320 C272,360 294,394 304,424"/>
+          <path d="M552,256 C540,300 538,340 546,450"/>
+          <path d="M862,247 L864,450"/>
+          <path d="M1186,236 C1150,280 1130,320 1100,350 C1086,365 1081,395 1080,446"/>
+          <path d="M1262,236 C1320,244 1420,250 1478,258"/>
+          <path d="M1300,330 C1360,326 1420,322 1482,317 M1300,330 L1292,446"/>
+          <path class="crease" d="M190,318 C500,292 900,276 1470,268"/>
+          <path d="M150,446 L1470,446" opacity=".5"/>
+        </g>
+        <rect class="part p-body" data-id="door_handle" x="790" y="268" width="38" height="9" rx="4.5"/>
+        <rect class="part p-body" data-id="door_handle" x="1072" y="262" width="36" height="9" rx="4.5"/>
+        <path class="part p-body" data-id="fuel_door" d="M1236,262 h40 a6 6 0 0 1 6 6 v24 a6 6 0 0 1 -6 6 h-40 a6 6 0 0 1 -6 -6 v-24 a6 6 0 0 1 6 -6z"/>
+        <!-- зеркало -->
+        <path class="part p-body" data-id="mirror" d="M560,252 C552,238 560,224 584,221 L610,222 C616,232 610,246 594,252Z"/>
+        <!-- оптика -->
+        <g class="part p-light" data-id="headlight">
+          <path d="M126,318 C128,304 142,296 172,292 L330,276 C322,292 300,308 268,318 L156,334 C138,334 127,328 126,318Z" class="lamp"/>
+          <circle cx="180" cy="314" r="11" class="lens"/><circle cx="222" cy="308" r="9" class="lens"/>
+          <path d="M142,326 L290,309" class="drl"/>
+        </g>
+        <path class="part p-light" data-id="repeater" d="M488,296 a10 4 -6 1 0 20 -2 a10 4 -6 1 0 -20 2z"/>
+        <ellipse class="part p-light" data-id="fog_light" cx="150" cy="412" rx="15" ry="9"/>
+        <path class="grille" d="M126,388 L215,382 L222,398 L130,405Z"/>
+        <path class="grille" d="M130,344 L232,336 L236,348 L134,355Z" opacity=".7"/>
+        <path class="part p-light" data-id="tail_light" d="M1395,244 L1450,246 C1468,250 1477,262 1480,290 L1481,318 C1450,312 1420,300 1398,282 C1392,270 1391,256 1395,244Z"/>
+        <path class="part p-body" data-id="wiper" d="M540,252 L640,236" stroke-width="5" fill="none"/>
+        <!-- колёса -->
+        <g class="part p-wheel" data-id="wheel"><use href="#wheelArt" x="405" y="425"/></g>
+        <g class="part p-wheel" data-id="wheel"><use href="#wheelArt" x="1185" y="425"/></g>
+        <path class="part p-wheel tyre-hit" data-id="tyre" d="M405,330 a95 95 0 1 1 -0.1 0z M405,345 a80 80 0 1 0 0.1 0z" fill-rule="evenodd"/>
+        <path class="part p-wheel tyre-hit" data-id="tyre" d="M1185,330 a95 95 0 1 1 -0.1 0z M1185,345 a80 80 0 1 0 0.1 0z" fill-rule="evenodd"/>
+        <path class="exhaust-tip" d="M1440,456 L1478,456"/>
+      </g>
+
+      <!-- ============ РЕНТГЕН (внутренности) ============ -->
+      <g id="xrayLayer">
+        <!-- салон -->
+        <path class="part s-interior" data-id="headliner" d="M730,98 C820,84 960,86 1040,100 L1036,110 C960,98 820,96 734,110Z"/>
+        <path class="part s-interior" data-id="dashboard" d="M548,262 L644,248 C668,254 676,276 670,304 L566,316 C556,300 550,282 548,262Z"/>
+        <g class="part s-interior" data-id="steering_wheel">
+          <ellipse cx="652" cy="282" rx="9" ry="42" transform="rotate(-24 652 282)"/>
+          <path d="M660,290 L604,330" class="thin"/>
+        </g>
+        <g class="part s-trans" data-id="shifter">
+          <path d="M680,348 L770,346 L772,362 L682,364Z"/><path d="M712,348 L706,316" class="thin"/><circle cx="705" cy="312" r="7"/>
+        </g>
+        <g class="part s-interior" data-id="seat_front">
+          <path d="M705,372 C705,360 712,356 725,356 L830,360 C842,362 846,372 842,384 L712,390 C706,388 705,380 705,372Z"/>
+          <path d="M812,362 C800,300 795,240 800,200 C803,186 820,182 828,196 C838,240 846,300 852,360Z"/>
+          <path d="M797,178 C797,162 807,154 821,156 C833,158 837,172 833,186 L801,190Z"/>
+        </g>
+        <g class="part s-interior" data-id="seat_rear">
+          <path d="M936,372 C936,360 944,356 958,356 L1062,360 C1072,362 1076,372 1072,386 L944,390 C938,388 936,380 936,372Z"/>
+          <path d="M1040,362 C1030,300 1028,250 1035,212 C1040,202 1058,204 1062,218 C1070,260 1078,310 1084,362Z"/>
+        </g>
+        <path class="part s-interior lod2" data-id="pedals" d="M560,410 L548,372 M576,412 L566,372 M545,410 h22 M562,412 h22" fill="none"/>
+        <rect class="part s-cool lod2" data-id="cabin_filter" x="598" y="320" width="34" height="9" rx="3"/>
+        <rect class="part s-elec lod2" data-id="ecu" x="566" y="286" width="32" height="20" rx="4"/>
+        <path class="part s-interior" data-id="trunk" d="M1272,248 L1440,256 L1452,330 L1300,336Z" fill-opacity=".05" stroke-dasharray="6 6"/>
+        <ellipse class="part s-chassis lod2" data-id="spare_wheel" cx="1366" cy="404" rx="72" ry="16"/>
+
+        <!-- охлаждение -->
+        <rect class="part s-cool lod2" data-id="condenser" x="134" y="324" width="8" height="102" rx="3"/>
+        <g class="part s-cool" data-id="radiator"><rect x="146" y="318" width="17" height="112" rx="3"/><path class="thin" d="M150,326 v96 M155,326 v96 M159,326 v96"/></g>
+        <ellipse class="part s-cool" data-id="fan" cx="177" cy="374" rx="7" ry="46"/>
+        <rect class="part s-cool lod2" data-id="coolant_tank" x="166" y="294" width="26" height="20" rx="6"/>
+        <circle class="part s-cool lod2" data-id="water_pump" cx="230" cy="368" r="10"/>
+        <circle class="part s-cool lod2" data-id="thermostat" cx="352" cy="336" r="6"/>
+        <circle class="part s-elec lod2" data-id="horn" cx="136" cy="362" r="8"/>
+
+        <!-- двигатель -->
+        <g class="part s-engine" data-id="engine_block">
+          <rect x="196" y="330" width="165" height="95" rx="10"/>
+          <g class="lod2 cyls"><rect x="208" y="336" width="30" height="54" rx="4"/><rect x="246" y="336" width="30" height="54" rx="4"/><rect x="284" y="336" width="30" height="54" rx="4"/><rect x="322" y="336" width="30" height="54" rx="4"/></g>
+        </g>
+        <rect class="part s-engine" data-id="oil_pan" x="204" y="425" width="150" height="22" rx="8"/>
+        <rect class="part s-engine" data-id="valve_cover" x="200" y="296" width="160" height="34" rx="12"/>
+        <g class="part s-engine lod2" data-id="ign_coil"><rect x="218" y="286" width="12" height="16" rx="3"/><rect x="256" y="286" width="12" height="16" rx="3"/><rect x="294" y="286" width="12" height="16" rx="3"/><rect x="332" y="286" width="12" height="16" rx="3"/></g>
+        <g class="part s-elec lod2" data-id="spark_plug"><path d="M224,304 v20 M262,304 v20 M300,304 v20 M338,304 v20" stroke-width="4"/></g>
+        <path class="part s-engine lod2" data-id="timing_chain" d="M226,412 C220,380 236,330 252,310 C262,300 300,300 308,312 C318,330 260,380 238,414Z" fill="none" stroke-dasharray="4 3"/>
+        <circle class="part s-engine lod2" data-id="vvti" cx="254" cy="312" r="10"/>
+        <circle class="part s-elec lod2" data-id="alternator" cx="212" cy="342" r="15"/>
+        <path class="part s-engine lod2" data-id="belt" d="M200,342 C196,370 198,400 198,412 C198,430 226,432 226,418 M224,342 C232,352 240,360 240,368" fill="none"/>
+        <circle class="part s-cool lod2" data-id="ac_compressor" cx="214" cy="434" r="12"/>
+        <rect class="part s-engine lod2" data-id="oil_filter" x="244" y="428" width="14" height="18" rx="5"/>
+        <path class="part s-fuel lod2" data-id="injector" d="M208,318 l-8,10 M214,320 l-8,10 M220,322 l-8,10 M226,324 l-8,10"/>
+        <path class="part s-engine" data-id="intake" d="M214,306 C190,312 186,330 196,346 M222,308 C200,318 198,334 206,348" fill="none" stroke-width="7"/>
+        <circle class="part s-engine" data-id="throttle" cx="222" cy="296" r="10"/>
+        <g class="part s-engine" data-id="air_filter"><rect x="290" y="276" width="104" height="26" rx="10"/><path d="M290,290 C262,290 246,292 232,294" fill="none" stroke-width="9"/></g>
+        <g class="part s-engine lod2" data-id="engine_mount"><rect x="186" y="356" width="12" height="18" rx="3"/><rect x="360" y="352" width="12" height="18" rx="3"/></g>
+        <!-- коробка MMT -->
+        <path class="part s-trans" data-id="gearbox" d="M300,352 C330,344 380,344 422,352 L430,402 C430,428 420,440 396,442 L322,444 C306,438 298,420 298,400Z"/>
+        <circle class="part s-trans lod2" data-id="clutch" cx="318" cy="396" r="30"/>
+        <g class="part s-trans lod2" data-id="clutch_actuator"><rect x="330" y="333" width="34" height="14" rx="4"/><circle cx="330" cy="340" r="8"/></g>
+        <g class="part s-trans lod2" data-id="shift_actuator"><rect x="374" y="330" width="42" height="18" rx="4"/><circle cx="416" cy="339" r="8"/></g>
+        <rect class="part s-elec lod2" data-id="starter" x="306" y="430" width="42" height="14" rx="7"/>
+        <path class="part s-trans lod2" data-id="cv_joint" d="M380,424 L405,425" stroke-width="9" fill="none"/>
+        <!-- электрика / тормоза у перегородки -->
+        <g class="part s-elec" data-id="battery"><rect x="400" y="268" width="60" height="42" rx="5"/><rect x="408" y="262" width="10" height="7" rx="2"/><rect x="442" y="262" width="10" height="7" rx="2"/></g>
+        <rect class="part s-elec lod2" data-id="fuse_box" x="402" y="314" width="40" height="18" rx="4"/>
+        <g class="part s-brake" data-id="brake_booster"><circle cx="500" cy="318" r="28"/><rect x="458" y="312" width="16" height="12" rx="3"/></g>
+        <rect class="part s-brake lod2" data-id="abs" x="470" y="352" width="28" height="20" rx="4"/>
+        <!-- выпуск -->
+        <path class="part s-fuel" data-id="catalyst" d="M364,322 C380,316 396,322 398,336 L398,396 C396,410 380,414 366,408Z"/>
+        <circle class="part s-elec lod2" data-id="o2_sensor" cx="381" cy="320" r="5"/>
+        <path class="part s-fuel" data-id="exhaust_pipe" d="M382,410 C392,444 412,462 450,464 L1300,464" fill="none" stroke-width="8"/>
+        <ellipse class="part s-fuel" data-id="resonator" cx="760" cy="464" rx="62" ry="10"/>
+        <rect class="part s-fuel" data-id="muffler" x="1296" y="432" width="152" height="30" rx="14"/>
+        <!-- топливо -->
+        <path class="part s-fuel" data-id="fuel_tank" d="M900,398 C900,390 908,386 920,386 L1056,388 C1068,390 1072,398 1070,410 L1064,440 C1062,448 1054,450 1044,450 L918,450 C906,448 902,442 900,432Z"/>
+        <g class="part s-fuel lod2" data-id="fuel_pump"><rect x="962" y="396" width="18" height="44" rx="5"/><path d="M971,396 C960,360 700,300 520,316" fill="none" stroke-dasharray="5 5" class="thin"/></g>
+        <!-- подвеска / рулевое -->
+        <g class="part s-chassis" data-id="strut_front"><path d="M412,420 L420,292" stroke-width="9" fill="none"/><path d="M406,358 l22,-6 l-22,-6 l22,-6 l-22,-6 l22,-6 l-22,-6 l22,-6 l-22,-6" fill="none"/><rect x="408" y="284" width="26" height="10" rx="4"/></g>
+        <path class="part s-chassis" data-id="control_arm" d="M318,456 L404,446" stroke-width="8" fill="none"/>
+        <path class="part s-chassis lod2" data-id="stab_link" d="M394,420 L388,362" stroke-width="4" fill="none"/>
+        <circle class="part s-chassis lod2" data-id="ball_joint" cx="404" cy="447" r="6"/>
+        <rect class="part s-chassis" data-id="steering_rack" x="440" y="428" width="86" height="11" rx="5"/>
+        <path class="part s-chassis lod2" data-id="tie_rod" d="M440,434 L418,432" stroke-width="5" fill="none"/>
+        <g class="part s-chassis lod2" data-id="eps"><path d="M604,330 L528,428" fill="none" class="thin"/><rect x="574" y="346" width="28" height="18" rx="5"/></g>
+        <path class="part s-chassis" data-id="rear_beam" d="M1052,446 L1185,430" stroke-width="10" fill="none"/>
+        <g class="part s-chassis" data-id="shock_rear"><path d="M1170,424 L1150,318" stroke-width="8" fill="none"/><path d="M1206,440 l18,-5 l-18,-5 l18,-5 l-18,-5 l18,-5 l-18,-5" fill="none"/></g>
+        <!-- тормоза на колёсах -->
+        <g class="part s-brake" data-id="brake_front"><circle cx="405" cy="425" r="52" fill-opacity=".18"/><path d="M455,390 A62 62 0 0 1 462,452" stroke-width="10" fill="none"/></g>
+        <g class="part s-brake" data-id="brake_rear"><circle cx="1185" cy="425" r="48" fill-opacity=".18"/><path d="M1232,394 A58 58 0 0 1 1238,450" stroke-width="12" fill="none"/></g>
+        <circle class="part s-chassis lod2" data-id="hub_bearing" cx="405" cy="425" r="13"/>
+      </g>
+    </svg>
+
+    <div class="legend" id="legend" role="toolbar" aria-label="Системы"></div>
+    <div class="zoombar">
+      <button class="pill" id="xrayBtn" aria-pressed="false"><t-ru>Рентген</t-ru><t-en>X-ray</t-en></button>
+      <button class="pill round" id="zIn" aria-label="Приблизить">+</button>
+      <button class="pill round" id="zOut" aria-label="Отдалить">-</button>
+      <button class="pill round" id="zReset" aria-label="Сбросить">⤾</button>
+    </div>
+    <div class="paints" id="paints" aria-label="Цвет кузова"></div>
+    <button class="pill list-btn" id="listBtn"><t-ru>Все детали</t-ru><t-en>All parts</t-en></button>
+  </div>
+</section>
+
+<!-- ================= КАК ЕДЕТ ================= -->
+<section class="page" data-page="drive">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Как Corolla едет</t-ru><t-en>How the Corolla moves</t-en></h1>
+    <p class="lead"><t-ru>Бензин сгорает в цилиндрах и толкает поршни. Поршни крутят коленвал, коробка подбирает передачу, а приводы передают вращение на передние колёса. Задние колёса просто катятся следом. Нажми на любой шаг или включи показ.</t-ru><t-en>Petrol burns in the cylinders and pushes the pistons. The pistons spin the crankshaft, the gearbox picks a gear, and the drive shafts turn the front wheels. The rear wheels just roll along. Tap any step or press play.</t-en></p>
+    <div class="flow-grid">
+      <div class="card glass flow-card">
+        <svg id="topSvg" class="topsvg" viewBox="60 80 1480 600" role="img" aria-label="Вид сверху"></svg>
+      </div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="flow-play"><button class="pill accent" id="flowPlay"><t-ru>Показать по шагам</t-ru><t-en>Play step by step</t-en></button></div>
+  </div>
+</section>
+
+<!-- ================= ДВИГАТЕЛЬ ================= -->
+<section class="page" data-page="engine">
+  <div class="wrap">
+    <h1 class="h-big">1ZR-FE <span class="h-sub">1.6 Dual VVT-i</span></h1>
+    <p class="lead"><t-ru>Четыре цилиндра в ряд. В каждом поршень ходит вверх-вниз и проходит четыре такта. Двигай ползунок оборотов и смотри, что происходит внутри одного цилиндра.</t-ru><t-en>Four cylinders in a row. In each, a piston goes up and down through four strokes. Move the rpm slider and watch what happens inside one cylinder.</t-en></p>
+    <div class="engine-grid">
+      <div class="card glass engine-card">
+        <svg id="cylSvg" viewBox="0 0 400 520" aria-label="Цилиндр"></svg>
+        <div class="rpm"><label for="rpm"><t-ru>Обороты</t-ru><t-en>RPM</t-en>: <b id="rpmVal">800</b></label><input type="range" id="rpm" min="0" max="100" value="12"></div>
+      </div>
+      <div class="strokes" id="strokes"></div>
+    </div>
+    <h2 class="h-mid"><t-ru>Цифры двигателя</t-ru><t-en>Engine numbers</t-en></h2>
+    <div class="specs" id="engSpecs"></div>
+    <h2 class="h-mid"><t-ru>Что такое Dual VVT-i и цепь ГРМ</t-ru><t-en>Dual VVT-i and the timing chain</t-en></h2>
+    <div class="two">
+      <div class="card glass prose"><t-ru><p>Клапаны открываются распредвалами. Их два: один для впуска, другой для выпуска. Система Dual VVT-i чуть поворачивает каждый распредвал маслом под давлением, и клапаны открываются раньше или позже под обороты. На малых оборотах мотор тянет мягко, на высоких дышит свободнее, а бензина уходит меньше.</p><p>Распредвалы вращает цепь от коленвала. Ремня ГРМ здесь нет, менять по графику не нужно. Но цепь любит чистое масло: если затягивать с заменой, она растягивается и при запуске слышно короткое «тр-р-р».</p></t-ru><t-en><p>Valves are opened by camshafts. There are two: one for intake, one for exhaust. Dual VVT-i turns each camshaft slightly using oil pressure, so the valves open earlier or later depending on rpm. At low rpm the engine pulls smoothly, at high rpm it breathes freely, and it uses less fuel.</p><p>The camshafts are driven by a chain from the crankshaft. There is no timing belt, so no scheduled replacement. But the chain likes clean oil: skip oil changes and it stretches, and you hear a short rattle on cold start.</p></t-en></div>
+      <div class="card glass prose" id="engWeak"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MMT ================= -->
+<section class="page" data-page="mmt">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Робот MMT</t-ru><t-en>MMT robot gearbox</t-en></h1>
+    <p class="lead"><t-ru>Внутри обычная механика на 5 передач и одно сухое сцепление. Педали сцепления нет: вместо ноги работает электромотор, вместо руки на рычаге - второй мотор. Компьютер решает, когда выжать сцепление и какую передачу включить.</t-ru><t-en>Inside is an ordinary 5-speed manual with a single dry clutch. There is no clutch pedal: an electric motor does the foot's job, and a second motor does the hand's job on the lever. A computer decides when to release the clutch and which gear to select.</t-en></p>
+    <div class="mmt-grid">
+      <div class="card glass mmt-card">
+        <svg id="mmtSvg" viewBox="0 0 640 380" aria-label="Схема MMT"></svg>
+        <div class="mmt-ctrl" id="mmtCtrl"></div>
+      </div>
+      <div class="card glass prose" id="mmtText"></div>
+    </div>
+    <h2 class="h-mid"><t-ru>Как ездить, чтобы робот жил долго</t-ru><t-en>Driving tips for a long-lived robot</t-en></h2>
+    <div class="tips" id="mmtTips"></div>
+  </div>
+</section>
+
+<!-- ================= САЛОН ================= -->
+<section class="page" data-page="salon">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Салон и свет</t-ru><t-en>Cabin & lights</t-en></h1>
+    <p class="lead"><t-ru>Вид сверху. Светящиеся точки - лампочки: наведи, чтобы узнать цоколь и мощность. Ниже таблица всех ламп, лампочки приборки и что можно перешить.</t-ru><t-en>Top view. Glowing dots are bulbs: hover to see the socket type and wattage. Below: all bulbs, the dashboard warning lights and what you can reupholster.</t-en></p>
+    <div class="card glass flow-card"><svg id="salonSvg" class="topsvg" viewBox="60 80 1480 600" aria-label="Салон сверху"></svg></div>
+    <h2 class="h-mid"><t-ru>Все лампочки</t-ru><t-en>All bulbs</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="bulbTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Лампы на приборке</t-ru><t-en>Dashboard warning lights</t-en></h2>
+    <div class="warns" id="warns"></div>
+    <h2 class="h-mid"><t-ru>Перешить салон</t-ru><t-en>Reupholstering the cabin</t-en></h2>
+    <div class="cards3" id="uphol"></div>
+  </div>
+</section>
+
+<!-- ================= РАЗМЕРЫ ================= -->
+<section class="page" data-page="size">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Размеры</t-ru><t-en>Dimensions</t-en></h1>
+    <p class="lead"><t-ru>Сколько машина в длину, ширину и высоту, влезет ли в гараж и на какой парковке не потеряет зеркало.</t-ru><t-en>Length, width and height: will it fit your garage, and where will the mirrors survive.</t-en></p>
+    <div class="dims-grid">
+      <div class="card glass"><svg id="dimSide" viewBox="40 0 1500 620" aria-label="Размеры сбоку"></svg></div>
+      <div class="card glass"><svg id="dimFront" viewBox="0 0 700 620" aria-label="Размеры спереди"></svg></div>
+    </div>
+    <div class="specs" id="dimSpecs"></div>
+    <h2 class="h-mid"><t-ru>Колёса</t-ru><t-en>Wheels</t-en></h2>
+    <div class="specs" id="wheelSpecs"></div>
+  </div>
+</section>
+
+<!-- ================= НИШТЯКИ ================= -->
+<section class="page" data-page="mods">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Ништяки и улучшения</t-ru><t-en>Upgrades and goodies</t-en></h1>
+    <p class="lead"><t-ru>Что можно добавить или улучшить, сколько это стоит в Беларуси и есть ли смысл. Сортировка по цене.</t-ru><t-en>What you can add or improve, what it costs in Belarus and whether it's worth it. Sorted by price.</t-en></p>
+    <div class="cards3" id="mods"></div>
+  </div>
+</section>
+
+<!-- ================= ОБСЛУЖИВАНИЕ ================= -->
+<section class="page" data-page="service">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Обслуживание</t-ru><t-en>Service</t-en></h1>
+    <p class="lead"><t-ru>Что и когда менять, какие жидкости заливать и сколько стоит работа в Минске.</t-ru><t-en>What to replace and when, which fluids to use and what labour costs in Minsk.</t-en></p>
+    <h2 class="h-mid"><t-ru>График</t-ru><t-en>Schedule</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="maintTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Жидкости</t-ru><t-en>Fluids</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="fluidTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Цены на работу</t-ru><t-en>Labour prices</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="laborTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Все детали с ценами</t-ru><t-en>All parts with prices</t-en></h2>
+    <input class="search" id="partSearch" type="search" placeholder="Найти деталь" aria-label="Найти деталь">
+    <div class="table-wrap"><table class="tbl" id="partsTbl"></table></div>
+    <p class="note" id="rateNote"></p>
+  </div>
+</section>
+</main>
+
+<!-- всплывашка и панель -->
+<div class="tip" id="tip" role="tooltip"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="pill round drawer-x" id="drawerX" aria-label="Закрыть">✕</button>
+  <div id="drawerBody"></div>
+</aside>
+<div class="sheet" id="sheet" aria-hidden="true"><div class="sheet-in glass"><button class="pill round drawer-x" id="sheetX" aria-label="Закрыть">✕</button><div id="sheetBody"></div></div></div>
+
+<footer class="foot"><t-ru>Цены ориентировочные, собраны по белорусским магазинам и барахолкам. Перед покупкой сверяй деталь по VIN.</t-ru><t-en>Prices are approximate, collected from Belarusian shops and classifieds. Check the part by VIN before buying.</t-en></footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
