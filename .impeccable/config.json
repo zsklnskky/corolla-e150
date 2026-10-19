@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "bounce-easing",
+        "value": "cubic-bezier(.34, 1.56, .64, 1)",
+        "createdAt": "2026-10-19T13:48:33.927Z",
+        "reason": "user design-taste memory: spring easing from SYNC reference is the user's stated preference"
+      }
+    ]
+  }
+}

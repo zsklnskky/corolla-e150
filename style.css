@@ -164,7 +164,7 @@ body.ready .carsvg #bodyLayer{animation:carIn 1.3s var(--land) both}
 .kv small{display:block;color:var(--mute);font-size:11px}
 .badge{flex:none;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;background:rgba(255,197,158,.16);color:#FFC59E}
 .badge.ok{background:rgba(124,240,176,.15);color:var(--ok)}
-.badge.sm{font-size:10px;padding:1px 7px}
+.badge.sm{font-size:11px;padding:1px 7px}
 .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .links a{font-size:13px;font-weight:700;text-decoration:none;padding:5px 11px;border-radius:999px;background:rgba(185,140,255,.16);color:#D9C6FF;transition:background .2s,transform .3s var(--spring)}
 .links a:hover{background:rgba(185,140,255,.32);transform:translateY(-1px)}
