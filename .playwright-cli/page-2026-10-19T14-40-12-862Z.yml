@@ -1,0 +1,67 @@
+- generic [active] [ref=f9e1]:
+  - banner [ref=f9e3]:
+    - link "Corolla E150" [ref=f9e4] [cursor=pointer]:
+      - /url: "#/car"
+    - navigation:
+      - link "Машина":
+        - /url: "#/car"
+      - link "Как едет":
+        - /url: "#/drive"
+      - link "Двигатель":
+        - /url: "#/engine"
+      - link "Робот MMT":
+        - /url: "#/mmt"
+      - link "Салон и свет":
+        - /url: "#/salon"
+      - link "Размеры":
+        - /url: "#/size"
+      - link "Ништяки":
+        - /url: "#/mods"
+      - link "Справочник":
+        - /url: "#/ref"
+      - link "Обслуживание":
+        - /url: "#/service"
+    - generic [ref=f9e11]:
+      - button "Language" [ref=f9e12] [cursor=pointer]: EN
+      - button "Меню" [ref=f9e13] [cursor=pointer]
+  - main [ref=f9e16]:
+    - generic [ref=f9e18]:
+      - generic "3D Toyota Corolla E150" [ref=f9e19]
+      - generic [ref=f9e21]: Собираю машину по чертежу
+      - generic: Крути мышью или пальцем, колёсико - приблизить. Наведи на деталь - название, нажми - всё о ней.
+      - toolbar "Системы" [ref=f9e24]:
+        - button "Всё" [ref=f9e25] [cursor=pointer]
+        - button "Кузов" [ref=f9e28] [cursor=pointer]
+        - button "Свет" [ref=f9e31] [cursor=pointer]
+        - button "Двигатель" [ref=f9e34] [cursor=pointer]
+        - button "Охлаждение и климат" [ref=f9e37] [cursor=pointer]
+        - button "Электрика" [ref=f9e40] [cursor=pointer]
+        - button "Коробка MMT" [ref=f9e43] [cursor=pointer]
+        - button "Тормоза" [ref=f9e46] [cursor=pointer]
+        - button "Подвеска и руль" [ref=f9e49] [cursor=pointer]
+        - button "Топливо и выхлоп" [ref=f9e52] [cursor=pointer]
+        - button "Салон" [ref=f9e55] [cursor=pointer]
+      - navigation "Управление" [ref=f9e58]:
+        - button [ref=f9e59] [cursor=pointer]
+        - button [ref=f9e62] [cursor=pointer]
+        - button [ref=f9e65] [cursor=pointer]
+        - button "3/4" [ref=f9e68] [cursor=pointer]
+        - button "Бок" [ref=f9e69] [cursor=pointer]
+        - button "Перед" [ref=f9e71] [cursor=pointer]
+        - button "Зад" [ref=f9e73] [cursor=pointer]
+        - button "Сверху" [ref=f9e75] [cursor=pointer]
+        - button "Днище" [ref=f9e77] [cursor=pointer]
+        - button "Все детали" [ref=f9e79] [cursor=pointer]
+      - generic "Цвет кузова" [ref=f9e81]:
+        - button "Black 202" [ref=f9e82] [cursor=pointer]
+        - button "Super White 040" [ref=f9e83] [cursor=pointer]
+        - button "Silver Metallic 1F7" [ref=f9e84] [cursor=pointer]
+        - button "Grey Metallic 1G3" [ref=f9e85] [cursor=pointer]
+        - button "Dark Blue Mica 8T5" [ref=f9e86] [cursor=pointer]
+        - button "Barcelona Red 3R3" [ref=f9e87] [cursor=pointer]
+  - tooltip
+  - complementary [aria-hidden]:
+    - button: ✕
+  - generic [aria-hidden]:
+    - generic:
+      - button: ✕

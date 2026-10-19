@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "car": {"ru": "Toyota Corolla E150 седан 2008, ZRE151, 1ZR-FE 1.6 Dual VVT-i, робот MMT C50A, Европа/РФ/Беларусь", "en": "Toyota Corolla E150 sedan 2008, ZRE151, 1ZR-FE 1.6 Dual VVT-i, MMT C50A, Europe/RU/Belarus"},
+    "date": "2026-10-19",
+    "usd_byn": 3.0098,
+    "note": {"ru": "verified:true - подтверждено найденным источником; false - по одному непервичному источнику или по памяти, сверять по VIN (EPC Toyota, megazip/amayama). Цены BYN - оценки на 10.2026.", "en": "verified:true - confirmed by a found source; false - single non-primary source or recall, check by VIN in Toyota EPC (megazip/amayama). BYN prices are estimates as of 10.2026."}
+  },
+  "mmt": {
+    "overview": {
+      "ru": "MMT (Multimode Manual Transmission, в РФ/РБ - 'робот') - обычная 5-ступенчатая механика C50 с одним сухим сцеплением, но сцепление и переключение выполняют электромоторы по команде отдельного ЭБУ MMT. Селектор shift-by-wire, механической связи с коробкой нет. Режимы E, Es (спорт), M (ручной +/-, подрулевые лепестки). Положения P нет - на стоянке ручник и N.",
+      "en": "MMT (Multimode Manual Transmission) is a regular C50 5-speed manual with a single dry clutch; clutch and shifting are done by electric motors commanded by a separate MMT ECU. Shift-by-wire selector, no mechanical link to the gearbox. Modes E, Es (sport), M (manual +/- and paddles). No P position - use parking brake and N.",
+      "verified": true
+    },
+    "construction": {
+      "type": {"ru": "Двухвальная поперечная механическая коробка (первичный и вторичный валы) с главной передачей и дифференциалом в одном картере, плюс навесные актуаторы.", "en": "Two-shaft transverse transaxle (input and output shafts) with final drive and differential in one case, plus bolt-on actuators.", "verified": true},
+      "synchros": {"ru": "Синхронизаторы на всех передних передачах. Блок 1-2 на вторичном валу (многоконусные кольца на 1-2), блоки 3-4 и 5 на первичном валу. Задний ход - скользящая промежуточная шестерня без синхронизатора (поэтому R включается только после полной остановки).", "en": "Synchros on all forward gears. 1-2 hub on the output shaft (multi-cone rings on 1-2), 3-4 and 5 hubs on the input shaft. Reverse uses a sliding idler with no synchro (so R engages only at standstill).", "verified": false},
+      "gear_ratios": {"1": 3.545, "2": 1.904, "3": 1.310, "4": 0.969, "5": 0.815, "R": 3.250, "final_drive": 4.529, "source": "gearboxlist.com C50A MMT (Corolla 2007 1.6)", "verified": false,
+        "note": {"ru": "Один источник. На форуме встречается главная пара 4.312 для C50 - сверять по коду коробки на табличке.", "en": "Single source. Forums also mention a 4.312 final drive for C50 - check the gearbox code on the plate."}},
+      "weight": {"ru": "около 40-45 кг с актуаторами (оценка)", "en": "about 40-45 kg with actuators (estimate)", "verified": false}
+    },
+    "clutch": {
+      "disc_diameter_mm": {"value": "212-215", "ru": "Диаметр ведомого диска около 212-215 мм, 21-24 шлица. Уточнять по артикулу комплекта.", "en": "Driven disc diameter about 212-215 mm, 21-24 splines. Check against the kit part number.", "verified": false},
+      "kit_oem": [
+        {"pn": "31250-19095", "ru": "Комплект диск + корзина для MMT (по данным владельцев Corolla MMT, цены exist.ru 2013)", "en": "Disc + cover set for MMT (per Corolla MMT owners, exist.ru prices 2013)", "verified": false},
+        {"pn": "04000-03352", "ru": "Полный комплект сцепления (корзина, диск, вилка, выжимной) - дилерская позиция", "en": "Complete clutch kit (cover, disc, fork, release bearing) - dealer item", "verified": false},
+        {"pn": "31250-12510", "ru": "Комплект для E150 1.6 с обычной МКПП (не MMT) - не путать", "en": "Kit for E150 1.6 with plain manual (not MMT) - do not confuse", "verified": false},
+        {"pn": "Blue Print ADT330265 / ADT330266 / ADT330274 / ADT330278", "ru": "Aftermarket комплекты Blue Print для MMT Auris/Corolla/Yaris (подбор по модели)", "en": "Blue Print aftermarket MMT kits for Auris/Corolla/Yaris (select by model)", "verified": true}
+      ],
+      "release_bearing": [
+        {"pn": "31230-17011", "ru": "Выжимной подшипник для MMT (рекомендация дилера в ветке владельцев)", "en": "Release bearing for MMT (dealer recommendation in owners thread)", "verified": false},
+        {"pn": "31230-12191 / 31230-12181", "ru": "Выжимной для E150 с МКПП", "en": "Release bearing for E150 manual", "verified": false}
+      ],
+      "seals_hardware": [
+        {"pn": "90311-34039", "ru": "Сальник привода (левый/правый, по ветке владельцев)", "en": "Drive shaft oil seal (per owners thread)", "verified": false},
+        {"pn": "90311-34042", "ru": "Сальник привода (вторая сторона)", "en": "Drive shaft oil seal (other side)", "verified": false},
+        {"pn": "90177-22001", "ru": "Гайка ступицы (2 шт, одноразовые)", "en": "Hub nut (2 pcs, single use)", "verified": false}
+      ]
+    },
+    "clutch_actuator": {
+      "pn": [
+        {"pn": "31360-12030", "ru": "Актуатор сцепления в сборе (заменяет 31360-12010), Corolla/Auris/Verso 1ZR", "en": "Clutch actuator assy (supersedes 31360-12010), Corolla/Auris/Verso 1ZR", "verified": true},
+        {"pn": "31360-12010", "ru": "Ранний номер актуатора", "en": "Early actuator number", "verified": true},
+        {"pn": "04000-19112", "ru": "Ремкомплект 'усиленный': мотор, вилка, сальник, подшипник (не весь актуатор)", "en": "'Reinforced' kit: motor, fork, seal, bearing (not the whole actuator)", "verified": false},
+        {"pn": "31360-52044", "ru": "Актуатор Yaris/Corolla/Auris/Verso-S по каталогам продавцов - проверять применимость к ZRE151", "en": "Actuator listed for Yaris/Corolla/Auris/Verso-S by sellers - verify fit for ZRE151", "verified": false}
+      ],
+      "design": {
+        "ru": "Коллекторный DC-мотор 12 В -> червяк и червячное колесо (сектор) -> рычаг-опора (fulcrum) -> шток -> вилка выжима. Компенсирующая (assist) пружина помогает мотору при выжиме, снижая ток. Положение штока меряет бесконтактный датчик хода сцепления на эффекте Холла (0.2-4.8 В). Механизм LCC подстраивает высоту корзины под износ диска, износ определяется по току мотора. Слабые места: щётки мотора, втулки червячного колеса, смазка с угольной пылью.",
+        "en": "12 V brushed DC motor -> worm and worm wheel (sector) -> fulcrum lever -> push rod -> release fork. An assist spring helps the motor during release, lowering current. Rod position is read by a contactless Hall-effect clutch stroke sensor (0.2-4.8 V). The LCC mechanism compensates pressure plate height for disc wear, wear detected via motor current. Weak points: motor brushes, worm wheel bushings, grease mixed with carbon dust.",
+        "verified": true
+      },
+      "location": {"ru": "На картере сцепления сверху/спереди коробки, слева в моторном отсеке под аккумулятором и его площадкой.", "en": "On top/front of the clutch housing, left of the engine bay under the battery and its tray.", "verified": false}
+    },
+    "shift_actuator": {
+      "pn": {"pn": "33690-12xxx (уточнять по VIN)", "ru": "Актуатор переключения/выбора передач в сборе (номер зависит от версии ЭБУ, сверять в EPC)", "en": "Gear shift/select actuator assy (number depends on ECU revision, check EPC)", "verified": false},
+      "design": {
+        "ru": "Два DC-мотора: мотор SHIFT через редуктор двигает шток вдоль (включение передачи), мотор SELECT через шестерню-рейку поворачивает шток (выбор кулисы 1-2/3-4/5-R). Оба действуют на вал рычага переключения, который двигает штоки вилок. Два датчика Холла: ход shift и ход select.",
+        "en": "Two DC motors: SHIFT motor through a reduction gear moves the shaft axially (engages gear), SELECT motor through a gear-rack pair rotates the shaft (picks 1-2/3-4/5-R gate). Both act on the shift and select lever shaft driving the fork shafts. Two Hall sensors: shift stroke and select stroke.",
+        "verified": true
+      },
+      "location": {"ru": "Сверху коробки за актуатором сцепления, ближе к моторному щиту.", "en": "On top of the gearbox behind the clutch actuator, towards the firewall.", "verified": false}
+    },
+    "ecu": {
+      "pn": [
+        {"pn": "89530-12290 / 89530-12291 / 89530-12292", "ru": "ЭБУ MMT (Computer assy, transmission control). Последние цифры - версия прошивки, по гарантии меняли 290 -> 291 -> 292. Ставить самую свежую.", "en": "MMT ECU (Computer assy, transmission control). Last digits = firmware revision, warranty swaps 290 -> 291 -> 292. Fit the latest.", "verified": false}
+      ],
+      "location": {"ru": "За перчаточным ящиком (справа под панелью). Предохранитель ECU-B2 10A в салонном блоке (MMT, кондиционер, Smart Entry).", "en": "Behind the glove box (right under the dash). Fuse ECU-B2 10A in cabin box (MMT, A/C, Smart Entry).", "verified": true},
+      "recall": {"ru": "Отзыв/кампания 2009 по ЭБУ MMT (обновление ПО/замена блока).", "en": "2009 campaign on MMT ECU (software update/unit swap).", "verified": false}
+    },
+    "sensors": [
+      {"id": "clutch_stroke", "ru": "Датчик хода сцепления (Холл, в актуаторе сцепления)", "en": "Clutch stroke sensor (Hall, in clutch actuator)"},
+      {"id": "shift_stroke", "ru": "Датчик хода переключения (Холл, в актуаторе передач)", "en": "Shift stroke sensor (Hall, in gear actuator)"},
+      {"id": "select_stroke", "ru": "Датчик хода выбора (Холл, в актуаторе передач)", "en": "Select stroke sensor (Hall, in gear actuator)"},
+      {"id": "input_speed", "ru": "Датчик оборотов первичного вала", "en": "Transmission input (rotation) speed sensor"},
+      {"id": "pnp", "ru": "Выключатель нейтрали/запуска (PNP)", "en": "Neutral start (PNP) switch"},
+      {"id": "reverse", "ru": "Выключатель фонаря заднего хода", "en": "Back-up light switch"},
+      {"id": "lever", "ru": "Датчик положения селектора (контактная пластина) + главный выключатель, соленоид блокировки", "en": "Shift lever position sensor (contact plate) + main switch, shift lock solenoid"},
+      {"id": "can", "ru": "Обороты двигателя, педаль газа, тормоз, скорость - по CAN от ЭБУ двигателя и ABS", "en": "Engine speed, throttle, brake, vehicle speed - via CAN from ECM and ABS"}
+    ],
+    "dtc": [
+      {"code": "P0810", "ru": "Ошибка управления положением сцепления (ток мотора >=22 А 2 с): износ диска, щётки/втулки актуатора, вилка, выжимной", "en": "Clutch position control error (motor current >=22 A for 2 s): disc wear, actuator brushes/bushings, fork, release bearing"},
+      {"code": "P0806/P0807/P0808", "ru": "Датчик положения сцепления: диапазон / низкий (<=0.2 В) / высокий (>=4.8 В)", "en": "Clutch position sensor: range / low (<=0.2 V) / high (>=4.8 V)"},
+      {"code": "P0900", "ru": "Цепь актуатора сцепления (обрыв/КЗ мотора, предохранитель, проводка)", "en": "Clutch actuator circuit (motor open/short, fuse, wiring)"},
+      {"code": "P0905/P0906/P0907", "ru": "Датчик выбора: диапазон / низкий / высокий", "en": "Select position sensor: range / low / high"},
+      {"code": "P0909", "ru": "Ошибка управления выбором (ток >=20 А 2 с)", "en": "Gate select control error (current >=20 A for 2 s)"},
+      {"code": "P0910", "ru": "Цепь актуатора выбора", "en": "Select actuator circuit"},
+      {"code": "P0915/P0916/P0917", "ru": "Датчик переключения: диапазон / низкий / высокий", "en": "Shift position sensor: range / low / high"},
+      {"code": "P0919", "ru": "Ошибка управления переключением (ток >=32 А 2 с)", "en": "Shift control error (current >=32 A for 2 s)"},
+      {"code": "P0920", "ru": "Цепь актуатора переключения", "en": "Shift actuator circuit"},
+      {"code": "P0715", "ru": "Датчик оборотов первичного вала", "en": "Input/turbine speed sensor circuit"},
+      {"code": "P0725", "ru": "Рассогласование оборотов двигателя CAN/NE", "en": "Engine speed mismatch CAN vs NE"},
+      {"code": "P0820/P0821", "ru": "Датчик положения селектора", "en": "Gear lever position sensor circuit"},
+      {"code": "P0885/P0887", "ru": "Реле питания трансмиссии", "en": "Transmission power relay"},
+      {"code": "P0562", "ru": "Низкое напряжение (<=7 В) - сначала проверить АКБ и клеммы", "en": "Low voltage (<=7 V) - check battery and terminals first"},
+      {"code": "P0703", "ru": "Цепь выключателя стоп-сигнала B", "en": "Brake switch B circuit"},
+      {"code": "U0001", "ru": "Нет связи по CAN с ЭБУ двигателя", "en": "Lost CAN communication with ECM"}
+    ],
+    "calibration": {
+      "order": {"ru": ["Перед снятием коробки - установить сцепление в положение clamp (Target Clutch Clamp Position Control)", "Замена сцепления/актуатора", "Инициализация ЭБУ MMT (стирает все обученные значения и коды)", "Инициализация/обучение сцепления (Clutch Actuator Preload, точка схватывания)", "Обучение системы (зажигание ON 40 с, OFF 15 с, пуск)", "Калибровка положений синхронизации - езда в M по таблице скоростей"], "en": ["Before removing the gearbox - set clutch to clamp position (Target Clutch Clamp Position Control)", "Replace clutch/actuator", "Initialise MMT ECU (clears all learned values and DTCs)", "Initialise/learn clutch (Clutch Actuator Preload, touch point)", "System learning (ignition ON 40 s, OFF 15 s, start)", "Synchronisation position calibration - drive in M per speed table"]},
+      "techstream": {"ru": "Techstream: Powertrain -> MMT -> Utility: Target Clutch Clamp Position Control, Clutch Actuator Preload, Initialization of MMT ECU, Initial Calibration of MMT System, Synchronization Position Calibration. Data List: Clutch Stroke, Shift/Select Stroke, Gear Position, Learned Touch Point.", "en": "Techstream: Powertrain -> MMT -> Utility: Target Clutch Clamp Position Control, Clutch Actuator Preload, Initialization of MMT ECU, Initial Calibration of MMT System, Synchronization Position Calibration. Data List: Clutch Stroke, Shift/Select Stroke, Gear Position, Learned Touch Point.", "verified": false},
+      "manual_without_scanner": {
+        "ru": ["Перемычка между выводами 4 (CG) и 13 (TC) разъёма OBD, селектор N, ручник.", "Clamp: зажигание ON без тормоза, 7+ нажатий тормоза за 3 с (2 сигнала по 0.25 с), держа тормоз: N-E-M-+-M-+-M-+-M-+-M-E-N, отпустить, нажать 1 раз (1 сигнал), 3+ нажатия за 2 с, держа тормоз селектор в '-', OFF 10 с, снять перемычку.", "Инициализация ЭБУ: перемычка, 10 с, ON, 7+ нажатий за 3 с, держа тормоз: N-E-M---M---M---M---E-N (M и минус 4 раза), отпустить, нажать 1 раз (2 сигнала по 0.5 с), 3+ нажатия за 2 с, OFF 10 с, снять перемычку.", "Инициализация сцепления: то же, последовательность N-E-M-+-M---M-+-M---E-N, после 1 нажатия 3 сигнала.", "Обучение: ON 40 с (слышна работа актуаторов), OFF 15 с, тормоз + пуск в N, индикатор N мигает и через 10 с горит постоянно.", "Езда в M, пауза >=2 с между сменами: 1-2 при 26-35 км/ч, 2-3 при 47-67, 3-4 при 62-98, 4-5 при 76-132, 2-1 при 26-35. Если рывки - повторить."],
+        "en": ["Jumper OBD pins 4 (CG) and 13 (TC), selector N, parking brake on.", "Clamp: ignition ON foot off brake, 7+ brake pumps in 3 s (2 beeps 0.25 s), holding brake: N-E-M-+-M-+-M-+-M-+-M-E-N, release, press once (1 beep), 3+ pumps in 2 s, holding brake move lever to '-', OFF 10 s, remove jumper.", "ECU init: jumper, wait 10 s, ON, 7+ pumps in 3 s, holding brake: N-E-M---M---M---M---E-N (M and minus 4 times), release, press once (2 beeps 0.5 s), 3+ pumps in 2 s, OFF 10 s, remove jumper.", "Clutch init: same, sequence N-E-M-+-M---M-+-M---E-N, after single press 3 beeps.", "Learning: ON 40 s (actuators audible), OFF 15 s, brake + start in N, N indicator blinks then steady after 10 s.", "Drive in M, >=2 s between shifts: 1-2 at 26-35 km/h, 2-3 at 47-67, 3-4 at 62-98, 4-5 at 76-132, 2-1 at 26-35. Repeat if jerky."],
+        "source": "Blue Print INF122 (2015)",
+        "verified": true
+      }
+    },
+    "oil": {
+      "type": {"ru": "Toyota Genuine Manual Transmission Gear Oil LV (MTG LV) API GL-4 SAE 75W, допуск 75W-90 GL-4", "en": "Toyota Genuine Manual Transmission Gear Oil LV (MTG LV) API GL-4 SAE 75W, 75W-90 GL-4 acceptable", "verified": true},
+      "volume_l": {"value": "1.9-2.0", "ru": "1.9-2.0 л (по разным источникам), заливать до нижней кромки заливного отверстия", "en": "1.9-2.0 L (sources differ), fill to the lower edge of the filler hole", "verified": true},
+      "interval": {"ru": "Регламент Toyota - проверка, на практике замена каждые 60 000-85 000 км", "en": "Toyota schedule - inspect; in practice change every 60,000-85,000 km", "verified": false},
+      "plugs": {"ru": "Заливная пробка - сбоку картера коробки, сливная - снизу картера дифференциала. Шестигранник/головка 24 мм (у части версий под ключ 10 мм шестигранник), новые шайбы. Момент: слив 39 Н·м, залив 49 Н·м.", "en": "Filler plug on the side of the gearbox case, drain plug at the bottom of the differential case. 24 mm hex head (some versions 10 mm Allen), new washers. Torque: drain 39 N·m, filler 49 N·m.", "verified": false}
+    },
+    "how_it_shifts": {
+      "ru": ["1. Водитель тянет селектор в + (или ЭБУ в режиме E решает сменить передачу по скорости и газу).", "2. ЭБУ MMT по CAN просит ЭБУ двигателя снизить момент: прикрывается дроссель, уводится зажигание (~50-100 мс).", "3. Мотор сцепления через червяк выжимает сцепление до полного разрыва (~100-150 мс), датчик хода подтверждает.", "4. Мотор SHIFT выводит текущую передачу в нейтраль (~50-80 мс).", "5. Если нужна другая кулиса (например 2-3), мотор SELECT поворачивает шток (~50 мс).", "6. Мотор SHIFT вдвигает новую передачу, синхронизатор выравнивает обороты (~80-150 мс), датчики Холла подтверждают положение.", "7. ЭБУ двигателя подгоняет обороты под новую передачу (при понижении - перегазовка).", "8. Сцепление отпускается плавно по обученной точке схватывания (~150-300 мс), момент двигателя возвращается.", "Итого 0.5-1.0 с на смену - отсюда 'кивок' машины. Помогает чуть отпустить газ в момент переключения."],
+      "en": ["1. Driver pulls the selector to + (or in E mode the ECU decides by speed and throttle).", "2. MMT ECU asks the ECM via CAN to cut torque: throttle closes, ignition retards (~50-100 ms).", "3. Clutch motor via the worm fully releases the clutch (~100-150 ms), stroke sensor confirms.", "4. SHIFT motor pulls the current gear to neutral (~50-80 ms).", "5. If another gate is needed (e.g. 2-3) the SELECT motor rotates the shaft (~50 ms).", "6. SHIFT motor pushes in the new gear, synchro matches speeds (~80-150 ms), Hall sensors confirm.", "7. ECM matches engine rpm to the new gear (blip on downshift).", "8. Clutch re-engages smoothly to the learned touch point (~150-300 ms), torque restored.", "Total 0.5-1.0 s per shift - hence the 'nod'. Lifting the throttle slightly during the shift helps."],
+      "verified": false,
+      "note": {"ru": "Миллисекунды - оценка по поведению подобных систем, официальных данных не найдено.", "en": "Millisecond figures are estimates from similar systems, no official data found."}
+    },
+    "failures": [
+      {"id": "clutch_wear", "ru": "Износ диска сцепления (часто к 50-100 тыс. км)", "en": "Clutch disc wear (often by 50-100k km)",
+       "symptoms": {"ru": "P0810, рывки и пробуксовка при трогании, нет 'ползучести', выкидывает в N, запах сцепления в пробках", "en": "P0810, judder and slip on take-off, no creep, drops to N, clutch smell in traffic"},
+       "fix": {"ru": "Комплект сцепления + выжимной + обучение, часто вместе с ремонтом актуатора", "en": "Clutch kit + release bearing + learning, often with actuator overhaul"},
+       "cost_byn": {"labor": "320-450", "parts_oem": "700-1000", "parts_aftermarket": "350-550", "total": "700-1450"}, "verified": false},
+      {"id": "clutch_actuator", "ru": "Актуатор сцепления: щётки мотора, втулки червячного колеса, люфт", "en": "Clutch actuator: motor brushes, worm wheel bushings, play",
+       "symptoms": {"ru": "P0810/P0900, щелчки и жужжание, сцепление не выжимается, мигает N, машина не трогается", "en": "P0810/P0900, clicks and whine, clutch will not release, N blinks, car will not move"},
+       "fix": {"ru": "Переборка (щётки, подшипники, втулки, смазка) или новый/модернизированный узел + адаптация", "en": "Overhaul (brushes, bearings, bushings, grease) or new/upgraded unit + adaptation"},
+       "cost_byn": {"repair": "310-450", "new_unit_parts": "1500-2500", "replace_labor": "140-200"}, "verified": false},
+      {"id": "gear_actuator", "ru": "Актуатор передач: окисление датчиков, износ моторов", "en": "Gear actuator: sensor oxidation, motor wear",
+       "symptoms": {"ru": "P0909/P0919/P0905-P0917, не включает передачу или R, долго 'думает', ошибка на панели", "en": "P0909/P0919/P0905-P0917, will not engage gear or R, slow shifts, warning on dash"},
+       "fix": {"ru": "Чистка и переборка, замена моторов, калибровка", "en": "Clean and overhaul, replace motors, calibrate"},
+       "cost_byn": {"repair": "300-500"}, "verified": false},
+      {"id": "ecu_software", "ru": "Старая прошивка ЭБУ MMT (290/291)", "en": "Old MMT ECU firmware (290/291)",
+       "symptoms": {"ru": "Грубые переключения, откаты, выкидывание в N на холодную", "en": "Harsh shifts, rollback, drops to N when cold"},
+       "fix": {"ru": "Блок 89530-12292 или перепрошивка + инициализация", "en": "Unit 89530-12292 or reflash + initialisation"},
+       "cost_byn": {"adaptation": "40-80", "used_ecu": "150-300"}, "verified": false},
+      {"id": "low_voltage", "ru": "Слабый АКБ/окисленные клеммы", "en": "Weak battery/corroded terminals",
+       "symptoms": {"ru": "P0562, случайные ошибки MMT, после переброса клеммы - потеря обучения", "en": "P0562, random MMT faults, lost learning after battery disconnect"},
+       "fix": {"ru": "АКБ, клеммы, масса; затем обучение", "en": "Battery, terminals, ground; then learning"},
+       "cost_byn": {"diagnosis": "35-60", "battery": "200-300"}, "verified": false}
+    ],
+    "costs_reference": {"ru": "Прайс rkpp.by (Минск, 'от'): диагностика 35, адаптация 40, ремонт актуатора сцепления 310, замена актуатора 140, ремонт актуатора передач 300, замена сцепления MMT 320, замена масла 40, переделка MMT на АКПП от 3800 BYN. Цены страницы примерно 2022 года.", "en": "rkpp.by price list (Minsk, 'from'): diagnosis 35, adaptation 40, clutch actuator repair 310, actuator replace 140, gear actuator repair 300, MMT clutch replace 320, oil change 40, MMT to automatic swap from 3800 BYN. Page prices circa 2022.", "verified": true}
+  },
+  "injectors": {
+    "oem": [
+      {"pn": "23209-0D030 / 23250-0D030", "ru": "Указывается продавцами РФ/UA для Corolla E150/Auris 1ZR 2006-2013. Тот же номер у 3ZZ-FE/4ZZ-FE, это Bosch EV14 0 280 156 019. 23209 и 23250 - один инжектор (номер узла и номер для заказа).", "en": "Listed by RU/UA sellers for Corolla E150/Auris 1ZR 2006-2013. Same number as 3ZZ-FE/4ZZ-FE, it is Bosch EV14 0 280 156 019. 23209 and 23250 are the same injector (assembly vs order number).", "verified": false},
+      {"pn": "23209-0T020 / 23250-0T020", "ru": "Denso 297500-1300, это 2ZR-FE 1.8 (Corolla 2009-2019, Matrix, Scion xD). Для 1ZR штатно не подтверждён.", "en": "Denso 297500-1300, this is 2ZR-FE 1.8 (Corolla 2009-2019, Matrix, Scion xD). Not confirmed as stock for 1ZR.", "verified": true}
+    ],
+    "bosch_or_denso": {"ru": "Для 23209-0D030: Bosch 0 280 156 019 (EV14). Denso-аналог на ZR - 297500-xxxx, сверять по маркировке на корпусе.", "en": "For 23209-0D030: Bosch 0 280 156 019 (EV14). Denso equivalents on ZR are 297500-xxxx, check the body marking.", "verified": false},
+    "holes": {"ru": "EV14 - 4 отверстия; Denso 2ZR - 12-дырчатая распылительная пластина", "en": "EV14 - 4 holes; Denso 2ZR - 12-hole atomiser plate", "verified": false},
+    "flow_cc_min": {"value": "190.5 (n-гептан, 0D030) / ~250-270 (0T020)", "ru": "0D030: 190.5 см3/мин по н-гептану (~210 по бензину при 3 бар). 0T020 больше - на 1ZR даст переобогащение без адаптации.", "en": "0D030: 190.5 cc/min n-heptane (~210 petrol at 3 bar). 0T020 flows more - would richen 1ZR beyond adaptation.", "verified": false},
+    "connector": {"ru": "2-контактный разъём Sumitomo (EV6/'Toyota'), фиксатор-защёлка", "en": "2-pin Sumitomo connector (EV6/'Toyota' style), latch lock", "verified": false},
+    "resistance_ohm": {"value": "11.6-15.0", "ru": "Высокоомные: 0D030 около 14.5 Ом, по мануалу ZR 11.6-12.4 Ом при 20 °C. Ниже 10 или обрыв - замена.", "en": "High impedance: 0D030 about 14.5 ohm, ZR manual 11.6-12.4 ohm at 20 °C. Below 10 or open - replace.", "verified": false},
+    "o_rings": {"ru": "Верхнее кольцо (к рампе) и нижний изолятор (к коллектору) менять при каждом снятии. Номера: изолятор 23291-21010 (ZZ/ZR), уплотнительное кольцо 90301-08025 / ремкомплект 23291-xxxxx - сверять по VIN. 23250-0H070/23209-0H070 встречаются как нижний изолятор.", "en": "Upper O-ring (to rail) and lower insulator (to manifold) replaced every removal. Numbers: insulator 23291-21010 (ZZ/ZR), O-ring 90301-08025 / kit 23291-xxxxx - check by VIN. 23250-0H070/23209-0H070 seen as lower insulator.", "verified": false},
+    "interchange": {"ru": "Физически совпадают по посадке EV14-форсунки ZZ (3ZZ/4ZZ 0D030) и ZR. 2ZR (0T020) встаёт по посадке, но производительность выше - не рекомендуется без перепрошивки. Брать по номеру с корпуса старой форсунки.", "en": "EV14 ZZ (3ZZ/4ZZ 0D030) and ZR injectors share the fit. 2ZR (0T020) fits physically but flows more - not recommended without remap. Buy by the number stamped on the old injector.", "verified": false},
+    "symptoms": {"ru": "Неровный холостой, троение (P0300-P0304), P0171/P0172, рост расхода, провал при разгоне, тяжёлый горячий пуск (подтекание), запах бензина.", "en": "Rough idle, misfire (P0300-P0304), P0171/P0172, higher consumption, hesitation on acceleration, hard hot start (dripping), fuel smell.", "verified": true},
+    "clean_vs_replace": {"ru": "Сначала ультразвуковая чистка на стенде с проверкой факела и производительности (разброс <=5%) и заменой колец. Менять, если после чистки разброс >5%, течь, сопротивление вне нормы. Сервисная промывка 'через рампу' малоэффективна.", "en": "First ultrasonic bench cleaning with spray and flow check (spread <=5%) and new seals. Replace if spread >5% after cleaning, leaking, or resistance out of spec. In-rail flush is of little use.", "verified": true},
+    "price_byn": {"clean_4pcs": "60-100", "new_oem_each": "180-300", "new_bosch_each": "120-200", "used_each": "25-50", "verified": false}
+  },
+  "fuel": {
+    "system": {"ru": "Безобратная (returnless) система: регулятор давления в модуле насоса в баке, к рампе одна трубка.", "en": "Returnless system: pressure regulator in the in-tank pump module, single line to the rail.", "verified": true},
+    "pressure": {"ru": "304-343 кПа (3.0-3.4 бар) на работающем двигателе; остаточное через 5 мин не ниже 147 кПа.", "en": "304-343 kPa (3.0-3.4 bar) engine running; residual after 5 min at least 147 kPa.", "verified": false},
+    "pump": {"pn": "23220-0D040 (насос), модуль 77020-12xxx", "ru": "Электробензонасос Denso в модуле в баке. Номер сверять по VIN. Aftermarket: Bosch, Denso 950-xxxx.", "en": "Denso electric pump inside the tank module. Check number by VIN. Aftermarket: Bosch, Denso 950-xxxx.", "verified": false},
+    "filter": {"pn": "77024-12xxx / в составе модуля 23300-xxxxx", "ru": "Фильтр тонкой очистки встроен в модуль насоса, по регламенту не обслуживается (менять при замене насоса или от плохого топлива, ~120-150 тыс. км). Плюс сетка-заборник на насосе.", "en": "Fine filter is built into the pump module, not a service item (replace with the pump or after bad fuel, ~120-150k km). Plus an inlet strainer on the pump.", "verified": false},
+    "location": {"ru": "Бак под задним сиденьем. Доступ: откинуть подушку заднего сиденья, снять лючок в полу справа (x~3300 мм, y~-250 мм).", "en": "Tank under the rear seat. Access: lift the rear seat cushion, remove the floor service hatch on the right (x~3300 mm, y~-250 mm).", "verified": false},
+    "price_byn": {"pump_oem": "350-550", "pump_aftermarket": "100-200", "filter": "60-150", "labor": "60-100", "verified": false}
+  },
+  "filters": [
+    {"id": "oil",
+     "ru": "Масляный фильтр", "en": "Oil filter",
+     "oem": "90915-YZZE1 (накручиваемый, spin-on), аналог 90915-10003 / 90915-10001",
+     "type": {"ru": "Для 1ZR-FE выпуска до ~12.2008 - накручиваемый (spin-on) фильтр. С 2009 (рестайл) часть машин получила корпус с бумажным картриджем 04152-YZZA6 (04152-37010) - смотреть, что стоит на двигателе.", "en": "For 1ZR-FE built up to ~12.2008 - spin-on filter. From 2009 (facelift) some cars got a housing with paper cartridge 04152-YZZA6 (04152-37010) - check what is on the engine.", "verified": true},
+     "cross": {"MANN": "W 68/3", "Mahle": "OC 534 (проверить)", "Bosch": "0 451 103 316 (P3316)", "Filtron": "OP 632/1 (проверить)", "Denso": "DXE-1006 / 150-1006 (проверить)", "cartridge_version": "MANN HU 6006 z, Mahle OX 416D2 (проверить)"},
+     "same_in": ["Toyota Corolla E120/E150 (ZZ/ZR)", "Toyota Auris E15 1.4/1.6 (до 2009)", "Toyota Yaris", "Toyota Avensis T25 1.6/1.8", "Toyota RAV4 (бензин 1ZZ/2AZ)", "Toyota Prius NHW20", "Toyota Camry (2AZ)"],
+     "location": {"ru": "Спереди-снизу блока цилиндров, ближе к правой стороне (со стороны ремня). Доступ снизу, после снятия пыльника.", "en": "Front-lower part of the block, towards the right (belt) side. Access from below after removing the splash shield."},
+     "steps": {"ru": ["Прогреть двигатель, заглушить, поставить на яму/подъёмник.", "Снять нижний пыльник двигателя.", "Открутить пробку поддона (14 мм), слить масло, новая шайба 90430-12031, затянуть 37 Н·м.", "Ключом-съёмником открутить фильтр против часовой.", "Смазать резинку нового фильтра маслом, накрутить рукой до касания и ещё 3/4 оборота (около 13 Н·м).", "Залить 4.2 л 0W-20/5W-30 (ACEA A5/API SN), проверить щуп.", "Запустить, проверить течи, через 2 мин долить до MAX."], "en": ["Warm up engine, shut off, put on lift/pit.", "Remove the engine undercover.", "Remove sump plug (14 mm), drain, new washer 90430-12031, tighten 37 N·m.", "Unscrew filter anticlockwise with a filter wrench.", "Oil the new filter seal, screw on by hand to contact plus 3/4 turn (about 13 N·m).", "Fill 4.2 L 0W-20/5W-30 (ACEA A5/API SN), check dipstick.", "Start, check leaks, after 2 min top up to MAX."]},
+     "interval": {"ru": "Каждые 10 000-15 000 км или раз в год (в РБ лучше 10 000 км)", "en": "Every 10,000-15,000 km or yearly (in Belarus better 10,000 km)"},
+     "price_byn": {"oem": "18-30", "aftermarket": "10-20"},
+     "verified": false},
+    {"id": "air",
+     "ru": "Воздушный фильтр", "en": "Air filter",
+     "oem": "17801-0T020 (поздняя замена), ранние 17801-22020 / 17801-21050 - сверять по VIN",
+     "cross": {"MANN": "C 26 003 (проверить)", "Mahle": "LX 2850 (проверить)", "Bosch": "F 026 400 158 (проверить)", "Filtron": "AP 108/4 (проверить)", "Denso": "DCF-xxx (проверить)"},
+     "same_in": ["Toyota Auris E15 1.6/1.8 ZR", "Toyota Corolla E15/E18 1ZR/2ZR", "Toyota Verso 1.6/1.8", "Toyota Avensis T27 1.6/1.8"],
+     "location": {"ru": "Корпус воздушного фильтра слева в моторном отсеке (рядом с АКБ), крышка на 2-4 защёлках.", "en": "Air box on the left of the engine bay (next to the battery), lid with 2-4 clips."},
+     "steps": {"ru": ["Открыть капот.", "Отщёлкнуть защёлки крышки корпуса (при необходимости ослабить хомут гофры).", "Приподнять крышку, вынуть старый элемент.", "Протереть корпус от пыли и листьев, не задувать грязь во впуск.", "Уложить новый элемент рёбрами вверх, по уплотнению.", "Закрыть крышку, защёлкнуть, проверить хомут."], "en": ["Open the hood.", "Release the lid clips (loosen the duct clamp if needed).", "Lift the lid, take out the old element.", "Wipe dust and leaves from the box, do not push dirt into the intake.", "Fit the new element pleats up, seated on the seal.", "Close the lid, latch the clips, check the clamp."]},
+     "interval": {"ru": "Каждые 15 000-30 000 км, в пыли/зимой с реагентами - 15 000", "en": "Every 15,000-30,000 km, 15,000 in dust/winter"},
+     "price_byn": {"oem": "35-60", "aftermarket": "15-30"},
+     "verified": false},
+    {"id": "cabin",
+     "ru": "Салонный фильтр", "en": "Cabin filter",
+     "oem": "87139-02090 (обычный), угольный 87139-YZZ08 / 87139-0N010 - сверять",
+     "cross": {"MANN": "CU 1919 / угольный CUK 1919", "Mahle": "LA 109 (проверить)", "Bosch": "1 987 432 120 (проверить)", "Filtron": "K 1159 / угольный K 1159A (проверить)", "Denso": "DCC-2009 (проверить)"},
+     "same_in": ["Toyota Auris E15", "Toyota Corolla E15 (Европа)", "Toyota Yaris XP90", "Toyota Avensis T25", "Toyota Prius", "Toyota RAV4 XA30", "Toyota Urban Cruiser"],
+     "location": {"ru": "За перчаточным ящиком, вертикальная кассета перед вентилятором печки.", "en": "Behind the glove box, vertical cassette in front of the heater blower."},
+     "steps": {"ru": ["Открыть и освободить бардачок.", "Отсоединить шнур-демпфер справа.", "Сжать боковые стенки бардачка, вывести упоры, опустить его.", "Отщёлкнуть крышку кассеты фильтра.", "Вытянуть фильтр, отметить стрелку потока (вниз, AIR FLOW).", "Вставить новый стрелкой вниз, закрыть крышку, вернуть бардачок."], "en": ["Open and empty the glove box.", "Unhook the damper cord on the right.", "Squeeze the glove box sides to clear the stops, lower it.", "Unclip the filter cover.", "Pull the filter out, note the airflow arrow (down, AIR FLOW).", "Insert new one arrow down, close cover, refit glove box."]},
+     "interval": {"ru": "Каждые 15 000 км или раз в год (весной), угольный - так же", "en": "Every 15,000 km or yearly (spring), charcoal - the same"},
+     "price_byn": {"oem": "40-70", "aftermarket": "12-25", "charcoal": "25-45"},
+     "verified": false}
+  ],
+  "ignition": {
+    "spark_plugs": {"oem": "90919-01253", "denso": "SC16HR11 (часть источников: SC20HR11), иридий", "ngk": "DILKAR7A11 (проверить)", "gap_mm": "1.0-1.1", "torque_nm": "25", "interval": {"ru": "60 000 км (иридий, регламент для Европы), в РБ часто 40 000-60 000", "en": "60,000 km (iridium, EU schedule), in Belarus often 40,000-60,000"}, "price_byn": {"oem_each": "35-55", "denso_each": "25-40"}, "verified": false,
+      "note": {"ru": "90919-01253 подтверждён для 1ZR-FE/FAE, 2ZR, 3ZR. Ключ свечной 14 мм тонкостенный.", "en": "90919-01253 confirmed for 1ZR-FE/FAE, 2ZR, 3ZR. Thin-wall 14 mm plug socket."}},
+    "coil": {"oem": "90919-02252", "ru": "Индивидуальная катушка на каждую свечу (COP) со встроенным коммутатором, общая для ZR. Возможна замена на 90919-02258/02262 по супересии - сверять.", "en": "Coil-on-plug with built-in igniter, common for ZR. Possible supersession 90919-02258/02262 - check.", "price_byn": {"oem": "120-200", "aftermarket": "40-80"}, "verified": false}
+  },
+  "misc_parts": [
+    {"id": "drive_belt", "ru": "Ремень навесного агрегатов (поликлиновой, с кондиционером)", "en": "Accessory drive belt (poly-V, with A/C)", "oem": "90916-A2014 (7PK1516) - проверить", "spec": "7PK 1515-1520 мм, автоматический натяжитель", "price_byn": "40-80", "verified": false},
+    {"id": "thermostat", "ru": "Термостат (в патрубке-корпусе на входе в насос)", "en": "Thermostat (in the inlet housing at the pump)", "oem": "16031-37010 / 90916-03136 - проверить", "spec": {"ru": "Начало открытия 80-84 °C, полное 95 °C, ход 8.5 мм", "en": "Starts opening 80-84 °C, fully 95 °C, lift 8.5 mm"}, "price_byn": "60-150", "verified": false},
+    {"id": "water_pump", "ru": "Помпа", "en": "Water pump", "oem": "16100-39466 (1ZR/2ZR/3ZR)", "spec": {"ru": "Привод от поликлинового ремня, прокладка в комплекте", "en": "Driven by poly-V belt, gasket included"}, "price_byn": "150-300", "verified": true},
+    {"id": "engine_oil", "ru": "Моторное масло", "en": "Engine oil", "oem": "08880-80845 (Toyota 5W-30) / 0W-20", "spec": {"ru": "4.2 л с фильтром, 3.9 л без фильтра, 0W-20/5W-30 API SN ILSAC GF-5", "en": "4.2 L with filter, 3.9 L without, 0W-20/5W-30 API SN ILSAC GF-5"}, "price_byn": "80-150", "verified": false},
+    {"id": "sump_washer", "ru": "Шайба сливной пробки", "en": "Drain plug washer", "oem": "90430-12031", "spec": {"ru": "12 мм, алюминий, одноразовая", "en": "12 mm aluminium, single use"}, "price_byn": "2-5", "verified": true},
+    {"id": "coolant", "ru": "Охлаждающая жидкость", "en": "Coolant", "oem": "Toyota Super Long Life Coolant (розовая, 08889-80070)", "spec": {"ru": "Около 5.8-6.5 л, первая замена 160 000 км, далее каждые 80 000 км", "en": "About 5.8-6.5 L, first change 160,000 km, then every 80,000 km"}, "price_byn": "40-80", "verified": false},
+    {"id": "brake_fluid", "ru": "Тормозная жидкость", "en": "Brake fluid", "oem": "DOT 4 (08823-80004)", "spec": {"ru": "Замена каждые 2 года/40 000 км", "en": "Change every 2 years/40,000 km"}, "price_byn": "20-40", "verified": false}
+  ],
+  "locations": [
+    {"id": "battery", "ru": "Аккумулятор", "en": "Battery", "desc": {"ru": "Слева в моторном отсеке (сторона водителя), за фарой, на площадке над коробкой. 12 В, около 45-60 А·ч, клемма + спереди.", "en": "Left of the engine bay (driver side), behind the headlamp, on a tray above the gearbox. 12 V, about 45-60 Ah, + terminal at the front."}, "x": 650, "y": 480, "z": 820, "verified": false},
+    {"id": "engine_fuse_box", "ru": "Блок предохранителей и реле в моторном отсеке", "en": "Engine compartment fuse/relay box", "desc": {"ru": "Слева рядом с аккумулятором (позади него), чёрная крышка на защёлках, схема на крышке.", "en": "Left side next to (behind) the battery, black clip-on lid, diagram on the lid."}, "x": 850, "y": 430, "z": 850, "verified": true},
+    {"id": "cabin_fuse_box", "ru": "Салонный блок предохранителей", "en": "Cabin fuse box", "desc": {"ru": "Под панелью слева от рулевой колонки, за крышкой у колена водителя (ECU-B2 10A там же).", "en": "Under the dash left of the steering column, behind the cover at the driver's knee (ECU-B2 10A here)."}, "x": 1750, "y": 520, "z": 550, "verified": true},
+    {"id": "obd", "ru": "Диагностический разъём OBD-II", "en": "OBD-II port", "desc": {"ru": "Под панелью слева от рулевой колонки, над педалями, открыт без крышки. Выводы 4 и 13 - для перемычки MMT.", "en": "Under the dash left of the steering column, above the pedals, no cover. Pins 4 and 13 - for the MMT jumper."}, "x": 1800, "y": 450, "z": 500, "verified": true},
+    {"id": "ecm", "ru": "ЭБУ двигателя (ECM)", "en": "Engine ECU (ECM)", "desc": {"ru": "В моторном отсеке у моторного щита, за корпусом воздушного фильтра/АКБ слева (по части данных - в салоне за бардачком; сверять на машине).", "en": "In the engine bay at the firewall, behind the air box/battery on the left (some data say behind the glove box; check on the car)."}, "x": 1250, "y": 350, "z": 800, "verified": false},
+    {"id": "mmt_ecu", "ru": "ЭБУ MMT", "en": "MMT ECU", "desc": {"ru": "За перчаточным ящиком справа, на кронштейне под панелью.", "en": "Behind the glove box on the right, on a bracket under the dash."}, "x": 1700, "y": -400, "z": 600, "verified": true},
+    {"id": "vin_windshield", "ru": "VIN под лобовым стеклом", "en": "VIN at the windshield", "desc": {"ru": "Табличка в левом нижнем углу лобового стекла, видна снаружи.", "en": "Plate at the lower left corner of the windshield, visible from outside."}, "x": 1500, "y": 600, "z": 1000, "verified": false},
+    {"id": "vin_body", "ru": "VIN на кузове", "en": "VIN on the body", "desc": {"ru": "Выбит на полу под правым передним сиденьем (под лючком в ковре) или на моторном щите; табличка с VIN и кодами - на центральной стойке водителя.", "en": "Stamped on the floor under the right front seat (under a carpet flap) or on the firewall; VIN/code plate on the driver B-pillar."}, "x": 2300, "y": -350, "z": 250, "verified": false},
+    {"id": "engine_number", "ru": "Номер двигателя", "en": "Engine number", "desc": {"ru": "Выбит на площадке блока цилиндров спереди-слева у стыка с коробкой, виден сверху/спереди с фонарём.", "en": "Stamped on a pad on the front-left of the block near the gearbox joint, visible from above/front with a torch."}, "x": 700, "y": 200, "z": 550, "verified": false},
+    {"id": "dipstick", "ru": "Щуп уровня масла", "en": "Oil dipstick", "desc": {"ru": "Спереди двигателя по центру, жёлтая/оранжевая ручка-кольцо.", "en": "Front of the engine, centre, yellow/orange ring handle."}, "x": 600, "y": 50, "z": 800, "verified": false},
+    {"id": "oil_filler", "ru": "Горловина заливки масла", "en": "Oil filler cap", "desc": {"ru": "На клапанной крышке сверху, крышка с символом лейки.", "en": "On top of the valve cover, cap with oil-can symbol."}, "x": 800, "y": 100, "z": 900, "verified": true},
+    {"id": "coolant_reservoir", "ru": "Расширительный бачок ОЖ", "en": "Coolant reservoir", "desc": {"ru": "Справа спереди у радиатора (сторона пассажира), полупрозрачный, метки FULL/LOW. Не открывать пробку радиатора на горячем.", "en": "Front right by the radiator (passenger side), translucent, FULL/LOW marks. Do not open radiator cap hot."}, "x": 350, "y": -500, "z": 750, "verified": false},
+    {"id": "brake_fluid_reservoir", "ru": "Бачок тормозной жидкости", "en": "Brake fluid reservoir", "desc": {"ru": "Слева у моторного щита, над главным тормозным цилиндром (сторона водителя), метки MAX/MIN.", "en": "Left at the firewall above the master cylinder (driver side), MAX/MIN marks."}, "x": 1250, "y": 500, "z": 950, "verified": true},
+    {"id": "washer_reservoir", "ru": "Бачок омывателя", "en": "Washer reservoir", "desc": {"ru": "Горловина спереди слева в моторном отсеке у фары, синяя крышка с символом стекла; сам бак за бампером.", "en": "Filler at front left of the engine bay near the headlamp, blue cap with screen symbol; tank behind the bumper."}, "x": 300, "y": 600, "z": 700, "verified": false},
+    {"id": "spare_jack_tools", "ru": "Запаска, домкрат, инструмент", "en": "Spare, jack, tools", "desc": {"ru": "Под полом багажника: докатка/полноразмерное колесо, домкрат и ключ в пенопластовом ложементе, там же буксирная проушина.", "en": "Under the trunk floor: space-saver/full spare, jack and wrench in a foam tray, tow eye there too."}, "x": 4100, "y": 0, "z": 400, "verified": true},
+    {"id": "tow_hook_front", "ru": "Резьба буксирной проушины спереди", "en": "Front tow eye thread", "desc": {"ru": "За круглой/квадратной заглушкой в правой части переднего бампера, проушина вкручивается по часовой до упора (резьба около M20, проверить).", "en": "Behind the round/square cap on the right of the front bumper, screw the eye in clockwise fully (thread about M20, verify)."}, "x": 20, "y": -450, "z": 350, "verified": false},
+    {"id": "tow_hook_rear", "ru": "Задняя буксирная проушина", "en": "Rear tow point", "desc": {"ru": "Справа под задним бампером (резьбовое гнездо за заглушкой или штатная петля).", "en": "Right side under the rear bumper (threaded socket behind cap or fixed loop)."}, "x": 4500, "y": -450, "z": 350, "verified": false},
+    {"id": "hood_release", "ru": "Рычаг открытия капота", "en": "Hood release", "desc": {"ru": "Под панелью слева у двери водителя (символ машины с открытым капотом), затем защёлка под капотом по центру.", "en": "Under the dash left by the driver door (car-with-open-hood symbol), then the safety catch under the hood centre."}, "x": 1850, "y": 700, "z": 450, "verified": true},
+    {"id": "fuel_door_release", "ru": "Открытие лючка бензобака", "en": "Fuel door release", "desc": {"ru": "Рычаг на полу слева от сиденья водителя (вместе с рычагом багажника). Лючок сзади справа.", "en": "Floor lever left of the driver seat (next to the trunk lever). Fuel door is rear right."}, "x": 2400, "y": 650, "z": 300, "verified": false},
+    {"id": "trunk_release", "ru": "Открытие багажника", "en": "Trunk release", "desc": {"ru": "Рычаг на полу слева от сиденья водителя или кнопка на ключе/кнопка на крышке (Smart Entry). Аварийная рукоятка изнутри багажника.", "en": "Floor lever left of the driver seat or key fob/lid button (Smart Entry). Emergency handle inside the trunk."}, "x": 2400, "y": 680, "z": 300, "verified": false},
+    {"id": "jack_front_left", "ru": "Точка домкрата передняя левая", "en": "Jacking point front left", "desc": {"ru": "Шов порога за передней аркой, между двумя вырезами-метками. Подъёмник - те же места с резиновыми проставками.", "en": "Sill seam behind the front arch between two notch marks. Lift pads - same spots with rubber blocks."}, "x": 1250, "y": 700, "z": 180, "verified": true},
+    {"id": "jack_front_right", "ru": "Точка домкрата передняя правая", "en": "Jacking point front right", "desc": {"ru": "Шов порога за передней правой аркой между метками.", "en": "Sill seam behind the front right arch between the marks."}, "x": 1250, "y": -700, "z": 180, "verified": true},
+    {"id": "jack_rear_left", "ru": "Точка домкрата задняя левая", "en": "Jacking point rear left", "desc": {"ru": "Шов порога перед задней аркой между метками.", "en": "Sill seam in front of the rear arch between the marks."}, "x": 3150, "y": 700, "z": 190, "verified": true},
+    {"id": "jack_rear_right", "ru": "Точка домкрата задняя правая", "en": "Jacking point rear right", "desc": {"ru": "Шов порога перед задней правой аркой между метками.", "en": "Sill seam in front of the rear right arch between the marks."}, "x": 3150, "y": -700, "z": 190, "verified": true},
+    {"id": "fuel_pump_hatch", "ru": "Лючок бензонасоса", "en": "Fuel pump access hatch", "desc": {"ru": "Под подушкой заднего сиденья справа.", "en": "Under the rear seat cushion, right side."}, "x": 3300, "y": -250, "z": 350, "verified": false},
+    {"id": "air_box", "ru": "Корпус воздушного фильтра", "en": "Air filter box", "desc": {"ru": "Слева в моторном отсеке рядом с АКБ.", "en": "Left of the engine bay next to the battery."}, "x": 700, "y": 300, "z": 850, "verified": false},
+    {"id": "mmt_actuators", "ru": "Актуаторы MMT", "en": "MMT actuators", "desc": {"ru": "Сверху коробки слева под АКБ и её площадкой; доступ после снятия АКБ и корпуса фильтра.", "en": "On top of the gearbox on the left under the battery and tray; access after removing battery and air box."}, "x": 800, "y": 400, "z": 600, "verified": false}
+  ],
+  "coordinate_system": {"ru": "x - мм от переднего бампера (0) назад (4540), y - мм от оси, + влево, - вправо (машина LHD, водитель слева), z - мм от земли. Колёсная база 2600, передняя ось x~900, задняя x~3500, ширина 1760, высота 1470. Координаты приблизительные.", "en": "x - mm from front bumper (0) rearwards (4540), y - mm from centreline, + left, - right (LHD, driver left), z - mm above ground. Wheelbase 2600, front axle x~900, rear x~3500, width 1760, height 1470. Approximate coordinates."},
+  "sources": [
+    {"url": "https://www.techtips.ie/Blue-Print/toyota-multi-mode-transmission-mmt-clutch-replacement.pdf", "ru": "Blue Print INF122: процедуры clamp, инициализации, обучения MMT", "en": "Blue Print INF122: MMT clamp, init, learning procedures"},
+    {"url": "https://toyota-club.net/files/faq/21-06-10_faq_multimode_en.htm", "ru": "Toyota-Club: устройство MMT, актуаторы, DTC с порогами тока, бюллетени", "en": "Toyota-Club: MMT design, actuators, DTCs with current thresholds, bulletins"},
+    {"url": "https://gearboxlist.com/toyota/c50a-mmt/", "ru": "Передаточные числа C50A, масло, объём", "en": "C50A ratios, oil, capacity"},
+    {"url": "http://autopeople.ru/forum/toyota/corolla/repair/22572.html?page=57", "ru": "Номера сцепления/актуатора/ЭБУ MMT от владельцев, цены 2013", "en": "Owner-reported clutch/actuator/ECU part numbers, 2013 prices"},
+    {"url": "https://rkpp.by/remont-rkpp/mmt-freetronic/", "ru": "Цены ремонта MMT в Минске", "en": "MMT repair prices in Minsk"},
+    {"url": "https://car-box.info/toyota/corolla/e150-2007-2013.html", "ru": "Предохранители E150, ECU-B2, расположение блоков", "en": "E150 fuses, ECU-B2, box locations"},
+    {"url": "https://www.ebay.co.uk/p/26030202180", "ru": "ЭБУ MMT 89530-12292 для Corolla E150", "en": "MMT ECU 89530-12292 for Corolla E150"},
+    {"url": "https://www.fridayparts.com/4-pieces-fuel-injector-23250-0t020-23209-0t020-for-toyota-corolla-matrix-2009-2019-scion-xd-2008-2014-pontiac-vibe-1-8l-i4-2009-2010", "ru": "0T020 = 2ZR-FE, Denso 297500-1300", "en": "0T020 = 2ZR-FE, Denso 297500-1300"},
+    {"url": "https://avtorazborkarf.ru/product/forsunka-toplivnaya-corolla-e150auris-1zr-2006-2013-23209-0d030.html", "ru": "Форсунка 23209-0D030 для E150 1ZR", "en": "Injector 23209-0D030 for E150 1ZR"},
+    {"url": "https://www.injectorplanet.com/products/bosch-0280156019-toyota-23250-0d030-1", "ru": "0D030 = Bosch 0280156019, 190.5 см3/мин, 14.5 Ом", "en": "0D030 = Bosch 0280156019, 190.5 cc/min, 14.5 ohm"},
+    {"url": "https://plenty.parts/parts/toyota/ignition-system/9091901253", "ru": "Свеча 90919-01253 для 1ZR-FE", "en": "Spark plug 90919-01253 for 1ZR-FE"},
+    {"url": "https://magengines.com/product/16100-39466-toyota-genuine-pump-assembly-water-1zr-fe-2zr-fe-3zr-fe-1610039466/", "ru": "Помпа 16100-39466 для 1ZR/2ZR/3ZR", "en": "Water pump 16100-39466 for 1ZR/2ZR/3ZR"},
+    {"url": "https://www.fredauto.com.au/oir-filter~9492", "ru": "90915-YZZE1 применимость (ZRE152 и др.)", "en": "90915-YZZE1 fitment (ZRE152 etc.)"},
+    {"url": "https://www.toyotapartsdeal.com/oem-2011-toyota-corolla-oil_filter.html", "ru": "04152-37010 -> 04152-YZZA6 (картридж)", "en": "04152-37010 -> 04152-YZZA6 (cartridge)"},
+    {"url": "https://cararac.com/gear_oil/toyota/auris.html", "ru": "Объём масла MMT 1.9 л", "en": "MMT oil capacity 1.9 L"},
+    {"url": "https://www.autodoc.parts/car-parts/gearbox-oil-and-transmission-oil-11915/toyota/auris/auris-nre15-zze15-ade15-zre15-nde15/22469-1-6-zre151", "ru": "Масло 75W-90 GL-4 для C50A", "en": "75W-90 GL-4 oil for C50A"},
+    {"url": "https://en.wikipedia.org/wiki/Toyota_ZR_engine", "ru": "Общие данные 1ZR-FE", "en": "1ZR-FE general data"}
+  ]
+}

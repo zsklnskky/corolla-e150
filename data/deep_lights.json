@@ -1,0 +1,965 @@
+{
+ "car": {
+  "ru": "Toyota Corolla E150 седан 2008 (ZRE151, 1ZR-FE 1.6), РФ/ЕС, дорест",
+  "en": "Toyota Corolla E150 sedan 2008 (ZRE151, 1ZR-FE 1.6), RU/EU spec, pre-facelift"
+ },
+ "currency": {
+  "usd_byn": 3.0098,
+  "note": "price_byn - диапазон за пару (бюджет..премиум галоген), catalog.onliner.by 19.10.2026; null - нет данных"
+ },
+ "lights": [
+  {
+   "id": "low_beam",
+   "ru": "Ближний свет (фара, внешний отражатель)",
+   "en": "Low beam (headlamp, outer reflector)",
+   "bulb": "HB4 (9006)",
+   "socket": "P22d",
+   "watts": "51 (ECE 12V 51W; на упаковках часто пишут 55W)",
+   "access": {
+    "ru": "Из моторного отсека, бампер не снимать. Левая фара: снять раструб/патрубок воздухозаборника (держится одной клипсой), при необходимости отвести АКБ. Правая: отщелкнуть клипсу горловины бачка омывателя (на части машин открутить 2 болта 10 мм расширительного бачка) и отвести в сторону. Отжать защелку разъема, повернуть лампу против часовой примерно на 1/4 оборота, вынуть. Колбу пальцами не трогать.",
+    "en": "From the engine bay, bumper stays on. Left lamp: remove the air intake snorkel (one clip), move the battery if needed. Right: unclip the washer filler neck (some cars: 2x 10 mm bolts of the coolant tank) and push aside. Press connector latch, turn bulb ~1/4 turn counter-clockwise, pull out. Do not touch the glass."
+   },
+   "tools": {
+    "ru": "Руками; плоская отвертка для клипсы, головка 10 мм (правая сторона), перчатки",
+    "en": "Hands; flat screwdriver for the clip, 10 mm socket (right side), gloves"
+   },
+   "time_min": 15,
+   "price_byn": [
+    26,
+    120
+   ],
+   "brands": "Philips Vision/X-tremeVision Pro150, Osram Original/Night Breaker Laser, Bosch Pure Light/Eco, Narva Range Power, Neolux, Koito Whitebeam",
+   "same_in": [
+    "Toyota Corolla E140 (USA 2009-2013, ближний)",
+    "Toyota Matrix E140 (ближний)",
+    "Toyota Highlander XU20 (ближний)",
+    "Lexus RX300 XU10 (ближний)",
+    "Honda CR-V II (ближний)",
+    "Toyota Land Cruiser Prado 120 (ближний)"
+   ],
+   "same_in_note": "HB4 на Corolla E140 USA подтвержден (originalmechanic). Остальные модели - по памяти, сверить в подборе Philips/Osram.",
+   "legal": {
+    "ru": "Ближний/дальний: LED и ксенон вместо галогена в фаре, не рассчитанной под них, - переоборудование. В РБ ч.2 ст.18.11 КоАП: предупреждение или штраф до 1 БВ, повторно 2-8 БВ; техосмотр такая машина не пройдет (sudexpert.gov.by). Легально - только галоген нужного типа.",
+    "en": "Low/high beam: LED or HID in a halogen headlamp not designed for it counts as a modification. In Belarus, Admin Code art.18.11 part 2: warning or fine up to 1 base unit, repeat 2-8 units; the car fails inspection (sudexpert.gov.by). Legal option is the correct halogen bulb."
+   },
+   "verified": true,
+   "note": {
+    "ru": "HB4 подтвержден avto-lampa.ru (седан 2006-2013, дорест и рест) и toyota-camry-corolla.ru. У австралийского ZRE152 хэтч (кузов Auris) ближний H11 - не путать. Ксеноновые фары: ближний D4R 35W.",
+    "en": "HB4 confirmed by avto-lampa.ru (sedan 2006-2013, pre and facelift) and toyota-camry-corolla.ru. Australian ZRE152 hatch (Auris body) uses H11 - do not confuse. Xenon lamps: D4R 35W."
+   }
+  },
+  {
+   "id": "low_beam_xenon",
+   "ru": "Ближний свет, штатный ксенон (если фары ксеноновые)",
+   "en": "Low beam, factory xenon (if equipped)",
+   "bulb": "D4R",
+   "socket": "P32d-6",
+   "watts": "35",
+   "access": {
+    "ru": "Из моторного отсека: снять крышку на корпусе фары, отщелкнуть фиксатор, вынуть лампу с поджигом. Перед работой снять минус АКБ - напряжение поджига опасно.",
+    "en": "From the engine bay: remove the cap on the headlamp back, release the retainer, pull the bulb with igniter. Disconnect battery negative first - ignition voltage is dangerous."
+   },
+   "tools": {
+    "ru": "Руками, перчатки",
+    "en": "Hands, gloves"
+   },
+   "time_min": 20,
+   "price_byn": [
+    320,
+    470
+   ],
+   "brands": "Osram Xenarc Original, Philips Xenon Standard/WhiteVision, LynxAuto",
+   "same_in": [
+    "Toyota Camry XV40 (ксенон)",
+    "Toyota Avensis T25 (ксенон)",
+    "Lexus IS XE20 (ксенон)"
+   ],
+   "same_in_note": "Модели не проверены, только ориентир.",
+   "legal": {
+    "ru": "Штатный ксенон с омывателем и автокорректором законен. Ставить газоразрядные лампы в галогенную фару - нарушение (ст.18.11 КоАП).",
+    "en": "Factory xenon with washers and auto-levelling is legal. Retrofitting HID into halogen lamps is a violation (art.18.11)."
+   },
+   "verified": false,
+   "note": {
+    "ru": "По drive2 спорно: в одной записи D2R, в другой D4R по книжке. Проверить надпись на лампе.",
+    "en": "Disputed on drive2: one post says D2R, another D4R per manual. Check the bulb marking."
+   }
+  },
+  {
+   "id": "high_beam",
+   "ru": "Дальний свет (фара, внутренний отражатель)",
+   "en": "High beam (headlamp, inner reflector)",
+   "bulb": "HB3 (9005)",
+   "socket": "P20d",
+   "watts": "60",
+   "access": {
+    "ru": "Из моторного отсека за фарой, ближе к решетке. Доступ проще, чем к ближнему. Отжать защелку разъема, повернуть лампу против часовой, вынуть.",
+    "en": "From the engine bay behind the lamp, nearer the grille. Easier than low beam. Press connector latch, turn counter-clockwise, pull out."
+   },
+   "tools": {
+    "ru": "Руками",
+    "en": "Hands"
+   },
+   "time_min": 10,
+   "price_byn": [
+    18,
+    135
+   ],
+   "brands": "Philips Vision/DiamondVision, Osram Original Line/Night Breaker Laser, Bosch, Narva, Neolux",
+   "same_in": [
+    "Toyota Corolla E140 (USA 2009-2013)",
+    "Toyota Auris E150 (дальний)",
+    "Toyota Camry XV40 (дальний)",
+    "Mitsubishi Lancer X (дальний)",
+    "Mazda 6 GH (дальний)",
+    "Honda Civic 8 седан (дальний)",
+    "Toyota RAV4 XA30 (дальний)"
+   ],
+   "same_in_note": "E140 USA и Auris ZRE152 подтверждены источниками; остальные по памяти, сверить.",
+   "legal": {
+    "ru": "Ближний/дальний: LED и ксенон вместо галогена в фаре, не рассчитанной под них, - переоборудование. В РБ ч.2 ст.18.11 КоАП: предупреждение или штраф до 1 БВ, повторно 2-8 БВ; техосмотр такая машина не пройдет (sudexpert.gov.by). Легально - только галоген нужного типа.",
+    "en": "Low/high beam: LED or HID in a halogen headlamp not designed for it counts as a modification. In Belarus, Admin Code art.18.11 part 2: warning or fine up to 1 base unit, repeat 2-8 units; the car fails inspection (sudexpert.gov.by). Legal option is the correct halogen bulb."
+   },
+   "verified": true,
+   "note": {
+    "ru": "Одинаково для дорест и рест 2010.",
+    "en": "Same pre-facelift and 2010 facelift."
+   }
+  },
+  {
+   "id": "front_position",
+   "ru": "Передний габарит (в фаре)",
+   "en": "Front position light (in headlamp)",
+   "bulb": "W5W",
+   "socket": "W2.1x9.5d",
+   "watts": "5",
+   "access": {
+    "ru": "Из моторного отсека, рукой под фарой: повернуть патрон против часовой, вынуть; лампа без цоколя тянется прямо. Держать патрон крепко - может упасть внутрь корпуса фары.",
+    "en": "From the engine bay, hand under the lamp: twist the holder counter-clockwise, pull; capless bulb pulls straight out. Hold firmly - the holder can drop inside the housing."
+   },
+   "tools": {
+    "ru": "Руками",
+    "en": "Hands"
+   },
+   "time_min": 10,
+   "price_byn": [
+    5,
+    30
+   ],
+   "brands": "Osram Original/Ultra Life, Philips Vision/LongLife EcoVision, Bosch Pure Light, Neolux; LED Osram LEDriving",
+   "same_in": [
+    "VW Golf V/VI (габарит)",
+    "Skoda Octavia A5 (габарит)",
+    "Renault Logan I (габарит)",
+    "Hyundai Solaris I (габарит)",
+    "Kia Rio III (габарит)",
+    "Lada Granta (габарит)",
+    "Toyota Camry XV40 (габарит)",
+    "Toyota RAV4 XA30 (габарит)"
+   ],
+   "same_in_note": "W5W - самый массовый тип; тип подтвержден каталогами, конкретные модели не сверялись.",
+   "legal": {
+    "ru": "Сигнальные огни: по словам экспертов ГАИ/экспертизы, LED в габаритах претензий не вызывает, если цвет и яркость штатные (габарит белый, поворот желтый, стоп красный), без мерцания и ошибок. LED в повороте может мигать быстро - нужен нагрузочный резистор или реле.",
+    "en": "Signal lamps: per Belarus experts, LED in position lamps raises no objections if colour and intensity match OEM (white position, amber turn, red stop), no flicker or errors. LED turn bulbs may hyper-flash - add a load resistor or LED relay."
+   },
+   "verified": true
+  },
+  {
+   "id": "front_turn",
+   "ru": "Передний поворотник (в фаре)",
+   "en": "Front turn signal (in headlamp)",
+   "bulb": "WY21W (оранжевая)",
+   "socket": "WX3x16d",
+   "watts": "21",
+   "access": {
+    "ru": "Патрон снизу-сбоку фары. На практике тянутся через передний край подкрылка (вынуть 2-3 пистона/самореза и отогнуть) или снимают бампер и фару. Повернуть патрон против часовой, лампа без цоколя тянется прямо.",
+    "en": "Holder on the lower outer side of the lamp. In practice reach via the front of the wheel liner (undo 2-3 clips/screws and fold back) or remove bumper and headlamp. Twist holder counter-clockwise, capless bulb pulls straight."
+   },
+   "tools": {
+    "ru": "Головка 10 мм, плоская отвертка, съемник пистонов",
+    "en": "10 mm socket, flat screwdriver, clip remover"
+   },
+   "time_min": 25,
+   "price_byn": [
+    23,
+    30
+   ],
+   "brands": "Osram Original WY21W, Philips, Narva, LynxAuto",
+   "same_in": [
+    "Toyota Auris E150",
+    "Toyota Yaris XP90",
+    "Toyota RAV4 XA30",
+    "Toyota Avensis T27"
+   ],
+   "same_in_note": "Модели не проверены.",
+   "legal": {
+    "ru": "Сигнальные огни: по словам экспертов ГАИ/экспертизы, LED в габаритах претензий не вызывает, если цвет и яркость штатные (габарит белый, поворот желтый, стоп красный), без мерцания и ошибок. LED в повороте может мигать быстро - нужен нагрузочный резистор или реле.",
+    "en": "Signal lamps: per Belarus experts, LED in position lamps raises no objections if colour and intensity match OEM (white position, amber turn, red stop), no flicker or errors. LED turn bulbs may hyper-flash - add a load resistor or LED relay."
+   },
+   "verified": false,
+   "note": {
+    "ru": "WY21W по avto-lampa.ru; другой сайт пишет 'S25 21W', у австралийского хэтча PY21W (BAU15s). Проверить по старой лампе. На USA E140 до поворотника добираются только со снятием бампера и фары.",
+    "en": "WY21W per avto-lampa.ru; another site says 'S25 21W'; Australian hatch uses PY21W. Check the old bulb. On US E140 access needs bumper and headlamp removal."
+   }
+  },
+  {
+   "id": "side_repeater",
+   "ru": "Боковой повторитель поворота (на крыле; после рест 2010 на части комплектаций в зеркале)",
+   "en": "Side repeater (on front fender; on some 2010 facelift trims in the mirror)",
+   "bulb": "WY5W (или W5W в оранжевом стекле)",
+   "socket": "W2.1x9.5d",
+   "watts": "5",
+   "access": {
+    "ru": "Сдвинуть корпус повторителя вперед/назад и вытянуть из крыла (или достать изнутри через подкрылок), повернуть патрон, заменить лампу. В зеркале обычно LED-модуль, лампа не меняется.",
+    "en": "Slide the repeater fore/aft and pull it out of the fender (or reach from behind the liner), twist the holder, replace. Mirror units are usually LED modules."
+   },
+   "tools": {
+    "ru": "Пластиковая лопатка",
+    "en": "Plastic trim tool"
+   },
+   "time_min": 10,
+   "price_byn": [
+    6,
+    12
+   ],
+   "brands": "Osram 2827NA, Bosch WY5W, Philips",
+   "same_in": [],
+   "same_in_note": "Не сверялось.",
+   "legal": {
+    "ru": "Сигнальные огни: по словам экспертов ГАИ/экспертизы, LED в габаритах претензий не вызывает, если цвет и яркость штатные (габарит белый, поворот желтый, стоп красный), без мерцания и ошибок. LED в повороте может мигать быстро - нужен нагрузочный резистор или реле.",
+    "en": "Signal lamps: per Belarus experts, LED in position lamps raises no objections if colour and intensity match OEM (white position, amber turn, red stop), no flicker or errors. LED turn bulbs may hyper-flash - add a load resistor or LED relay."
+   },
+   "verified": false
+  },
+  {
+   "id": "fog_front",
+   "ru": "Противотуманная фара (ПТФ) в бампере",
+   "en": "Front fog lamp (in bumper)",
+   "bulb": "H11",
+   "socket": "PGJ19-2",
+   "watts": "55",
+   "access": {
+    "ru": "Снизу через подкрылок: вынуть нижние пистоны и саморез 10 мм переднего края подкрылка, отогнуть. Отжать защелку разъема, повернуть лампу против часовой на 1/4 оборота. Левую ПТФ на части машин закрывает блок - тогда проще снять ПТФ (1 саморез 10 мм) или ослабить бампер.",
+    "en": "From below via the wheel liner: remove the lower clips and 10 mm screw of the liner front edge, fold back. Release connector latch, turn bulb 1/4 counter-clockwise. On some cars a module blocks the left fog - remove the fog unit (one 10 mm screw) or loosen the bumper."
+   },
+   "tools": {
+    "ru": "Головка 10 мм, съемник пистонов, фонарик",
+    "en": "10 mm socket, clip remover, torch"
+   },
+   "time_min": 20,
+   "price_byn": [
+    25,
+    110
+   ],
+   "brands": "Osram Original 64211/Night Breaker, Philips Vision/LongLife EcoVision, Bosch Eco/Pure Light, Narva",
+   "same_in": [
+    "Toyota Auris E150",
+    "Toyota Yaris XP90",
+    "Toyota RAV4 XA30",
+    "Toyota Camry XV40",
+    "Mitsubishi Lancer X (ближний)",
+    "Toyota Corolla E140 USA 2011-2013 (ПТФ)"
+   ],
+   "same_in_note": "Список не сверялся по каталогу.",
+   "legal": {
+    "ru": "ПТФ тоже светит на дорогу: LED в галогенной ПТФ без омологации формально нарушение (та же логика, ст.18.11 КоАП). Лучше галоген H11 или ПТФ в сборе с E-маркировкой под LED.",
+    "en": "Fogs light the road too: LED in a halogen fog lamp without approval is formally a violation (same art.18.11 logic). Use H11 halogen or an E-marked LED fog unit."
+   },
+   "verified": true,
+   "note": {
+    "ru": "H11 подтвержден avto-lampa.ru, xenonshop.ru и объявлениями ozon (седан 2006-2013). Один сайт пишет HB4 - это про другое поколение или допоставку.",
+    "en": "H11 confirmed by avto-lampa.ru, xenonshop.ru, ozon listings. One site says HB4 - another generation or aftermarket."
+   }
+  },
+  {
+   "id": "rear_stop_tail",
+   "ru": "Стоп-сигнал + задний габарит (наружный фонарь на крыле)",
+   "en": "Brake + tail light (outer lamp on quarter panel)",
+   "bulb": "W21/5W",
+   "socket": "W3x16q",
+   "watts": "21/5",
+   "access": {
+    "ru": "Из багажника: снять заглушку или отогнуть боковую обшивку (клипсы), повернуть патрон против часовой, вынуть. Лампа без цоколя тянется прямо. Фонарь снимать не надо.",
+    "en": "From the trunk: remove the access cover or fold back side trim (clips), twist the holder counter-clockwise, pull. Capless bulb pulls straight. No need to remove the lamp."
+   },
+   "tools": {
+    "ru": "Руками, плоская отвертка для клипс",
+    "en": "Hands, flat screwdriver for clips"
+   },
+   "time_min": 10,
+   "price_byn": [
+    11,
+    34
+   ],
+   "brands": "Philips Vision, Bosch Pure Light, Osram Original Line, Narva",
+   "same_in": [
+    "Toyota Camry XV40",
+    "Toyota RAV4 XA30",
+    "Toyota Yaris XP90",
+    "Honda Civic 8",
+    "Mazda 3 BK"
+   ],
+   "same_in_note": "Тип массовый, модели не сверялись.",
+   "legal": {
+    "ru": "Сигнальные огни: по словам экспертов ГАИ/экспертизы, LED в габаритах претензий не вызывает, если цвет и яркость штатные (габарит белый, поворот желтый, стоп красный), без мерцания и ошибок. LED в повороте может мигать быстро - нужен нагрузочный резистор или реле.",
+    "en": "Signal lamps: per Belarus experts, LED in position lamps raises no objections if colour and intensity match OEM (white position, amber turn, red stop), no flicker or errors. LED turn bulbs may hyper-flash - add a load resistor or LED relay."
+   },
+   "verified": true,
+   "note": {
+    "ru": "Подтверждено avto-lampa.ru и TecDoc-каталогами (autodoc, buycarparts) для ZRE151.",
+    "en": "Confirmed by avto-lampa.ru and TecDoc catalogs for ZRE151."
+   }
+  },
+  {
+   "id": "rear_turn",
+   "ru": "Задний поворотник (наружный фонарь)",
+   "en": "Rear turn signal (outer lamp)",
+   "bulb": "P21W",
+   "socket": "BA15s",
+   "watts": "21",
+   "access": {
+    "ru": "Из багажника, как стоп: отогнуть обшивку, повернуть патрон, лампу нажать и повернуть против часовой (байонет).",
+    "en": "From the trunk like the brake bulb: fold trim, twist holder, push-and-turn bulb counter-clockwise (bayonet)."
+   },
+   "tools": {
+    "ru": "Руками",
+    "en": "Hands"
+   },
+   "time_min": 10,
+   "price_byn": [
+    4,
+    32
+   ],
+   "brands": "Osram Original Line, Philips Vision/VisionPlus, Narva, Neolux, Bosch",
+   "same_in": [
+    "Renault Logan I",
+    "VW Passat B6",
+    "Ford Focus II",
+    "Opel Astra H",
+    "Skoda Octavia A5",
+    "Lada Granta"
+   ],
+   "same_in_note": "P21W массовый, модели не сверялись.",
+   "legal": {
+    "ru": "Сигнальные огни: по словам экспертов ГАИ/экспертизы, LED в габаритах претензий не вызывает, если цвет и яркость штатные (габарит белый, поворот желтый, стоп красный), без мерцания и ошибок. LED в повороте может мигать быстро - нужен нагрузочный резистор или реле.",
+    "en": "Signal lamps: per Belarus experts, LED in position lamps raises no objections if colour and intensity match OEM (white position, amber turn, red stop), no flicker or errors. LED turn bulbs may hyper-flash - add a load resistor or LED relay."
+   },
+   "verified": true,
+   "note": {
+    "ru": "P21W по avto-lampa.ru и TecDoc (лампы задних фонарей ZRE151: P21W, W21/5W, W16W). Секция с оранжевым стеклом, лампа белая.",
+    "en": "P21W per avto-lampa.ru and TecDoc rear-lamp bulb list for ZRE151 (P21W, W21/5W, W16W). Amber lens section, clear bulb."
+   }
+  },
+  {
+   "id": "reverse",
+   "ru": "Фонарь заднего хода (в фонаре на крышке багажника)",
+   "en": "Reverse light (trunk-lid lamp)",
+   "bulb": "W16W",
+   "socket": "W2.1x9.5d",
+   "watts": "16",
+   "access": {
+    "ru": "Открыть багажник, снять лючок/обшивку крышки (клипсы; зимой сначала отогреть машину - ломаются), повернуть патрон против часовой, вынуть лампу.",
+    "en": "Open the trunk, remove the lid access cover/trim (clips - warm the car up in winter, they break), twist holder counter-clockwise, pull bulb."
+   },
+   "tools": {
+    "ru": "Плоская отвертка или лопатка",
+    "en": "Flat screwdriver or trim tool"
+   },
+   "time_min": 10,
+   "price_byn": [
+    2,
+    8
+   ],
+   "brands": "Bosch Pure Light/ECO, Osram, Philips, Tesla; LED LynxAuto/CLD",
+   "same_in": [
+    "Toyota Auris E150",
+    "Toyota Corolla E180",
+    "Toyota C-HR",
+    "Toyota GT86"
+   ],
+   "same_in_note": "Из описания LED-ламп W16W 'Corolla E15 E18 Auris C-HR GT86' (AliExpress), не официально.",
+   "legal": {
+    "ru": "Задний ход/задняя ПТФ: LED допустим при белом (ход) и красном (ПТФ) свете и штатной яркости; не ослеплять сзади идущих.",
+    "en": "Reverse/rear fog: LED acceptable if white (reverse) / red (fog) and OEM-like intensity; must not dazzle following traffic."
+   },
+   "verified": true,
+   "note": {
+    "ru": "W16W подтвержден TecDoc (ak24parts, buycarparts) для ZRE151. У австралийского хэтча W21W - не путать.",
+    "en": "W16W confirmed via TecDoc listings for ZRE151. Australian hatch uses W21W - different."
+   }
+  },
+  {
+   "id": "rear_fog",
+   "ru": "Задний противотуманный фонарь (один, сторона водителя)",
+   "en": "Rear fog light (single, driver side)",
+   "bulb": "W21W",
+   "socket": "W3x16d",
+   "watts": "21",
+   "access": {
+    "ru": "Как задний ход: через обшивку крышки багажника, повернуть патрон, вынуть лампу.",
+    "en": "Same as reverse: via trunk-lid trim, twist holder, pull bulb."
+   },
+   "tools": {
+    "ru": "Плоская отвертка или лопатка",
+    "en": "Flat screwdriver or trim tool"
+   },
+   "time_min": 10,
+   "price_byn": [
+    10,
+    24
+   ],
+   "brands": "Osram Original Line 7505, Philips Vision, Bosch Pure Light",
+   "same_in": [],
+   "same_in_note": "Не сверялось.",
+   "legal": {
+    "ru": "Задний ход/задняя ПТФ: LED допустим при белом (ход) и красном (ПТФ) свете и штатной яркости; не ослеплять сзади идущих.",
+    "en": "Reverse/rear fog: LED acceptable if white (reverse) / red (fog) and OEM-like intensity; must not dazzle following traffic."
+   },
+   "verified": false,
+   "note": {
+    "ru": "Тип W21W по avto-lampa.ru и leoparts. Точное место (фонарь на крышке слева или бампер) не подтверждено, проверить на машине. Нужна одна лампа, цена за 1-2 шт.",
+    "en": "W21W per avto-lampa.ru and leoparts. Exact location not confirmed. One bulb needed; price for 1-2."
+   }
+  },
+  {
+   "id": "high_mount_stop",
+   "ru": "Дополнительный стоп-сигнал (на полке у заднего стекла)",
+   "en": "High-mount stop lamp (rear parcel shelf)",
+   "bulb": "LED-модуль (вероятно)",
+   "socket": "-",
+   "watts": "-",
+   "access": {
+    "ru": "Меняется весь фонарь: снять крышку фонаря на полке, отщелкнуть, отключить разъем.",
+    "en": "Replace the whole unit: remove the cover on the parcel shelf, unclip, unplug."
+   },
+   "tools": {
+    "ru": "Лопатка",
+    "en": "Trim tool"
+   },
+   "time_min": 20,
+   "price_byn": [
+    null,
+    null
+   ],
+   "brands": "Toyota OEM, б/у",
+   "same_in": [],
+   "same_in_note": "",
+   "legal": {
+    "ru": "Сигнальные огни: по словам экспертов ГАИ/экспертизы, LED в габаритах претензий не вызывает, если цвет и яркость штатные (габарит белый, поворот желтый, стоп красный), без мерцания и ошибок. LED в повороте может мигать быстро - нужен нагрузочный резистор или реле.",
+    "en": "Signal lamps: per Belarus experts, LED in position lamps raises no objections if colour and intensity match OEM (white position, amber turn, red stop), no flicker or errors. LED turn bulbs may hyper-flash - add a load resistor or LED relay."
+   },
+   "verified": false,
+   "note": {
+    "ru": "Не подтверждено, светодиодный он или на лампах. Проверить.",
+    "en": "Not confirmed whether LED or bulbs. Check."
+   }
+  },
+  {
+   "id": "license_plate",
+   "ru": "Подсветка номера (плафоны в накладке крышки багажника)",
+   "en": "License plate light (lamps in trunk-lid garnish)",
+   "bulb": "W5W",
+   "socket": "W2.1x9.5d",
+   "watts": "5",
+   "access": {
+    "ru": "Снаружи: поддеть плафон отверткой и вынуть, или изнутри крышки через обшивку повернуть патрон. Лампа тянется прямо.",
+    "en": "From outside: pry the lens out with a screwdriver, or from inside the lid twist the holder. Bulb pulls straight."
+   },
+   "tools": {
+    "ru": "Плоская отвертка",
+    "en": "Flat screwdriver"
+   },
+   "time_min": 10,
+   "price_byn": [
+    5,
+    30
+   ],
+   "brands": "Philips, Osram, Bosch, Neolux",
+   "same_in": [
+    "VW Golf V/VI (габарит)",
+    "Skoda Octavia A5 (габарит)",
+    "Renault Logan I (габарит)",
+    "Hyundai Solaris I (габарит)",
+    "Kia Rio III (габарит)",
+    "Lada Granta (габарит)",
+    "Toyota Camry XV40 (габарит)",
+    "Toyota RAV4 XA30 (габарит)"
+   ],
+   "same_in_note": "См. W5W.",
+   "legal": {
+    "ru": "LED допустим, если свет белый и номер читается; синий или цветной - нарушение.",
+    "en": "LED is fine if white and the plate is legible; coloured light is a violation."
+   },
+   "verified": true,
+   "note": {
+    "ru": "W5W по avto-lampa.ru и Neolux N501 для E150. Количество плафонов (1 или 2) не сверено.",
+    "en": "W5W per avto-lampa.ru and Neolux N501 listing for E150. Lamp count (1 or 2) not checked."
+   }
+  },
+  {
+   "id": "trunk_light",
+   "ru": "Плафон багажника",
+   "en": "Trunk light",
+   "bulb": "W5W (по каталогу; в австралийском мануале festoon 5W)",
+   "socket": "W2.1x9.5d",
+   "watts": "5",
+   "access": {
+    "ru": "Поддеть плафон отверткой, вынуть, заменить лампу.",
+    "en": "Pry the lamp out, replace the bulb."
+   },
+   "tools": {
+    "ru": "Плоская отвертка",
+    "en": "Flat screwdriver"
+   },
+   "time_min": 5,
+   "price_byn": [
+    5,
+    30
+   ],
+   "brands": "Philips, Osram, Bosch",
+   "same_in": [
+    "VW Golf V/VI (габарит)",
+    "Skoda Octavia A5 (габарит)",
+    "Renault Logan I (габарит)",
+    "Hyundai Solaris I (габарит)",
+    "Kia Rio III (габарит)",
+    "Lada Granta (габарит)",
+    "Toyota Camry XV40 (габарит)",
+    "Toyota RAV4 XA30 (габарит)"
+   ],
+   "same_in_note": "См. W5W.",
+   "legal": {
+    "ru": "Салон и багажник: ограничений нет, LED можно свободно.",
+    "en": "Interior and trunk: no restrictions, LED is fine."
+   },
+   "verified": false,
+   "note": {
+    "ru": "avto-lampa.ru: W5W; австралийский список ZRE152: festoon 5W. Проверить по старой лампе.",
+    "en": "avto-lampa.ru: W5W; Australian ZRE152 list: festoon 5W. Check the old bulb."
+   }
+  },
+  {
+   "id": "dome_center",
+   "ru": "Центральный плафон салона",
+   "en": "Centre dome light",
+   "bulb": "Festoon C10W (8W, длину мерить: 31/37/41 мм)",
+   "socket": "SV8.5",
+   "watts": "8",
+   "access": {
+    "ru": "Поддеть рассеиватель плоской отверткой через ткань, вынуть лампу из пружинных контактов.",
+    "en": "Pry off the lens with a flat screwdriver (through cloth), pull the bulb from the spring contacts."
+   },
+   "tools": {
+    "ru": "Плоская отвертка",
+    "en": "Flat screwdriver"
+   },
+   "time_min": 5,
+   "price_byn": [
+    5,
+    15
+   ],
+   "brands": "Osram Festoon, Narva, Bosch, LynxAuto",
+   "same_in": [],
+   "same_in_note": "Зависит от длины.",
+   "legal": {
+    "ru": "Салон и багажник: ограничений нет, LED можно свободно.",
+    "en": "Interior and trunk: no restrictions, LED is fine."
+   },
+   "verified": false,
+   "note": {
+    "ru": "avto-lampa.ru: festoon 8W SV8.5, в подборе Osram 41 мм; на форуме упоминают 31 мм. Длину мерить на старой лампе. Цена за 1 шт.",
+    "en": "avto-lampa.ru: festoon 8W SV8.5, Osram 41 mm listed; forum mentions 31 mm. Measure the old one. Price per bulb."
+   }
+  },
+  {
+   "id": "map_lights",
+   "ru": "Передний плафон (подсветка для чтения, 2 шт.)",
+   "en": "Front map/reading lights (x2)",
+   "bulb": "T10 клиновая 8W (размер W5W)",
+   "socket": "W2.1x9.5d",
+   "watts": "8",
+   "access": {
+    "ru": "Снять рассеиватель/корпус плафона на потолке лопаткой, вынуть лампу.",
+    "en": "Pry off the overhead console lens, pull the bulb."
+   },
+   "tools": {
+    "ru": "Лопатка",
+    "en": "Trim tool"
+   },
+   "time_min": 10,
+   "price_byn": [
+    5,
+    30
+   ],
+   "brands": "Osram, Philips, Bosch (W5W как замена, чуть тусклее)",
+   "same_in": [],
+   "same_in_note": "",
+   "legal": {
+    "ru": "Салон и багажник: ограничений нет, LED можно свободно.",
+    "en": "Interior and trunk: no restrictions, LED is fine."
+   },
+   "verified": false,
+   "note": {
+    "ru": "По списку из мануала ZRE152 (Австралия): клиновые 8W. Для седана РФ/ЕС не сверено.",
+    "en": "Per ZRE152 (AU) manual list: wedge 8W. Not checked for EU sedan."
+   }
+  },
+  {
+   "id": "vanity",
+   "ru": "Подсветка зеркал в козырьках (если есть)",
+   "en": "Vanity mirror lights (if equipped)",
+   "bulb": "T10 клиновая 8W",
+   "socket": "W2.1x9.5d",
+   "watts": "8",
+   "access": {
+    "ru": "Поддеть рассеиватель в козырьке, вынуть лампу.",
+    "en": "Pry the lens in the visor, pull the bulb."
+   },
+   "tools": {
+    "ru": "Лопатка",
+    "en": "Trim tool"
+   },
+   "time_min": 5,
+   "price_byn": [
+    5,
+    30
+   ],
+   "brands": "Osram, Philips",
+   "same_in": [],
+   "same_in_note": "",
+   "legal": {
+    "ru": "Салон и багажник: ограничений нет, LED можно свободно.",
+    "en": "Interior and trunk: no restrictions, LED is fine."
+   },
+   "verified": false,
+   "note": {
+    "ru": "Есть не во всех комплектациях. Данные по австралийскому мануалу.",
+    "en": "Not on all trims. Data from AU manual list."
+   }
+  }
+ ],
+ "assemblies": [
+  {
+   "id": "headlight",
+   "part_numbers": [
+    {
+     "ru": "Фара левая, галоген, под электрокорректор, дорест 2007-2010",
+     "en": "Headlamp LH, halogen, electric levelling, pre-facelift 2007-2010",
+     "no": "81170-12A60"
+    },
+    {
+     "ru": "Фара правая, галоген, под электрокорректор, дорест 2007-2010",
+     "en": "Headlamp RH, halogen, electric levelling, pre-facelift",
+     "no": "81130-12A60"
+    },
+    {
+     "ru": "Фара левая, ксенон, дорест (drive2)",
+     "en": "Headlamp LH, xenon, pre-facelift (drive2)",
+     "no": "81185-12A80"
+    },
+    {
+     "ru": "Фара правая, ксенон, дорест (drive2)",
+     "en": "Headlamp RH, xenon, pre-facelift (drive2)",
+     "no": "81145-12A80"
+    },
+    {
+     "ru": "Блок автокорректора для ксенона (drive2)",
+     "en": "Levelling ECU for xenon (drive2)",
+     "no": "89960-12240"
+    },
+    {
+     "ru": "Рест с 06.2010, галоген левая/правая (по объявлениям, HB3/HB4, вариант без моторчика)",
+     "en": "Facelift from 06.2010, halogen LH/RH (listings, HB3/HB4, variant without motor)",
+     "no": "81170-12D80 / 81130-12D80"
+    },
+    {
+     "ru": "Аналоги левой дорест: TYC, Depo",
+     "en": "Aftermarket LH pre-facelift: TYC, Depo",
+     "no": "TYC 20B152056B / Depo 21211M7LLDEM"
+    }
+   ],
+   "maker": "Koito (штатные фары Toyota японской сборки, номер Koito на корпусе; для этой модели не подтверждено)",
+   "fasteners": [
+    {
+     "ru": "3 болта 10 мм: верхний (под накладкой, резьба по пластику), боковой и нижний к кронштейну (машинные, по металлу)",
+     "en": "3x 10 mm bolts: top (under trim, plastic thread), side and lower to bracket (machine screws)",
+     "torque": "не найден; затягивать умеренно, ориентир 5-8 Н·м (не проверено)"
+    },
+    {
+     "ru": "Фиксирующий язычок в переднем углу фары входит в квадратное окно кузова",
+     "en": "Locating tab at the front corner clips into a square slot",
+     "torque": "-"
+    },
+    {
+     "ru": "Нижнее крепление на кронштейне бампера - без снятия бампера не достать",
+     "en": "Lower mount sits on the bumper bracket - inaccessible with bumper on",
+     "torque": "-"
+    }
+   ],
+   "steps": {
+    "ru": [
+     "Снять минус АКБ.",
+     "Снять передний бампер (см. bumper_front).",
+     "Открутить 3 болта 10 мм фары.",
+     "Приподнять пластиковую накладку у верхнего болта и снять ее с выступа.",
+     "Приподнять передний угол фары, освободить язычок из квадратного окна.",
+     "Отключить разъемы ламп (поворот на ~30 градусов) и моторчика корректора.",
+     "Вынуть фару. Сборка в обратном порядке: сначала завести передний угол в паз, затем верхнее ухо на выступ.",
+     "После установки проверить и отрегулировать свет на стенде."
+    ],
+    "en": [
+     "Disconnect battery negative.",
+     "Remove the front bumper cover (see bumper_front).",
+     "Remove the 3x 10 mm headlamp bolts.",
+     "Lift the plastic trim around the top bolt over its boss.",
+     "Lift the front corner to free the tab from the square slot.",
+     "Unplug bulb holders (turn ~30 deg) and the levelling motor connector.",
+     "Remove the lamp. Refit in reverse: seat the front corner first, then the top eye over the boss.",
+     "Aim the headlights on a test stand afterwards."
+    ]
+   },
+   "notes": {
+    "ru": "Регулировка: 2 винта на задней/верхней части корпуса (вертикаль и горизонталь), обычно под крестовую отвертку или шестигранник 6 мм (не проверено). Галоген - электрокорректор (моторчик), колесико на панели 0-5; ксенон - автокорректор с датчиком на подвеске. Разъемы HB3/HB4 прямые с защелкой. Лампы ближнего/дальнего меняются без снятия бампера, бампер нужен только для снятия фары. Рест 2010: другая форма фары, решетки и бампера, фары дорест и рест не взаимозаменяемы. Номера A60 некоторые магазины относят и к рест - сверить по VIN. Шаги снятия - по гайду для Corolla 2009-2013 USA (передок близок к E150 седан).",
+    "en": "Aiming: 2 adjusters on the back/top (vertical and horizontal), usually Phillips or 6 mm hex (unverified). Halogen: electric levelling motor, dash wheel 0-5; xenon: auto-levelling with suspension sensor. HB3/HB4 connectors are straight with a latch. Bulbs change without bumper removal; bumper only needed to remove the lamp. 2010 facelift: different headlamp, grille and bumper; not interchangeable. Some shops list A60 for facelift too - verify by VIN. Removal steps from a 2009-2013 US Corolla guide (front end close to E150 sedan)."
+   },
+   "verified": false
+  },
+  {
+   "id": "tail_light",
+   "part_numbers": [
+    {
+     "ru": "Фонарь наружный левый (на крыле), седан",
+     "en": "Outer tail lamp LH (quarter), sedan",
+     "no": "81561-12A10"
+    },
+    {
+     "ru": "Фонарь наружный правый (на крыле), седан",
+     "en": "Outer tail lamp RH (quarter), sedan",
+     "no": "81551-12A10"
+    },
+    {
+     "ru": "Вариант наружных фонарей (вероятно рест 2010)",
+     "en": "Outer lamp variant (likely 2010 facelift)",
+     "no": "81561-12A30 / 81551-12A30"
+    },
+    {
+     "ru": "Фонарь на крышке багажника левый (встречаются оба номера)",
+     "en": "Trunk-lid lamp LH (both numbers seen)",
+     "no": "81591-12100 / 81591-12150"
+    }
+   ],
+   "maker": "не подтверждено (Koito или Tokai Denso)",
+   "fasteners": [
+    {
+     "ru": "Наружный фонарь: 3 гайки 10 мм на шпильках, изнутри багажника за боковой обшивкой",
+     "en": "Outer lamp: 3x 10 mm nuts on studs, inside the trunk behind side trim",
+     "torque": "не найден; умеренно, около 5 Н·м, не перетягивать - трескается корпус"
+    },
+    {
+     "ru": "Фонарь крышки: гайки 10 мм изнутри крышки под обшивкой (клипсы); по одному описанию еще 2 самореза в водостоке",
+     "en": "Lid lamp: 10 mm nuts inside the lid under trim (clips); one write-up also mentions 2 screws in the drain channel",
+     "torque": "-"
+    }
+   ],
+   "steps": {
+    "ru": [
+     "Открыть багажник, вынуть клипсы и отогнуть боковую обшивку (или снять заглушку).",
+     "Отключить разъем, вынуть патроны с лампами (поворот против часовой).",
+     "Открутить 3 гайки 10 мм.",
+     "Вытянуть фонарь наружу, не повредив краску (малярный скотч, лопатка).",
+     "Установка в обратном порядке; проверить уплотнитель - вода в фонаре типичная проблема."
+    ],
+    "en": [
+     "Open trunk, remove clips and fold back side trim (or remove the access cover).",
+     "Unplug, remove bulb holders (counter-clockwise).",
+     "Remove 3x 10 mm nuts.",
+     "Pull the lamp outward, protect paint (tape, trim tool).",
+     "Refit in reverse; check the seal - water ingress is common."
+    ]
+   },
+   "notes": {
+    "ru": "Для замены ламп фонарь снимать не надо. Секция на крышке: задний ход W16W и задняя ПТФ W21W; зимой клипсы лючка хрупкие. Рест 2010: другой рисунок фонарей и номера. Номера из магазинов, сверить по VIN.",
+    "en": "Bulbs change without removing the lamp. Lid section: reverse W16W and rear fog W21W; access clips are brittle in cold. 2010 facelift: new lamp graphics and numbers. Numbers from shops, verify by VIN."
+   },
+   "verified": false
+  },
+  {
+   "id": "fog_light",
+   "part_numbers": [
+    {
+     "ru": "ПТФ правая",
+     "en": "Fog lamp RH",
+     "no": "81210-0D040 (также 81210-0D041)"
+    },
+    {
+     "ru": "ПТФ левая",
+     "en": "Fog lamp LH",
+     "no": "81220-0D040 (также 81220-0D041)"
+    }
+   ],
+   "maker": "не подтверждено (Toyota OEM, вероятно Koito)",
+   "fasteners": [
+    {
+     "ru": "1 саморез/болт 10 мм к бамперу с каждой стороны + направляющие язычки",
+     "en": "1x 10 mm screw to the bumper per side + locating tabs",
+     "torque": "-"
+    },
+    {
+     "ru": "Винт регулировки луча на корпусе",
+     "en": "Beam aiming screw on the housing",
+     "torque": "-"
+    }
+   ],
+   "steps": {
+    "ru": [
+     "Отогнуть передний край подкрылка (пистоны 90467-07201, саморез 10 мм) или снять бампер.",
+     "Отключить разъем, вынуть лампу H11.",
+     "Открутить саморез 10 мм, вынуть ПТФ.",
+     "Установить, отрегулировать винтом."
+    ],
+    "en": [
+     "Fold back the front of the wheel liner (clips 90467-07201, 10 mm screw) or remove the bumper.",
+     "Unplug, remove the H11 bulb.",
+     "Undo the 10 mm screw, pull the fog unit out.",
+     "Refit and aim with the adjuster screw."
+    ]
+   },
+   "notes": {
+    "ru": "Номера 0D040/0D041 по магазинам, сверить по VIN. Оригинал около 7500 RUB за штуку без лампы. Лампа H11 55W. Рамка ПТФ меняется при рест 2010.",
+    "en": "0D040/0D041 from shop listings, verify by VIN. OEM about 7500 RUB each without bulb. Bulb H11 55W. Bezel changed with 2010 facelift."
+   },
+   "verified": false
+  },
+  {
+   "id": "bumper_front",
+   "part_numbers": [
+    {
+     "ru": "Пистон подкрылка нижний (drive2)",
+     "en": "Lower wheel liner clip (drive2)",
+     "no": "90467-07201"
+    }
+   ],
+   "maker": "-",
+   "fasteners": [
+    {
+     "ru": "Сверху (под капотом): 6 шт. - с каждой стороны по 1 пистону, 1 крестовому винту с резиновым отбойником капота и 1 болту 10 мм; плюс крепления решетки (3 шт.)",
+     "en": "Top (under hood): 6 - per side one clip, one Phillips screw with hood cushion, one 10 mm bolt; plus grille fasteners (3)",
+     "torque": "-"
+    },
+    {
+     "ru": "Снизу: 6 шт. - 4 болта/самореза 10 мм по углам и 2 двухэлементных пистона по центру",
+     "en": "Bottom: 6 - 4x 10 mm screws at corners and 2 two-piece clips in the middle",
+     "torque": "-"
+    },
+    {
+     "ru": "Арки: по 2 крепления с каждой стороны (нижний поворотный пистон и пластиковый винт-пистон) + 1 болт/саморез бампера за подкрылком",
+     "en": "Wheel wells: 2 fasteners per side (lower quarter-turn clip and plastic screw clip) + 1 bumper screw behind the liner",
+     "torque": "-"
+    },
+    {
+     "ru": "Боковые защелки бампера в кронштейнах на крыльях",
+     "en": "Side snap-in brackets at the fenders",
+     "torque": "-"
+    }
+   ],
+   "steps": {
+    "ru": [
+     "Поставить машину на эстакаду или яму.",
+     "Снизу открутить 4 болта 10 мм и вынуть 2 пистона (сначала центр, затем корпус).",
+     "В каждой арке снять 2 крепления подкрылка, отвести его, открутить боковой винт бампера.",
+     "Отщелкнуть бампер от кронштейнов на крыльях рывком наружу.",
+     "Сверху снять 6 креплений (пистон, винт с отбойником, болт 10 мм с каждой стороны), при необходимости решетку.",
+     "Снять бампер вперед вдвоем, отключить разъемы ПТФ и омывателя фар (если есть).",
+     "Установка в обратном порядке."
+    ],
+    "en": [
+     "Put the car on ramps or a pit.",
+     "Below: remove 4x 10 mm screws and 2 clips (centre first, then body).",
+     "In each arch remove 2 liner fasteners, fold it back, remove the side bumper screw.",
+     "Unsnap the bumper from the fender brackets with a firm outward pull.",
+     "Top: remove 6 fasteners (clip, Phillips with hood cushion, 10 mm bolt per side), and the grille if needed.",
+     "Pull the bumper forward with a helper, unplug fog lamps and headlamp washers (if fitted).",
+     "Refit in reverse."
+    ]
+   },
+   "notes": {
+    "ru": "Итого около 16 креплений (по гайду для Corolla 2009-2013 USA). Русские описания дают похожую схему: центральный болт к верхней поперечине, по 1 болту за подкрылками, по 1 винту по бокам и по 1 болту снизу. Время 30-45 минут. Рест 2010: другой бампер с большим воздухозаборником, схема креплений близкая.",
+    "en": "About 16 fasteners total (per a 2009-2013 US Corolla guide). Russian write-ups give a similar layout. 30-45 minutes. 2010 facelift: different bumper with a larger intake, similar fastening."
+   },
+   "verified": false
+  },
+  {
+   "id": "wheel_liner",
+   "part_numbers": [
+    {
+     "ru": "Пистон переднего подкрылка нижний (drive2)",
+     "en": "Front liner lower clip (drive2)",
+     "no": "90467-07201"
+    },
+    {
+     "ru": "Клипса бампера/защиты (задняя часть, drive2)",
+     "en": "Bumper/undertray clip (rear, drive2)",
+     "no": "52161-16010"
+    }
+   ],
+   "maker": "-",
+   "fasteners": [
+    {
+     "ru": "Передний подкрылок: около 3 пистонов + 1 саморез 10 мм + стык с бампером (поворотный пистон и пластиковый винт)",
+     "en": "Front liner: ~3 push clips + 1x 10 mm screw + bumper joints (quarter-turn clip and plastic screw)",
+     "torque": "-"
+    },
+    {
+     "ru": "Задний подкрылок: гайки с шайбами и удлиненный пистон (по комплекту Novline)",
+     "en": "Rear liner: nuts with washers and a long clip (per Novline kit)",
+     "torque": "-"
+    }
+   ],
+   "steps": {
+    "ru": [
+     "Вывернуть руль в сторону для доступа.",
+     "Вынуть пистоны (поддеть центр, затем корпус) и открутить саморез 10 мм.",
+     "Отогнуть передний край подкрылка - откроется доступ к поворотнику, ПТФ и боковому креплению бампера.",
+     "Сломанные пистоны заменить новыми 90467-07201."
+    ],
+    "en": [
+     "Turn the steering for access.",
+     "Pull clips (centre first, then body) and remove the 10 mm screw.",
+     "Fold back the front of the liner - access to turn signal, fog lamp and bumper side mount.",
+     "Replace broken clips with new 90467-07201."
+    ]
+   },
+   "notes": {
+    "ru": "Номера крепежа из списков владельцев drive2, сверить по VIN-каталогу. Пистоны часто ломаются - взять запас 5-10 шт.",
+    "en": "Fastener numbers from drive2 owner lists, verify by VIN catalog. Clips break often - buy 5-10 spare."
+   },
+   "verified": false
+  }
+ ],
+ "sources": [
+  "https://avto-lampa.ru/cars/toyota/corolla/10-pok-e150-sedan.html",
+  "https://toyota-camry-corolla.ru/corolla/corolla-150/korolla-150-lampochki-svet-protivotumannye-fary/",
+  "https://au.toyotaownersclub.com/forums/topic/29880-zre-lights-and-specs-required/",
+  "http://www.originalmechanic.com/2017/04/how-to-remove-and-install-front-bumper.html",
+  "https://kuzovnoy.ru/autoparts/toyota/toyota_corolla_e150_06/22075_fara_toyota_corolla_e150.html",
+  "https://www.drive2.ru/l/483832671173083784/",
+  "https://www.drive2.ru/l/8242012/",
+  "https://fdauto.ru/shop/UID_19074.html",
+  "https://www.toyotacarmine.ru/zadniy-fonar-toyota-corolla-150",
+  "https://www.toyotacarmine.ru/ptf-toyota-corolla-150",
+  "https://fdauto.ru/parts/7_708/",
+  "https://www.buycarparts.co.uk/toyota/corolla-saloon-e15/133445/10601/bulb-reverse-light",
+  "https://www.ak24parts.com/en/toyota-spareparts/56850/corolla-saloon-e15-1-6-vvti-zre141-zre151/38/reverse-light-bulb",
+  "https://leoparts.com.ua/toyota/7967/lampa-protivotumannoy-fary",
+  "https://www.xenonshop.ru/podbor/toyota/toyota-corolla/x-2006-2010/protivotumanki/",
+  "https://carfrance.ru/demontazh-perednego-bampera-toyota-corolla-e150/",
+  "https://www.drive2.ru/l/9929360/",
+  "https://www.drive2.ru/l/6904986/",
+  "https://www.drive2.ru/l/538530076120056770/",
+  "https://www.go-parts.com/garage/headlight-assembly-toyota-corolla-2009-2010",
+  "https://www.go-parts.com/garage/tail-light-toyota-corolla-2005-2013",
+  "https://toyota-org.ru/threads/lampy-blizhnego-sveta-korolla-150-rest-kaps-dlja-vnimanija-krch-delo-takoe-kak-vy-menjaete-ehti-lampy-u-menja-nikak-ruka-tuda-ne-podlaziet-chtoby.132349/",
+  "https://sudexpert.gov.by/ru/list_news-grodno-a-n.html?news_id=8090",
+  "https://catalog.onliner.by (sdapi search, цены на 19.10.2026)"
+ ]
+}

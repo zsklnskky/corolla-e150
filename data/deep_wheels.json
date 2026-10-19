@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "car": {"ru": "Toyota Corolla E150 седан 2008, ZRE151, 1ZR-FE 1.6, MMT, рынок Европа/РФ/Беларусь", "en": "Toyota Corolla E150 sedan 2008, ZRE151, 1ZR-FE 1.6, MMT, Europe/RU/Belarus market"},
+    "fx": {"usd_byn": 3.0098, "date": "2026-10-19"},
+    "note": {"ru": "verified:true - подтверждено каталогом или двумя источниками; verified:false - по мануалу/форумам/памяти, сверить перед работой. Цены Onliner - минимальная цена в каталоге на 19.10.2026, обычно за 1 шт (диски) или комплект на ось (колодки), уточнять у продавца.", "en": "verified:true - confirmed by a catalogue or two sources; verified:false - from manual/forums/memory, check before work. Onliner prices are the catalogue minimum on 2026-10-19, usually per piece (discs) or per axle set (pads), confirm with the seller."}
+  },
+  "oem_wheels": [
+    {"diameter": 15, "rim": "6Jx15", "et": 39, "tyre": "195/65R15 91H", "trim": {"ru": "Базовые комплектации (Terra/Linea Terra, Comfort), сталь с колпаком или литьё", "en": "Base trims (Terra/Linea Terra, Comfort), steel with cover or alloy"}, "pressure_bar": 2.2, "verified": true},
+    {"diameter": 15, "rim": "6Jx15", "et": 39, "tyre": "195/60R15 88T", "trim": {"ru": "Альтернативный размер по каталогу", "en": "Catalogue alternative size"}, "pressure_bar": 2.2, "verified": true},
+    {"diameter": 16, "rim": "6.5Jx16", "et": 45, "tyre": "205/55R16 91V", "trim": {"ru": "Sol/Elegance/Prestige, литьё", "en": "Sol/Elegance/Prestige, alloy"}, "pressure_bar": 2.2, "verified": true},
+    {"diameter": 17, "rim": "7Jx17", "et": 45, "tyre": "215/45ZR17 87W", "trim": {"ru": "Топовые/спорт-пакеты, литьё (опция)", "en": "Top/sport packages, alloy (option)"}, "pressure_bar": 2.2, "verified": true},
+    {"diameter": 17, "rim": "7Jx17", "et": 39, "tyre": "225/45R17 93V", "trim": {"ru": "Альтернативный размер по каталогу", "en": "Catalogue alternative size"}, "pressure_bar": 2.2, "verified": true}
+  ],
+  "rim_rules": {
+    "pcd": "5x114.3",
+    "center_bore_mm": 60.1,
+    "hub_rings": {"ru": "Неоригинальные диски с ЦО 64.1/66.1/67.1/73.1 - ставить центровочные кольца на 60.1, иначе биение на скорости.", "en": "Non-OEM rims with CB 64.1/66.1/67.1/73.1 need hub rings to 60.1, otherwise vibration at speed."},
+    "fastener": {"ru": "Гайка M12x1.5, конус 60°, под ключ 21 мм, 5 шт на колесо", "en": "Nut M12x1.5, 60° cone seat, 21 mm hex, 5 per wheel"},
+    "wheel_nut_torque_nm": 103,
+    "diameter_range": {"ru": "R15-R17 штатно; R18 возможно (7-7.5J ET40-45, 215/40 или 225/40), но жёстче, риск задевания и повреждения дисков; R14 не встаёт из-за суппорта 275 мм.", "en": "R15-R17 stock; R18 possible (7-7.5J ET40-45, 215/40 or 225/40), but harsher, rub and rim damage risk; R14 does not clear the 275 mm caliper."},
+    "width_range": {"ru": "6-7.5J. 6-7J без вопросов, 7.5J - только с ET 40-45 и шиной не шире 225.", "en": "6-7.5J. 6-7J no issues, 7.5J only with ET 40-45 and tyre no wider than 225."},
+    "et_range": {"ru": "Штатно ET39-45, допустимо ET35-50. Ниже ET35 при 7-7.5J колесо выходит за арку, задевает кромку крыла на ходе сжатия с пассажирами; выше ET50 при 7.5J риск касания шины о стойку/пружину.", "en": "Stock ET39-45, acceptable ET35-50. Below ET35 on 7-7.5J the wheel pokes out and rubs the fender lip under compression with passengers; above ET50 on 7.5J the tyre may touch the strut/spring."},
+    "rubbing_notes": {"ru": "Самые рискованные: 225/45R17 на 7.5J ET35 и 225/40R18 на 8J. Проверять полный поворот руля и сжатие подвески. Проставки - только с длинными шпильками или болтовые хабцентричные.", "en": "Most risky: 225/45R17 on 7.5J ET35 and 225/40R18 on 8J. Check full lock and suspension compression. Spacers only with longer studs or hub-centric bolt-on type."},
+    "verified": false
+  },
+  "tyre_sizes": [
+    {"rim": "15", "tyre": "195/65R15", "diameter_mm": 634.5, "diff_pct": 0.0, "note": {"ru": "Штатный эталон", "en": "Stock reference"}, "verified": true},
+    {"rim": "15", "tyre": "195/60R15", "diameter_mm": 615.0, "diff_pct": -3.1, "note": {"ru": "Есть в каталоге, но спидометр врёт больше, клиренс ниже на ~10 мм", "en": "In catalogue, but larger speedo error, ~10 mm less clearance"}, "verified": true},
+    {"rim": "15", "tyre": "205/60R15", "diameter_mm": 627.0, "diff_pct": -1.2, "note": {"ru": "Неофициально, в пределах 3%", "en": "Unofficial, within 3%"}, "verified": false},
+    {"rim": "15", "tyre": "185/65R15", "diameter_mm": 621.5, "diff_pct": -2.0, "note": {"ru": "Узкая, как вариант для зимы", "en": "Narrow, an option for winter"}, "verified": false},
+    {"rim": "16", "tyre": "205/55R16", "diameter_mm": 631.9, "diff_pct": -0.4, "note": {"ru": "Штатный, самый ходовой размер", "en": "Stock, most common size"}, "verified": true},
+    {"rim": "16", "tyre": "215/55R16", "diameter_mm": 642.9, "diff_pct": 1.3, "note": {"ru": "Неофициально, на 6.5-7J", "en": "Unofficial, on 6.5-7J"}, "verified": false},
+    {"rim": "17", "tyre": "215/45R17", "diameter_mm": 625.3, "diff_pct": -1.4, "note": {"ru": "Штатный", "en": "Stock"}, "verified": true},
+    {"rim": "17", "tyre": "225/45R17", "diameter_mm": 634.3, "diff_pct": 0.0, "note": {"ru": "Штатный, на 7-7.5J", "en": "Stock, on 7-7.5J"}, "verified": true},
+    {"rim": "17", "tyre": "205/50R17", "diameter_mm": 636.8, "diff_pct": 0.4, "note": {"ru": "Неофициально, удобен для зимы на 17", "en": "Unofficial, handy for winter on 17"}, "verified": false},
+    {"rim": "18", "tyre": "215/40R18", "diameter_mm": 629.2, "diff_pct": -0.8, "note": {"ru": "Неофициально, только 7-7.5J", "en": "Unofficial, 7-7.5J only"}, "verified": false},
+    {"rim": "18", "tyre": "225/40R18", "diameter_mm": 637.2, "diff_pct": 0.4, "note": {"ru": "Неофициально, риск задевания", "en": "Unofficial, rub risk"}, "verified": false}
+  ],
+  "spare_wheel": {"ru": "Под полом багажника: полноразмерное стальное 15 или докатка T125/70D16 (T-тип, до 80 км/ч), зависит от комплектации и рынка. Проверить у своей машины.", "en": "Under the boot floor: full-size 15 steel or temporary T125/70D16 (T-type, max 80 km/h), depends on trim and market. Check on your car.", "verified": false},
+  "donor_wheels": [
+    {"model": "Toyota Auris E150 (2006-2012)", "sizes": "6Jx15 ET39, 6.5Jx16 ET45, 7Jx17 ET45", "fit": {"ru": "Прямая установка, та же платформа", "en": "Direct fit, same platform"}, "verified": true},
+    {"model": "Toyota Corolla E180 (2013-2018)", "sizes": "6.5Jx16 ET39-45, 7Jx17 ET45", "fit": {"ru": "Прямая установка", "en": "Direct fit"}, "verified": false},
+    {"model": "Toyota Auris E180 (2012-2018)", "sizes": "6.5Jx16 ET39, 7Jx17 ET45", "fit": {"ru": "Прямая установка", "en": "Direct fit"}, "verified": false},
+    {"model": "Toyota Corolla E210 (2018+)", "sizes": "6.5Jx16 ET40, 7.5Jx17 ET45, 7.5-8Jx18 ET40", "fit": {"ru": "Прямая (5x114.3, ЦО 60.1), 18 - на грани по задеванию", "en": "Direct (5x114.3, CB 60.1), 18 is borderline for rubbing"}, "verified": false},
+    {"model": "Toyota Camry XV40/XV50/XV70", "sizes": "6.5Jx16 ET45, 7Jx17 ET45, 7.5Jx18 ET45", "fit": {"ru": "Прямая установка, популярный донор", "en": "Direct fit, popular donor"}, "verified": false},
+    {"model": "Toyota Avensis T25/T27", "sizes": "6.5Jx16 ET45, 7Jx17 ET45, 7.5Jx18 ET45", "fit": {"ru": "Прямая установка", "en": "Direct fit"}, "verified": false},
+    {"model": "Toyota RAV4 XA30/XA40", "sizes": "7Jx17 ET39-45, 7.5Jx18 ET45", "fit": {"ru": "Прямая по крепежу, но шины от RAV4 (225/65R17) не подходят - брать свою резину", "en": "Direct by fastening, but RAV4 tyres (225/65R17) do not fit - use own tyres"}, "verified": false},
+    {"model": "Toyota C-HR", "sizes": "6.5Jx17 ET45, 7Jx18 ET50", "fit": {"ru": "Прямая установка", "en": "Direct fit"}, "verified": false},
+    {"model": "Toyota Verso (R20)", "sizes": "6.5Jx16 ET45, 7Jx17 ET45", "fit": {"ru": "Прямая установка", "en": "Direct fit"}, "verified": false},
+    {"model": "Lexus IS II (XE20)", "sizes": "7.5Jx17 ET45, 8Jx18 ET45", "fit": {"ru": "Прямая (ЦО 60.1); 8J - только с узкой шиной, риск задевания", "en": "Direct (CB 60.1); 8J only with narrow tyre, rub risk"}, "verified": false},
+    {"model": "Lexus ES / GS", "sizes": "7Jx17 ET45, 8Jx18 ET45", "fit": {"ru": "Прямая (ЦО 60.1), 18x8 на грани", "en": "Direct (CB 60.1), 18x8 borderline"}, "verified": false},
+    {"model": "Mazda 3 BK/BL, Mazda 6 GH", "sizes": "6.5Jx16 ET50-52.5, 7Jx17 ET52.5-55", "fit": {"ru": "Нужны кольца 67.1 -> 60.1; ET 52.5-55 при 7J - риск касания стойки", "en": "Rings 67.1 -> 60.1 needed; ET 52.5-55 on 7J risks strut contact"}, "verified": false},
+    {"model": "Hyundai / Kia (Elantra, i30, Ceed, Sportage)", "sizes": "6.5Jx16 ET45-50, 7Jx17 ET45-48", "fit": {"ru": "Нужны кольца 67.1 -> 60.1", "en": "Rings 67.1 -> 60.1 needed"}, "verified": false},
+    {"model": "Mitsubishi Lancer X / ASX / Outlander", "sizes": "6.5Jx16 ET46, 7Jx18 ET38", "fit": {"ru": "Нужны кольца 67.1 -> 60.1", "en": "Rings 67.1 -> 60.1 needed"}, "verified": false},
+    {"model": "Nissan / Renault (Qashqai J10, Megane III, Fluence)", "sizes": "6.5Jx16 ET40-47, 7Jx17 ET40", "fit": {"ru": "Нужны кольца 66.1 -> 60.1, гайки свои конусные M12x1.5", "en": "Rings 66.1 -> 60.1 needed, use own M12x1.5 cone nuts"}, "verified": false},
+    {"model": "Honda Civic / Accord / CR-V", "sizes": "6.5-7Jx16-17 ET45-55", "fit": {"ru": "Кольца 64.1 -> 60.1 и гайки со сферической посадкой под диски Honda - иначе колесо не держится", "en": "Rings 64.1 -> 60.1 and ball-seat nuts for Honda rims - otherwise the wheel is not secured"}, "verified": false}
+  ],
+  "brakes": {
+    "front": {
+      "disc": {"diameter_mm": 275, "thickness_mm": 22, "min_thickness_mm": 19, "type": {"ru": "Вентилируемый, высота 46 мм, центровка 62 мм", "en": "Ventilated, height 46 mm, centering 62 mm"}, "verified": true},
+      "disc_parts": [
+        {"brand": "Brembo", "pn": "09.A864.11 (09.A864.14 без покраски, 09.A864.1X Xtra)", "price_byn": null, "price_usd": null, "note": {"ru": "На Onliner 09A86414 есть, цены нет на 19.10.2026", "en": "09A86414 listed on Onliner, no price on 2026-10-19"}, "verified": true}
+      ],
+      "caliper": {"ru": "Плавающий однопоршневой Bosch (европейская сборка), поршень около 57 мм. На японских машинах встречается Akebono.", "en": "Floating single-piston Bosch (European build), piston about 57 mm. Japanese-built cars may have Akebono.", "verified": false}
+    },
+    "rear": {
+      "disc": {"diameter_mm": 259, "thickness_mm": 9, "min_thickness_mm": 7.5, "type": {"ru": "Сплошной, высота 30 мм, центровка 62 мм", "en": "Solid, height 30 mm, centering 62 mm"}, "verified": true},
+      "disc_parts": [
+        {"brand": "Brembo", "pn": "08.A534.21 (08.A534.20 без покраски)", "price_byn": 106.20, "price_usd": 35.28, "note": {"ru": "Onliner, мин. цена, за 1 шт или пару - уточнить", "en": "Onliner, min price, per piece or pair - confirm"}, "verified": true}
+      ],
+      "caliper": {"ru": "Плавающий однопоршневой Bosch, поршень около 34-36 мм. Задние колодки Bosch P 83 080.", "en": "Floating single-piston Bosch, piston about 34-36 mm. Rear pads Bosch-type P 83 080.", "verified": false},
+      "handbrake": {"ru": "Механический, тросовый, механизм встроен в задний суппорт. Поршень при замене колодок не вдавливается, а вкручивается по часовой стрелке специальным ключом. В каталоге Brembo для ZRE151 есть и задние колодки барабана 229x37 (с 01/2009) - это для версий с барабанами, проверить свою машину.", "en": "Mechanical, cable, mechanism built into the rear caliper. When changing pads, the piston is wound back clockwise with a tool, not pushed. Brembo also lists 229x37 rear shoes for ZRE151 (from 01/2009) - that is for drum versions, check your car.", "verified": false}
+    },
+    "abs": {"ru": "ABS + EBD + BA, на части комплектаций VSC. Датчики активные, 4 шт: магнитное кольцо в подшипнике ступицы (подшипник ставить магнитной стороной к датчику). Ошибки чаще от грязи на кольце и обрыва проводки задних датчиков.", "en": "ABS + EBD + BA, VSC on some trims. Active sensors, 4 pcs: magnetic encoder in the hub bearing (fit bearing magnetic side to the sensor). Faults usually from dirt on the ring and broken rear sensor wiring.", "verified": false},
+    "fluid": {"spec": {"ru": "DOT 3 или DOT 4 (по крышке бачка, Toyota допускает DOT 4). Менять каждые 2 года/40 000 км. MMT - сцепление с электроприводом, общей с тормозами жидкости нет.", "en": "DOT 3 or DOT 4 (per reservoir cap, Toyota allows DOT 4). Replace every 2 years/40,000 km. MMT clutch is electrically actuated, no shared fluid with brakes."}, "volume_l": {"ru": "Около 0.8-1.0 л на полную замену с прокачкой", "en": "About 0.8-1.0 L for a full flush"}, "prices": [
+      {"item": "TRW Brake Fluid DOT4 1 л", "price_byn": 31.00, "price_usd": 10.30},
+      {"item": "Comma DOT4 ESP 1 л", "price_byn": 34.80, "price_usd": 11.56}
+    ], "verified": false},
+    "pads": [
+      {"axle": "front", "system": "Bosch", "brembo": "P 83 079", "trw": "GDB3481", "ate": "13.0460-5602.2", "bosch": "0 986 494 260", "wva": "24122, 24590, 24591", "dims_mm": "137x58-61x19", "price_byn": 166.75, "price_usd": 55.40, "price_note": {"ru": "TRW GDB3481 на Onliner; Brembo P83079 без цены", "en": "TRW GDB3481 on Onliner; Brembo P83079 no price"}, "oe": "04465-02xxx (по VIN)", "verified": true},
+      {"axle": "front", "system": "Akebono (японская сборка)", "brembo": "P 83 082", "trw": "GDB3425", "ate": null, "bosch": null, "wva": "24336", "dims_mm": "139x56x18", "price_byn": null, "price_usd": null, "oe": "04465-02220 (по VIN)", "verified": false},
+      {"axle": "rear", "system": "Bosch", "brembo": "P 83 080", "trw": "GDB3480", "ate": "13.0460-5604.2", "bosch": "0 986 494 182", "wva": "24664, 24665, 24666", "dims_mm": "102x46x16", "price_byn": 64.30, "price_usd": 21.36, "price_note": {"ru": "Bosch 0986494182 64.30; TRW GDB3480 от 98.20; Brembo P83080 96.10 BYN", "en": "Bosch 0986494182 64.30; TRW GDB3480 from 98.20; Brembo P83080 96.10 BYN"}, "verified": true},
+      {"axle": "rear", "system": "Akebono", "brembo": "P 83 133", "trw": null, "ate": null, "bosch": null, "wva": "25016, 25017, 25018", "dims_mm": "99x42x14", "price_byn": null, "price_usd": null, "verified": true}
+    ],
+    "upgrades": [
+      {"name": {"ru": "Перед 295x26 от Corolla E15/Auris 2.0-2.2 D-4D (ADE150/ADE15x)", "en": "Front 295x26 from Corolla E15/Auris 2.0-2.2 D-4D (ADE150/ADE15x)"},
+       "parts": {"ru": "Диски Brembo 09.A914.11 (295x26, высота 49, центровка 62), скобы суппортов и суппорты Bosch от 2.0/2.2 D-4D, колодки P 83 109 (151x65x19), шланги проверить. Поворотный кулак тот же - проверить по каталогу.", "en": "Brembo discs 09.A914.11 (295x26, height 49, centering 62), Bosch caliper brackets and calipers from 2.0/2.2 D-4D, pads P 83 109 (151x65x19), check hoses. Same knuckle - confirm in catalogue."},
+       "min_wheel": "R16",
+       "prices": {"ru": "Колодки Brembo P83109 - 137.30 BYN (Onliner). Диск 09A91414 на Onliner без цены. Суппорты б/у - оценка 150-300 BYN за пару (ориентир, не проверено).", "en": "Brembo P83109 pads - 137.30 BYN (Onliner). Disc 09A91414 no price on Onliner. Used calipers - estimate 150-300 BYN per pair (not verified)."},
+       "verified": false},
+      {"name": {"ru": "Зад 270x10 от Corolla E15/Auris 2.0 D-4D", "en": "Rear 270x10 from Corolla E15/Auris 2.0 D-4D"},
+       "parts": {"ru": "Диски Brembo 08.A912.11 (270x10, высота 37), скобы и суппорты от 2.0 D-4D (колодки те же P 83 080). Высота диска другая - нужны именно родные скобы донора.", "en": "Brembo discs 08.A912.11 (270x10, height 37), brackets and calipers from 2.0 D-4D (same pads P 83 080). Disc hat height differs - donor brackets required."},
+       "min_wheel": "R15 (проверить)",
+       "prices": {"ru": "Диск Brembo 08A91210 - 107.65 BYN (Onliner)", "en": "Brembo disc 08A91210 - 107.65 BYN (Onliner)"},
+       "verified": false},
+      {"name": {"ru": "Без переделки: качественные диски и колодки + DOT 4 + армированные шланги", "en": "No conversion: quality discs and pads + DOT 4 + braided hoses"},
+       "parts": {"ru": "Brembo/ATE/TRW в штатном размере 275x22, колодки с повышенным коэффициентом (Ferodo DS Performance, Brembo Xtra), свежая жидкость. Даёт большую часть эффекта за меньшие деньги.", "en": "Brembo/ATE/TRW in stock 275x22, higher-friction pads (Ferodo DS Performance, Brembo Xtra), fresh fluid. Gives most of the effect for less money."},
+       "min_wheel": "R15",
+       "prices": {"ru": "Перед: колодки TRW 166.75 BYN, жидкость 31 BYN, диски - оценка 150-250 BYN за пару", "en": "Front: TRW pads 166.75 BYN, fluid 31 BYN, discs - estimate 150-250 BYN per pair"},
+       "verified": false}
+    ]
+  },
+  "alignment": [
+    {"param": {"ru": "Схождение переднее (суммарное)", "en": "Front toe (total)"}, "value": "0°00' ±0°12' (0 ±2 мм)", "verified": false},
+    {"param": {"ru": "Развал передний", "en": "Front camber"}, "value": "-0°35' ±0°45'", "verified": false},
+    {"param": {"ru": "Кастер", "en": "Caster"}, "value": "+2°50' ±0°45' (не регулируется)", "verified": false},
+    {"param": {"ru": "Схождение заднее (суммарное)", "en": "Rear toe (total)"}, "value": "+0°16' ±0°16' (не регулируется, балка)", "verified": false},
+    {"param": {"ru": "Развал задний", "en": "Rear camber"}, "value": "-1°25' ±0°30' (не регулируется, балка)", "verified": false},
+    {"param": {"ru": "Примечание", "en": "Note"}, "value": {"ru": "Регулируется только переднее схождение (рулевые тяги). Развал спереди меняется лишь в люфте болтов стойки или эксцентриковым болтом. Брать данные из базы стенда по VIN.", "en": "Only front toe is adjustable (tie rods). Front camber only via strut bolt play or a cam bolt. Use the alignment machine database by VIN."}, "verified": false}
+  ],
+  "torques": [
+    {"item": {"ru": "Колёсные гайки", "en": "Wheel nuts"}, "nm": 103, "verified": true},
+    {"item": {"ru": "Скоба переднего суппорта к кулаку", "en": "Front caliper bracket to knuckle"}, "nm": 107, "verified": false},
+    {"item": {"ru": "Направляющие передние (болты суппорта к скобе)", "en": "Front caliper guide pin bolts"}, "nm": "27-34", "note": {"ru": "Форумы дают 30 и 34, сверить с мануалом", "en": "Forums quote 30 and 34, check manual"}, "verified": false},
+    {"item": {"ru": "Скоба заднего суппорта", "en": "Rear caliper bracket"}, "nm": 61, "verified": false},
+    {"item": {"ru": "Направляющие задние", "en": "Rear caliper guide pins"}, "nm": 27, "verified": false},
+    {"item": {"ru": "Штуцер прокачки", "en": "Bleeder screw"}, "nm": "8-11", "verified": false},
+    {"item": {"ru": "Гайка ступицы (привода)", "en": "Hub (driveshaft) nut"}, "nm": 216, "verified": false},
+    {"item": {"ru": "Гайка штока амортизатора (верх стойки)", "en": "Strut piston rod nut (top)"}, "nm": 47, "verified": false},
+    {"item": {"ru": "Опора стойки к кузову", "en": "Strut mount to body"}, "nm": 39, "verified": false},
+    {"item": {"ru": "Стойка к поворотному кулаку", "en": "Strut to knuckle"}, "nm": 240, "verified": false},
+    {"item": {"ru": "Шаровая к рычагу", "en": "Ball joint to lower arm"}, "nm": 89, "verified": false},
+    {"item": {"ru": "Нижний рычаг к подрамнику", "en": "Lower arm to subframe"}, "nm": "~120 (сверить)", "verified": false},
+    {"item": {"ru": "Стойка стабилизатора", "en": "Stabilizer link nut"}, "nm": 74, "verified": false},
+    {"item": {"ru": "Наконечник рулевой тяги", "en": "Tie rod end nut"}, "nm": 49, "verified": false},
+    {"item": {"ru": "Сливная пробка масла двигателя 1ZR-FE", "en": "Engine oil drain plug 1ZR-FE"}, "nm": 38, "verified": false},
+    {"item": {"ru": "Сливная/заливная пробки КПП MMT", "en": "MMT gearbox drain/fill plugs"}, "nm": 39, "verified": false}
+  ],
+  "jacking": {
+    "ru": "Боковые точки - усиленный порог (фланец) между метками-вырезами, примерно 20 см от колёсной арки спереди и сзади. Для подкатного домкрата: спереди - центр подрамника (поперечина под двигателем, не поддон и не КПП), сзади - центр задней балки у кронштейна/буксирной проушины. Ставить на резиновую проставку с прорезью под фланец. Под машину не лезть без подставок.",
+    "en": "Side points - reinforced sill pinch weld between notch marks, about 20 cm from the wheel arch front and rear. Trolley jack: front - centre of the subframe crossmember under the engine (not the sump or gearbox), rear - centre of the rear beam near the bracket/towing eye. Use a slotted rubber pad for the pinch weld. Never go under without axle stands.",
+    "verified": false
+  },
+  "winter": {
+    "ru": "Беларусь: с 1 декабря по 1 марта легковые и грузовые до 3.5 т обязаны ехать на зимних шинах на всех колёсах (п. 207-1 ПДД РБ), маркировка 3PMSF (гора со снежинкой) или M+S/M&S/All seasons, протектор не менее 4 мм. Штраф: за летнюю резину - предупреждение или 0.5 базовой, за износ - до 1 базовой (суммы по новостям, сверить с КоАП). Шипы: в РБ отдельного сезонного запрета и обязательного знака \"Ш\" в найденных источниках нет - не подтверждено. Россия: зимние с декабря по февраль, шипы запрещены в июне-августе (ТР ТС 018/2011), знак \"Ш\" рекомендован. Шиповать на все 4 колеса одинаково.",
+    "en": "Belarus: from 1 December to 1 March cars and trucks up to 3.5 t must run winter tyres on all wheels (rule 207-1 of Belarus traffic rules), marked 3PMSF (mountain with snowflake) or M+S/M&S/All seasons, tread at least 4 mm. Fine: summer tyres - warning or 0.5 base unit, worn tread - up to 1 base unit (from news, check the Code of Offences). Studs: no seasonal ban or mandatory \"Ш\" sign found for Belarus - not verified. Russia: winter tyres December-February, studs banned June-August (TR CU 018/2011), \"Ш\" sign recommended. Studded tyres on all 4 wheels alike.",
+    "verified": {"dates_by": true, "tread_4mm": true, "fines": false, "studs_by": false, "ru_rules": false}
+  },
+  "sources": [
+    {"name": "wheel-size.com Corolla 2008", "url": "https://www.wheel-size.com/size/toyota/corolla/2008/"},
+    {"name": "koleso.ee Corolla X E150 2007-2010", "url": "https://koleso.ee/en/valuveljed/toyota/corolla/4347/e150-2007-2010/8834"},
+    {"name": "Brembo Corolla E15 1.6 ZRE151", "url": "https://www.bremboparts.com/europe/en/catalogue/toyota-corolla-saloon-e15-1-6-zre151/000031149-1"},
+    {"name": "Brembo Corolla E15 2.0 D-4D", "url": "https://www.bremboparts.com/europe/en/catalogue/toyota-corolla-saloon-e15-2-0-d-4d-ade150/000030715-1"},
+    {"name": "Brembo Corolla E15 1.4 VVT-i", "url": "https://www.bremboparts.com/europe/en/catalogue/toyota-corolla-saloon-e15-1-4-vvt-i-zze150/000012155-1"},
+    {"name": "TRW GDB3480 (piecesauto.fr)", "url": "https://www.piecesauto.fr/trw-2193008.html"},
+    {"name": "ATE 13.0460-5604.2 (pkwteile.de)", "url": "https://www.pkwteile.de/ate/955850"},
+    {"name": "Bosch 0 986 494 182 (onlinecarparts)", "url": "https://www.onlinecarparts.co.uk/nk-1997565.html"},
+    {"name": "ATE 13.0460-5602.2 (autoteiledirekt)", "url": "https://www.autoteiledirekt.de/ate-955848.html"},
+    {"name": "Toyota 04465-02220 (toyotapartsdeal)", "url": "https://www.toyotapartsdeal.com/oem-2011-toyota-corolla-brake_pad_set.html"},
+    {"name": "Toyota Owners Club - caliper torque", "url": "https://www.toyotaownersclub.com/forums/topic/219969-caliper-torque-settings/"},
+    {"name": "Onliner catalog API (prices 19.10.2026)", "url": "https://catalog.onliner.by/"},
+    {"name": "myfin.by - штрафы за шины", "url": "https://myfin.by/stati/view/12374-kakie-shtrafy-za-letnie-shiny-a-takzhe-za-staruyu-rezinu-v-belarusi"},
+    {"name": "zerkalo - зимние шины с 1 декабря", "url": "https://news.zerkalo.io/life/55272.html"}
+  ]
+}

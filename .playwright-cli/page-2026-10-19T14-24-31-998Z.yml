@@ -1,0 +1,178 @@
+- generic [active] [ref=f9e1]:
+  - link "К содержанию" [ref=f9e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f9e6]:
+    - link "ЗАХАР СОКОЛИНСКИЙ AI · automation · web" [ref=f9e7] [cursor=pointer]:
+      - /url: "#/"
+      - text: ЗАХАР СОКОЛИНСКИЙ
+      - generic [ref=f9e8]: AI · automation · web
+    - navigation "Разделы" [ref=f9e9]:
+      - link "Главная" [ref=f9e10] [cursor=pointer]:
+        - /url: "#/"
+      - link "Обо мне" [ref=f9e11] [cursor=pointer]:
+        - /url: "#/about"
+      - link "Услуги" [ref=f9e12] [cursor=pointer]:
+        - /url: "#/services"
+      - link "Работы" [ref=f9e13] [cursor=pointer]:
+        - /url: "#/work"
+      - link "Контакты" [ref=f9e14] [cursor=pointer]:
+        - /url: "#/contact"
+    - generic [ref=f9e15]:
+      - group "Язык / Language" [ref=f9e16]:
+        - button "RU" [pressed] [ref=f9e17] [cursor=pointer]
+        - button "EN" [ref=f9e18] [cursor=pointer]
+      - switch "Синий" [checked] [ref=f9e19] [cursor=pointer]
+      - switch "Анимации" [checked] [ref=f9e22] [cursor=pointer]
+  - main [ref=f9e25]:
+    - generic [ref=f9e26]:
+      - generic [ref=f9e27]:
+        - img "Портрет Захара из частиц" [ref=f9e28]
+        - paragraph [ref=f9e29]: Проведите курсором по портрету и кликните
+        - heading "ПОРТФОЛИО" [level=1]
+        - paragraph [ref=f9e30]:
+          - generic [ref=f9e31]: AI-автоматизация и веб
+        - generic [ref=f9e32]:
+          - link "Работы" [ref=f9e33] [cursor=pointer]:
+            - /url: "#/work"
+          - link "Познакомиться" [ref=f9e36] [cursor=pointer]:
+            - /url: "#/contact"
+      - generic [ref=f9e38]:
+        - paragraph [ref=f9e40]: "Дорогие друзья, привет! Я Захар. Помогаю бизнесу избавиться от рутины: собираю умные автоматизации, Telegram-ботов и сайты, которые сами приводят клиентов. Устраивайтесь поудобнее, сейчас всё покажу."
+        - generic [ref=f9e41]:
+          - generic [ref=f9e42]:
+            - generic [ref=f9e43]:
+              - generic [ref=f9e44]: 30+
+              - generic [ref=f9e45]: проектов за 2026 год
+            - generic [ref=f9e46]:
+              - generic [ref=f9e47]: "3"
+              - generic [ref=f9e48]: страны клиентов
+            - generic [ref=f9e49]:
+              - generic [ref=f9e50]: "118"
+              - generic [ref=f9e51]: узлов в главной автоматизации
+          - link "Узнать обо мне" [ref=f9e53] [cursor=pointer]:
+            - /url: "#/about"
+      - generic [ref=f9e55]:
+        - generic [ref=f9e56]:
+          - generic [ref=f9e57]:
+            - paragraph [ref=f9e58]: Самое любимое
+            - heading "И з б р а н н ы е р а б о т ы" [level=2] [ref=f9e59]:
+              - generic [ref=f9e60]:
+                - generic [ref=f9e61]: И
+                - generic [ref=f9e62]: з
+                - generic [ref=f9e63]: б
+                - generic [ref=f9e64]: р
+                - generic [ref=f9e65]: а
+                - generic [ref=f9e66]: н
+                - generic [ref=f9e67]: н
+                - generic [ref=f9e68]: ы
+                - generic [ref=f9e69]: е
+                - generic [ref=f9e71]: р
+                - generic [ref=f9e72]: а
+                - generic [ref=f9e73]: б
+                - generic [ref=f9e74]: о
+                - generic [ref=f9e75]: т
+                - generic [ref=f9e76]: ы
+          - link "Все работы" [ref=f9e77] [cursor=pointer]:
+            - /url: "#/work"
+        - generic [ref=f9e79]:
+          - link "Bitrix24 сделка и фото Albato + JS маппинг полей Property Finder готовое объявление EQT Real Estate, Дубай Bitrix24 → Property Finder Сделка в CRM сама становится объявлением на главном портале недвижимости Дубая." [ref=f9e80] [cursor=pointer]:
+            - /url: "#/work/eqt"
+            - generic [ref=f9e82]:
+              - generic [ref=f9e83]:
+                - generic [ref=f9e84]: Bitrix24
+                - generic [ref=f9e85]: сделка и фото
+              - generic [ref=f9e87]:
+                - generic [ref=f9e88]: Albato + JS
+                - generic [ref=f9e89]: маппинг полей
+              - generic [ref=f9e91]:
+                - generic [ref=f9e92]: Property Finder
+                - generic [ref=f9e93]: готовое объявление
+            - generic [ref=f9e94]:
+              - generic [ref=f9e95]: EQT Real Estate, Дубай
+              - heading "Bitrix24 → Property Finder" [level=3] [ref=f9e96]
+              - paragraph [ref=f9e97]: Сделка в CRM сама становится объявлением на главном портале недвижимости Дубая.
+          - 'link "Здравствуйте! Вы записаны на массаж 21.10 в 14:00. Ждём вас! n8n · 14:02 Напоминаем: визит завтра в 14:00 за 24 часа Всё в силе, спасибо! Clariva Spa, Кипр WhatsApp на автопилоте Подтверждения и напоминания о визите на трёх языках, без единого ручного сообщения." [ref=f9e98] [cursor=pointer]':
+            - /url: "#/work/clariva"
+            - generic [ref=f9e100]:
+              - generic [ref=f9e101]:
+                - text: Здравствуйте! Вы записаны на массаж 21.10 в 14:00. Ждём вас!
+                - generic [ref=f9e102]: n8n · 14:02
+              - generic [ref=f9e103]:
+                - text: "Напоминаем: визит завтра в 14:00"
+                - generic [ref=f9e104]: за 24 часа
+              - generic [ref=f9e105]: Всё в силе, спасибо!
+            - generic [ref=f9e106]:
+              - generic [ref=f9e107]: Clariva Spa, Кипр
+              - heading "WhatsApp на автопилоте" [level=3] [ref=f9e108]
+              - paragraph [ref=f9e109]: Подтверждения и напоминания о визите на трёх языках, без единого ручного сообщения.
+          - link "Онлайн Мой продукт Вячэра ужин решён Планировщик ужинов на неделю с ценами пяти сетей Беларуси." [ref=f9e110] [cursor=pointer]:
+            - /url: "#/work/viachera"
+            - generic [ref=f9e111]: Онлайн
+            - generic [ref=f9e114]:
+              - generic [ref=f9e115]: Мой продукт
+              - heading "Вячэра ужин решён" [level=3] [ref=f9e116]
+              - paragraph [ref=f9e117]: Планировщик ужинов на неделю с ценами пяти сетей Беларуси.
+      - generic [ref=f9e118]:
+        - generic [ref=f9e119]:
+          - heading "Ч е м п о м о г у" [level=2] [ref=f9e120]:
+            - generic [ref=f9e121]:
+              - generic [ref=f9e122]: Ч
+              - generic [ref=f9e123]: е
+              - generic [ref=f9e124]: м
+              - generic [ref=f9e126]: п
+              - generic [ref=f9e127]: о
+              - generic [ref=f9e128]: м
+              - generic [ref=f9e129]: о
+              - generic [ref=f9e130]: г
+              - generic [ref=f9e131]: у
+          - link "Все услуги" [ref=f9e132] [cursor=pointer]:
+            - /url: "#/services"
+        - generic [ref=f9e134]:
+          - link [ref=f9e135] [cursor=pointer]:
+            - /url: "#/services"
+            - heading "Автоматизация" [level=3] [ref=f9e139]
+            - paragraph [ref=f9e140]: Заявки, напоминания и отчёты делаются сами, пока вы занимаетесь любимым делом.
+          - link [ref=f9e141] [cursor=pointer]:
+            - /url: "#/services"
+            - heading "Telegram-боты" [level=3] [ref=f9e145]
+            - paragraph [ref=f9e146]: "Добрые помощники в чате: принимают заявки, напоминают и даже правят сайт."
+          - link [ref=f9e147] [cursor=pointer]:
+            - /url: "#/services"
+            - heading "Сайты" [level=3] [ref=f9e151]
+            - paragraph [ref=f9e152]: Красивые и быстрые, с анимацией, которая радует глаз и ведёт к записи.
+      - generic [ref=f9e154]:
+        - heading "Е с т ь и д е я ?" [level=2] [ref=f9e155]:
+          - generic [ref=f9e156]:
+            - generic [ref=f9e157]: Е
+            - generic [ref=f9e158]: с
+            - generic [ref=f9e159]: т
+            - generic [ref=f9e160]: ь
+            - generic [ref=f9e162]: и
+            - generic [ref=f9e163]: д
+            - generic [ref=f9e164]: е
+            - generic [ref=f9e165]: я
+            - generic [ref=f9e166]: "?"
+        - paragraph [ref=f9e167]: Расскажите о ней, и вместе придумаем, как сделать её реальностью.
+        - generic [ref=f9e168]:
+          - link "Написать мне" [ref=f9e169] [cursor=pointer]:
+            - /url: "#/contact"
+          - button "Спросить Джарвиса" [ref=f9e171] [cursor=pointer]
+  - button "Джарвис, помощник по сайту" [ref=f9e173] [cursor=pointer]:
+    - generic [ref=f9e174]: J
+  - dialog "Джарвис":
+    - banner:
+      - generic:
+        - generic: Джарвис
+        - generic: помощник Захара, онлайн
+      - button "Озвучивать ответы"
+    - generic:
+      - button "Покажи ботов"
+      - button "Какие есть сайты?"
+      - button "Открой игру"
+      - button "Кто ты?"
+      - button "Как связаться?"
+    - generic:
+      - textbox "Сообщение Джарвису":
+        - /placeholder: "Например: покажи ботов"
+      - button "Сказать голосом"
+      - button "Отправить"

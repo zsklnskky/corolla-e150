@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Nunito:wght@400;600;700;800&display=swap&subset=cyrillic" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
 </head>
 <body>
 <canvas id="orbs" aria-hidden="true"></canvas>
@@ -31,6 +32,7 @@
     <a href="#/salon" data-go="salon"><t-ru>Салон и свет</t-ru><t-en>Cabin & lights</t-en></a>
     <a href="#/size" data-go="size"><t-ru>Размеры</t-ru><t-en>Dimensions</t-en></a>
     <a href="#/mods" data-go="mods"><t-ru>Ништяки</t-ru><t-en>Upgrades</t-en></a>
+    <a href="#/ref" data-go="ref"><t-ru>Справочник</t-ru><t-en>Reference</t-en></a>
     <a href="#/service" data-go="service"><t-ru>Обслуживание</t-ru><t-en>Service</t-en></a>
     <span class="nav-blob" aria-hidden="true"></span>
   </nav>
@@ -45,11 +47,164 @@
 <!-- ================= МАШИНА ================= -->
 <section class="page" data-page="car">
   <div class="stage" id="stage">
+    <div id="c3d" class="c3d" aria-label="3D Toyota Corolla E150"></div>
+    <div class="loader" id="loader"><div class="loader-ring"></div><span><t-ru>Собираю машину по чертежу</t-ru><t-en>Assembling the car</t-en></span></div>
+    <div class="hud-frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     <div class="stage-hint" id="hint">
-      <t-ru>Крути колёсико или разведи пальцами - приблизить. Наведи на деталь - название. Нажми - цена и где купить.</t-ru>
-      <t-en>Scroll or pinch to zoom. Hover a part to see its name. Tap it for price and where to buy.</t-en>
+      <t-ru>Крути мышью или пальцем, колёсико - приблизить. Наведи на деталь - название, нажми - всё о ней.</t-ru>
+      <t-en>Drag to rotate, scroll to zoom. Hover a part for its name, tap for everything about it.</t-en>
     </div>
-    <svg id="carSvg" class="carsvg" viewBox="40 40 1500 540" role="img" aria-label="Toyota Corolla E150">
+    <aside class="rail" id="legend" role="toolbar" aria-label="Системы"></aside>
+    <nav class="dock" id="dock" aria-label="Управление">
+      <button class="dk" data-act="xray" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 4v10M7 12h10"/></svg><span><t-ru>Рентген</t-ru><t-en>X-ray</t-en></span></button>
+      <button class="dk" data-act="explode" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 12 5 5m7 7 7-7m-7 7-7 7m7-7 7 7M4 9V4h5m6 0h5v5m0 6v5h-5m-6 0H4v-5"/></svg><span><t-ru>Разобрать</t-ru><t-en>Explode</t-en></span></button>
+      <button class="dk" data-act="drive" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 3v6m-5-3a8 8 0 1 0 10 0"/></svg><span><t-ru>Завести</t-ru><t-en>Start</t-en></span></button>
+      <i class="dk-sep"></i>
+      <button class="dk sm" data-view="q">3/4</button>
+      <button class="dk sm" data-view="side"><t-ru>Бок</t-ru><t-en>Side</t-en></button>
+      <button class="dk sm" data-view="front"><t-ru>Перед</t-ru><t-en>Front</t-en></button>
+      <button class="dk sm" data-view="rear"><t-ru>Зад</t-ru><t-en>Rear</t-en></button>
+      <button class="dk sm" data-view="top"><t-ru>Сверху</t-ru><t-en>Top</t-en></button>
+      <button class="dk sm" data-view="bottom"><t-ru>Днище</t-ru><t-en>Underside</t-en></button>
+      <i class="dk-sep"></i>
+      <button class="dk sm" id="listBtn"><t-ru>Все детали</t-ru><t-en>All parts</t-en></button>
+    </nav>
+    <div class="paints" id="paints" aria-label="Цвет кузова"></div>
+  </div>
+</section>
+
+<!-- ================= КАК ЕДЕТ ================= -->
+<section class="page" data-page="drive">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Как Corolla едет</t-ru><t-en>How the Corolla moves</t-en></h1>
+    <p class="lead"><t-ru>Бензин сгорает в цилиндрах и толкает поршни. Поршни крутят коленвал, коробка подбирает передачу, а приводы передают вращение на передние колёса. Задние колёса просто катятся следом. Нажми на любой шаг или включи показ.</t-ru><t-en>Petrol burns in the cylinders and pushes the pistons. The pistons spin the crankshaft, the gearbox picks a gear, and the drive shafts turn the front wheels. The rear wheels just roll along. Tap any step or press play.</t-en></p>
+    <div class="flow-grid">
+      <div class="card glass flow-card">
+        <svg id="topSvg" class="topsvg" viewBox="60 80 1480 600" role="img" aria-label="Вид сверху"></svg>
+      </div>
+      <div class="steps" id="steps"></div>
+    </div>
+    <div class="flow-play"><button class="pill accent" id="flowPlay"><t-ru>Показать по шагам</t-ru><t-en>Play step by step</t-en></button></div>
+  </div>
+</section>
+
+<!-- ================= ДВИГАТЕЛЬ ================= -->
+<section class="page" data-page="engine">
+  <div class="wrap">
+    <h1 class="h-big">1ZR-FE <span class="h-sub">1.6 Dual VVT-i</span></h1>
+    <p class="lead"><t-ru>Четыре цилиндра в ряд. В каждом поршень ходит вверх-вниз и проходит четыре такта. Двигай ползунок оборотов и смотри, что происходит внутри одного цилиндра.</t-ru><t-en>Four cylinders in a row. In each, a piston goes up and down through four strokes. Move the rpm slider and watch what happens inside one cylinder.</t-en></p>
+    <div class="engine-grid">
+      <div class="card glass engine-card">
+        <svg id="cylSvg" viewBox="0 0 400 520" aria-label="Цилиндр"></svg>
+        <div class="rpm"><label for="rpm"><t-ru>Обороты</t-ru><t-en>RPM</t-en>: <b id="rpmVal">800</b></label><input type="range" id="rpm" min="0" max="100" value="12"></div>
+      </div>
+      <div class="strokes" id="strokes"></div>
+    </div>
+    <h2 class="h-mid"><t-ru>Цифры двигателя</t-ru><t-en>Engine numbers</t-en></h2>
+    <div class="specs" id="engSpecs"></div>
+    <h2 class="h-mid"><t-ru>Что такое Dual VVT-i и цепь ГРМ</t-ru><t-en>Dual VVT-i and the timing chain</t-en></h2>
+    <div class="two">
+      <div class="card glass prose"><t-ru><p>Клапаны открываются распредвалами. Их два: один для впуска, другой для выпуска. Система Dual VVT-i чуть поворачивает каждый распредвал маслом под давлением, и клапаны открываются раньше или позже под обороты. На малых оборотах мотор тянет мягко, на высоких дышит свободнее, а бензина уходит меньше.</p><p>Распредвалы вращает цепь от коленвала. Ремня ГРМ здесь нет, менять по графику не нужно. Но цепь любит чистое масло: если затягивать с заменой, она растягивается и при запуске слышно короткое «тр-р-р».</p></t-ru><t-en><p>Valves are opened by camshafts. There are two: one for intake, one for exhaust. Dual VVT-i turns each camshaft slightly using oil pressure, so the valves open earlier or later depending on rpm. At low rpm the engine pulls smoothly, at high rpm it breathes freely, and it uses less fuel.</p><p>The camshafts are driven by a chain from the crankshaft. There is no timing belt, so no scheduled replacement. But the chain likes clean oil: skip oil changes and it stretches, and you hear a short rattle on cold start.</p></t-en></div>
+      <div class="card glass prose" id="engWeak"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MMT ================= -->
+<section class="page" data-page="mmt">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Робот MMT</t-ru><t-en>MMT robot gearbox</t-en></h1>
+    <p class="lead"><t-ru>Внутри обычная механика на 5 передач и одно сухое сцепление. Педали сцепления нет: вместо ноги работает электромотор, вместо руки на рычаге - второй мотор. Компьютер решает, когда выжать сцепление и какую передачу включить.</t-ru><t-en>Inside is an ordinary 5-speed manual with a single dry clutch. There is no clutch pedal: an electric motor does the foot's job, and a second motor does the hand's job on the lever. A computer decides when to release the clutch and which gear to select.</t-en></p>
+    <div class="mmt-grid">
+      <div class="card glass mmt-card">
+        <svg id="mmtSvg" viewBox="0 0 640 380" aria-label="Схема MMT"></svg>
+        <div class="mmt-ctrl" id="mmtCtrl"></div>
+      </div>
+      <div class="card glass prose" id="mmtText"></div>
+    </div>
+    <h2 class="h-mid"><t-ru>Как ездить, чтобы робот жил долго</t-ru><t-en>Driving tips for a long-lived robot</t-en></h2>
+    <div class="tips" id="mmtTips"></div>
+  </div>
+</section>
+
+<!-- ================= САЛОН ================= -->
+<section class="page" data-page="salon">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Салон и свет</t-ru><t-en>Cabin & lights</t-en></h1>
+    <p class="lead"><t-ru>Вид сверху. Светящиеся точки - лампочки: наведи, чтобы узнать цоколь и мощность. Ниже таблица всех ламп, лампочки приборки и что можно перешить.</t-ru><t-en>Top view. Glowing dots are bulbs: hover to see the socket type and wattage. Below: all bulbs, the dashboard warning lights and what you can reupholster.</t-en></p>
+    <div class="card glass flow-card"><svg id="salonSvg" class="topsvg" viewBox="60 80 1480 600" aria-label="Салон сверху"></svg></div>
+    <h2 class="h-mid"><t-ru>Все лампочки</t-ru><t-en>All bulbs</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="bulbTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Лампы на приборке</t-ru><t-en>Dashboard warning lights</t-en></h2>
+    <div class="warns" id="warns"></div>
+    <h2 class="h-mid"><t-ru>Перешить салон</t-ru><t-en>Reupholstering the cabin</t-en></h2>
+    <div class="cards3" id="uphol"></div>
+  </div>
+</section>
+
+<!-- ================= РАЗМЕРЫ ================= -->
+<section class="page" data-page="size">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Размеры</t-ru><t-en>Dimensions</t-en></h1>
+    <p class="lead"><t-ru>Сколько машина в длину, ширину и высоту, влезет ли в гараж и на какой парковке не потеряет зеркало.</t-ru><t-en>Length, width and height: will it fit your garage, and where will the mirrors survive.</t-en></p>
+    <div class="dims-grid">
+      <div class="card glass"><svg id="dimSide" viewBox="40 0 1500 620" aria-label="Размеры сбоку"></svg></div>
+      <div class="card glass"><svg id="dimFront" viewBox="0 0 700 620" aria-label="Размеры спереди"></svg></div>
+    </div>
+    <div class="specs" id="dimSpecs"></div>
+    <h2 class="h-mid"><t-ru>Колёса</t-ru><t-en>Wheels</t-en></h2>
+    <div class="specs" id="wheelSpecs"></div>
+  </div>
+</section>
+
+<!-- ================= НИШТЯКИ ================= -->
+<section class="page" data-page="mods">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Ништяки и улучшения</t-ru><t-en>Upgrades and goodies</t-en></h1>
+    <p class="lead"><t-ru>Что можно добавить или улучшить, сколько это стоит в Беларуси и есть ли смысл. Сортировка по цене.</t-ru><t-en>What you can add or improve, what it costs in Belarus and whether it's worth it. Sorted by price.</t-en></p>
+    <div class="cards3" id="mods"></div>
+  </div>
+</section>
+
+<!-- ================= СПРАВОЧНИК ================= -->
+<section class="page" data-page="ref">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Справочник</t-ru><t-en>Reference</t-en></h1>
+    <p class="lead"><t-ru>Если что-то сломалось или хочешь поменять: какие диски и шины встанут, какие колодки и диски тормозов, какие лампы и цоколи, номера деталей, моменты затяжки и где что находится в машине.</t-ru><t-en>If something breaks or you want to upgrade: which wheels and tyres fit, which brake pads and discs, bulbs and bases, part numbers, torques and where everything is in the car.</t-en></p>
+    <div id="refBody"></div>
+  </div>
+</section>
+
+<!-- ================= ОБСЛУЖИВАНИЕ ================= -->
+<section class="page" data-page="service">
+  <div class="wrap">
+    <h1 class="h-big"><t-ru>Обслуживание</t-ru><t-en>Service</t-en></h1>
+    <p class="lead"><t-ru>Что и когда менять, какие жидкости заливать и сколько стоит работа в Минске.</t-ru><t-en>What to replace and when, which fluids to use and what labour costs in Minsk.</t-en></p>
+    <h2 class="h-mid"><t-ru>График</t-ru><t-en>Schedule</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="maintTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Жидкости</t-ru><t-en>Fluids</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="fluidTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Цены на работу</t-ru><t-en>Labour prices</t-en></h2>
+    <div class="table-wrap"><table class="tbl" id="laborTbl"></table></div>
+    <h2 class="h-mid"><t-ru>Все детали с ценами</t-ru><t-en>All parts with prices</t-en></h2>
+    <input class="search" id="partSearch" type="search" placeholder="Найти деталь" aria-label="Найти деталь">
+    <div class="table-wrap"><table class="tbl" id="partsTbl"></table></div>
+    <p class="note" id="rateNote"></p>
+  </div>
+</section>
+</main>
+
+<!-- всплывашка и панель -->
+<div class="tip" id="tip" role="tooltip"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <button class="pill round drawer-x" id="drawerX" aria-label="Закрыть">✕</button>
+  <div id="drawerBody"></div>
+</aside>
+<div class="sheet" id="sheet" aria-hidden="true"><div class="sheet-in glass"><button class="pill round drawer-x" id="sheetX" aria-label="Закрыть">✕</button><div id="sheetBody"></div></div></div>
+
+<footer class="foot"><t-ru>Цены ориентировочные, собраны по белорусским магазинам и барахолкам. Перед покупкой сверяй деталь по VIN.</t-ru><t-en>Prices are approximate, collected from Belarusian shops and classifieds. Check the part by VIN before buying.</t-en></footer>
+
+<div hidden id="svgStore"><svg id="carSvg" class="carsvg" viewBox="40 40 1500 540" role="img" aria-label="Toyota Corolla E150">
       <defs>
         <linearGradient id="paintG" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" style="stop-color:color-mix(in srgb,var(--paint) 55%,#fff)"/>
@@ -236,143 +391,9 @@
         <g class="part s-brake" data-id="brake_rear"><circle cx="1185" cy="425" r="48" fill-opacity=".18"/><path d="M1232,394 A58 58 0 0 1 1238,450" stroke-width="12" fill="none"/></g>
         <circle class="part s-chassis lod2" data-id="hub_bearing" cx="405" cy="425" r="13"/>
       </g>
-    </svg>
-
-    <div class="legend" id="legend" role="toolbar" aria-label="Системы"></div>
-    <div class="zoombar">
-      <button class="pill" id="xrayBtn" aria-pressed="false"><t-ru>Рентген</t-ru><t-en>X-ray</t-en></button>
-      <button class="pill round" id="zIn" aria-label="Приблизить">+</button>
-      <button class="pill round" id="zOut" aria-label="Отдалить">-</button>
-      <button class="pill round" id="zReset" aria-label="Сбросить">⤾</button>
-    </div>
-    <div class="paints" id="paints" aria-label="Цвет кузова"></div>
-    <button class="pill list-btn" id="listBtn"><t-ru>Все детали</t-ru><t-en>All parts</t-en></button>
-  </div>
-</section>
-
-<!-- ================= КАК ЕДЕТ ================= -->
-<section class="page" data-page="drive">
-  <div class="wrap">
-    <h1 class="h-big"><t-ru>Как Corolla едет</t-ru><t-en>How the Corolla moves</t-en></h1>
-    <p class="lead"><t-ru>Бензин сгорает в цилиндрах и толкает поршни. Поршни крутят коленвал, коробка подбирает передачу, а приводы передают вращение на передние колёса. Задние колёса просто катятся следом. Нажми на любой шаг или включи показ.</t-ru><t-en>Petrol burns in the cylinders and pushes the pistons. The pistons spin the crankshaft, the gearbox picks a gear, and the drive shafts turn the front wheels. The rear wheels just roll along. Tap any step or press play.</t-en></p>
-    <div class="flow-grid">
-      <div class="card glass flow-card">
-        <svg id="topSvg" class="topsvg" viewBox="60 80 1480 600" role="img" aria-label="Вид сверху"></svg>
-      </div>
-      <div class="steps" id="steps"></div>
-    </div>
-    <div class="flow-play"><button class="pill accent" id="flowPlay"><t-ru>Показать по шагам</t-ru><t-en>Play step by step</t-en></button></div>
-  </div>
-</section>
-
-<!-- ================= ДВИГАТЕЛЬ ================= -->
-<section class="page" data-page="engine">
-  <div class="wrap">
-    <h1 class="h-big">1ZR-FE <span class="h-sub">1.6 Dual VVT-i</span></h1>
-    <p class="lead"><t-ru>Четыре цилиндра в ряд. В каждом поршень ходит вверх-вниз и проходит четыре такта. Двигай ползунок оборотов и смотри, что происходит внутри одного цилиндра.</t-ru><t-en>Four cylinders in a row. In each, a piston goes up and down through four strokes. Move the rpm slider and watch what happens inside one cylinder.</t-en></p>
-    <div class="engine-grid">
-      <div class="card glass engine-card">
-        <svg id="cylSvg" viewBox="0 0 400 520" aria-label="Цилиндр"></svg>
-        <div class="rpm"><label for="rpm"><t-ru>Обороты</t-ru><t-en>RPM</t-en>: <b id="rpmVal">800</b></label><input type="range" id="rpm" min="0" max="100" value="12"></div>
-      </div>
-      <div class="strokes" id="strokes"></div>
-    </div>
-    <h2 class="h-mid"><t-ru>Цифры двигателя</t-ru><t-en>Engine numbers</t-en></h2>
-    <div class="specs" id="engSpecs"></div>
-    <h2 class="h-mid"><t-ru>Что такое Dual VVT-i и цепь ГРМ</t-ru><t-en>Dual VVT-i and the timing chain</t-en></h2>
-    <div class="two">
-      <div class="card glass prose"><t-ru><p>Клапаны открываются распредвалами. Их два: один для впуска, другой для выпуска. Система Dual VVT-i чуть поворачивает каждый распредвал маслом под давлением, и клапаны открываются раньше или позже под обороты. На малых оборотах мотор тянет мягко, на высоких дышит свободнее, а бензина уходит меньше.</p><p>Распредвалы вращает цепь от коленвала. Ремня ГРМ здесь нет, менять по графику не нужно. Но цепь любит чистое масло: если затягивать с заменой, она растягивается и при запуске слышно короткое «тр-р-р».</p></t-ru><t-en><p>Valves are opened by camshafts. There are two: one for intake, one for exhaust. Dual VVT-i turns each camshaft slightly using oil pressure, so the valves open earlier or later depending on rpm. At low rpm the engine pulls smoothly, at high rpm it breathes freely, and it uses less fuel.</p><p>The camshafts are driven by a chain from the crankshaft. There is no timing belt, so no scheduled replacement. But the chain likes clean oil: skip oil changes and it stretches, and you hear a short rattle on cold start.</p></t-en></div>
-      <div class="card glass prose" id="engWeak"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= MMT ================= -->
-<section class="page" data-page="mmt">
-  <div class="wrap">
-    <h1 class="h-big"><t-ru>Робот MMT</t-ru><t-en>MMT robot gearbox</t-en></h1>
-    <p class="lead"><t-ru>Внутри обычная механика на 5 передач и одно сухое сцепление. Педали сцепления нет: вместо ноги работает электромотор, вместо руки на рычаге - второй мотор. Компьютер решает, когда выжать сцепление и какую передачу включить.</t-ru><t-en>Inside is an ordinary 5-speed manual with a single dry clutch. There is no clutch pedal: an electric motor does the foot's job, and a second motor does the hand's job on the lever. A computer decides when to release the clutch and which gear to select.</t-en></p>
-    <div class="mmt-grid">
-      <div class="card glass mmt-card">
-        <svg id="mmtSvg" viewBox="0 0 640 380" aria-label="Схема MMT"></svg>
-        <div class="mmt-ctrl" id="mmtCtrl"></div>
-      </div>
-      <div class="card glass prose" id="mmtText"></div>
-    </div>
-    <h2 class="h-mid"><t-ru>Как ездить, чтобы робот жил долго</t-ru><t-en>Driving tips for a long-lived robot</t-en></h2>
-    <div class="tips" id="mmtTips"></div>
-  </div>
-</section>
-
-<!-- ================= САЛОН ================= -->
-<section class="page" data-page="salon">
-  <div class="wrap">
-    <h1 class="h-big"><t-ru>Салон и свет</t-ru><t-en>Cabin & lights</t-en></h1>
-    <p class="lead"><t-ru>Вид сверху. Светящиеся точки - лампочки: наведи, чтобы узнать цоколь и мощность. Ниже таблица всех ламп, лампочки приборки и что можно перешить.</t-ru><t-en>Top view. Glowing dots are bulbs: hover to see the socket type and wattage. Below: all bulbs, the dashboard warning lights and what you can reupholster.</t-en></p>
-    <div class="card glass flow-card"><svg id="salonSvg" class="topsvg" viewBox="60 80 1480 600" aria-label="Салон сверху"></svg></div>
-    <h2 class="h-mid"><t-ru>Все лампочки</t-ru><t-en>All bulbs</t-en></h2>
-    <div class="table-wrap"><table class="tbl" id="bulbTbl"></table></div>
-    <h2 class="h-mid"><t-ru>Лампы на приборке</t-ru><t-en>Dashboard warning lights</t-en></h2>
-    <div class="warns" id="warns"></div>
-    <h2 class="h-mid"><t-ru>Перешить салон</t-ru><t-en>Reupholstering the cabin</t-en></h2>
-    <div class="cards3" id="uphol"></div>
-  </div>
-</section>
-
-<!-- ================= РАЗМЕРЫ ================= -->
-<section class="page" data-page="size">
-  <div class="wrap">
-    <h1 class="h-big"><t-ru>Размеры</t-ru><t-en>Dimensions</t-en></h1>
-    <p class="lead"><t-ru>Сколько машина в длину, ширину и высоту, влезет ли в гараж и на какой парковке не потеряет зеркало.</t-ru><t-en>Length, width and height: will it fit your garage, and where will the mirrors survive.</t-en></p>
-    <div class="dims-grid">
-      <div class="card glass"><svg id="dimSide" viewBox="40 0 1500 620" aria-label="Размеры сбоку"></svg></div>
-      <div class="card glass"><svg id="dimFront" viewBox="0 0 700 620" aria-label="Размеры спереди"></svg></div>
-    </div>
-    <div class="specs" id="dimSpecs"></div>
-    <h2 class="h-mid"><t-ru>Колёса</t-ru><t-en>Wheels</t-en></h2>
-    <div class="specs" id="wheelSpecs"></div>
-  </div>
-</section>
-
-<!-- ================= НИШТЯКИ ================= -->
-<section class="page" data-page="mods">
-  <div class="wrap">
-    <h1 class="h-big"><t-ru>Ништяки и улучшения</t-ru><t-en>Upgrades and goodies</t-en></h1>
-    <p class="lead"><t-ru>Что можно добавить или улучшить, сколько это стоит в Беларуси и есть ли смысл. Сортировка по цене.</t-ru><t-en>What you can add or improve, what it costs in Belarus and whether it's worth it. Sorted by price.</t-en></p>
-    <div class="cards3" id="mods"></div>
-  </div>
-</section>
-
-<!-- ================= ОБСЛУЖИВАНИЕ ================= -->
-<section class="page" data-page="service">
-  <div class="wrap">
-    <h1 class="h-big"><t-ru>Обслуживание</t-ru><t-en>Service</t-en></h1>
-    <p class="lead"><t-ru>Что и когда менять, какие жидкости заливать и сколько стоит работа в Минске.</t-ru><t-en>What to replace and when, which fluids to use and what labour costs in Minsk.</t-en></p>
-    <h2 class="h-mid"><t-ru>График</t-ru><t-en>Schedule</t-en></h2>
-    <div class="table-wrap"><table class="tbl" id="maintTbl"></table></div>
-    <h2 class="h-mid"><t-ru>Жидкости</t-ru><t-en>Fluids</t-en></h2>
-    <div class="table-wrap"><table class="tbl" id="fluidTbl"></table></div>
-    <h2 class="h-mid"><t-ru>Цены на работу</t-ru><t-en>Labour prices</t-en></h2>
-    <div class="table-wrap"><table class="tbl" id="laborTbl"></table></div>
-    <h2 class="h-mid"><t-ru>Все детали с ценами</t-ru><t-en>All parts with prices</t-en></h2>
-    <input class="search" id="partSearch" type="search" placeholder="Найти деталь" aria-label="Найти деталь">
-    <div class="table-wrap"><table class="tbl" id="partsTbl"></table></div>
-    <p class="note" id="rateNote"></p>
-  </div>
-</section>
-</main>
-
-<!-- всплывашка и панель -->
-<div class="tip" id="tip" role="tooltip"></div>
-<aside class="drawer" id="drawer" aria-hidden="true">
-  <button class="pill round drawer-x" id="drawerX" aria-label="Закрыть">✕</button>
-  <div id="drawerBody"></div>
-</aside>
-<div class="sheet" id="sheet" aria-hidden="true"><div class="sheet-in glass"><button class="pill round drawer-x" id="sheetX" aria-label="Закрыть">✕</button><div id="sheetBody"></div></div></div>
-
-<footer class="foot"><t-ru>Цены ориентировочные, собраны по белорусским магазинам и барахолкам. Перед покупкой сверяй деталь по VIN.</t-ru><t-en>Prices are approximate, collected from Belarusian shops and classifieds. Check the part by VIN before buying.</t-en></footer>
-
+    </svg></div>
 <script src="data.js"></script>
+<script src="deep.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

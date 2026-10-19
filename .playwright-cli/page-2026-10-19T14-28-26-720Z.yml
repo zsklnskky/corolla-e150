@@ -1,0 +1,168 @@
+- generic [active] [ref=f15e1]:
+  - link "К содержанию" [ref=f15e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f15e6]:
+    - link "ЗАХАР СОКОЛИНСКИЙ" [ref=f15e7] [cursor=pointer]:
+      - /url: "#/"
+    - generic [ref=f15e8]:
+      - group "Язык / Language" [ref=f15e9]:
+        - button "RU" [pressed] [ref=f15e10] [cursor=pointer]
+        - button "EN" [ref=f15e11] [cursor=pointer]
+      - switch [checked] [ref=f15e12] [cursor=pointer]
+      - switch [checked] [ref=f15e14] [cursor=pointer]
+      - button "Меню" [ref=f15e16] [cursor=pointer]
+  - main [ref=f15e18]:
+    - generic [ref=f15e19]:
+      - generic [ref=f15e20]:
+        - img "Портрет Захара из частиц" [ref=f15e21]
+        - heading "ПОРТФОЛИО" [level=1]
+        - paragraph [ref=f15e22]:
+          - generic [ref=f15e23]: AI-автоматизация и веб
+        - link "Познакомиться" [ref=f15e25] [cursor=pointer]:
+          - /url: "#/contact"
+      - generic [ref=f15e27]:
+        - paragraph [ref=f15e29]: "Дорогие друзья, привет! Я Захар. Помогаю бизнесу избавиться от рутины: собираю умные автоматизации, Telegram-ботов и сайты, которые сами приводят клиентов. Устраивайтесь поудобнее, сейчас всё покажу."
+        - generic [ref=f15e30]:
+          - generic [ref=f15e31]:
+            - generic [ref=f15e32]:
+              - generic [ref=f15e33]: 30+
+              - generic [ref=f15e34]: проектов за 2026 год
+            - generic [ref=f15e35]:
+              - generic [ref=f15e36]: "3"
+              - generic [ref=f15e37]: страны клиентов
+            - generic [ref=f15e38]:
+              - generic [ref=f15e39]: "118"
+              - generic [ref=f15e40]: узлов в главной автоматизации
+          - link "Узнать обо мне" [ref=f15e42] [cursor=pointer]:
+            - /url: "#/about"
+      - generic [ref=f15e44]:
+        - generic [ref=f15e45]:
+          - generic [ref=f15e46]:
+            - paragraph [ref=f15e47]: Самое любимое
+            - heading "И з б р а н н ы е р а б о т ы" [level=2] [ref=f15e48]:
+              - generic [ref=f15e49]:
+                - generic [ref=f15e50]:
+                  - generic [ref=f15e51]: И
+                  - generic [ref=f15e52]: з
+                  - generic [ref=f15e53]: б
+                  - generic [ref=f15e54]: р
+                  - generic [ref=f15e55]: а
+                  - generic [ref=f15e56]: н
+                  - generic [ref=f15e57]: н
+                  - generic [ref=f15e58]: ы
+                  - generic [ref=f15e59]: е
+                - generic [ref=f15e60]:
+                  - generic [ref=f15e61]: р
+                  - generic [ref=f15e62]: а
+                  - generic [ref=f15e63]: б
+                  - generic [ref=f15e64]: о
+                  - generic [ref=f15e65]: т
+                  - generic [ref=f15e66]: ы
+          - link "Все работы" [ref=f15e67] [cursor=pointer]:
+            - /url: "#/work"
+        - generic [ref=f15e69]:
+          - link "Bitrix24 сделка и фото Albato + JS маппинг полей Property Finder готовое объявление EQT Real Estate, Дубай Bitrix24 → Property Finder Сделка в CRM сама становится объявлением на главном портале недвижимости Дубая." [ref=f15e70] [cursor=pointer]:
+            - /url: "#/work/eqt"
+            - generic [ref=f15e72]:
+              - generic [ref=f15e73]:
+                - generic [ref=f15e74]: Bitrix24
+                - generic [ref=f15e75]: сделка и фото
+              - generic [ref=f15e77]:
+                - generic [ref=f15e78]: Albato + JS
+                - generic [ref=f15e79]: маппинг полей
+              - generic [ref=f15e81]:
+                - generic [ref=f15e82]: Property Finder
+                - generic [ref=f15e83]: готовое объявление
+            - generic [ref=f15e84]:
+              - generic [ref=f15e85]: EQT Real Estate, Дубай
+              - heading "Bitrix24 → Property Finder" [level=3] [ref=f15e86]
+              - paragraph [ref=f15e87]: Сделка в CRM сама становится объявлением на главном портале недвижимости Дубая.
+          - 'link "Здравствуйте! Вы записаны на массаж 21.10 в 14:00. Ждём вас! n8n · 14:02 Напоминаем: визит завтра в 14:00 за 24 часа Всё в силе, спасибо! Clariva Spa, Кипр WhatsApp на автопилоте Подтверждения и напоминания о визите на трёх языках, без единого ручного сообщения." [ref=f15e88] [cursor=pointer]':
+            - /url: "#/work/clariva"
+            - generic [ref=f15e90]:
+              - generic [ref=f15e91]:
+                - text: Здравствуйте! Вы записаны на массаж 21.10 в 14:00. Ждём вас!
+                - generic [ref=f15e92]: n8n · 14:02
+              - generic [ref=f15e93]:
+                - text: "Напоминаем: визит завтра в 14:00"
+                - generic [ref=f15e94]: за 24 часа
+              - generic [ref=f15e95]: Всё в силе, спасибо!
+            - generic [ref=f15e96]:
+              - generic [ref=f15e97]: Clariva Spa, Кипр
+              - heading "WhatsApp на автопилоте" [level=3] [ref=f15e98]
+              - paragraph [ref=f15e99]: Подтверждения и напоминания о визите на трёх языках, без единого ручного сообщения.
+          - link "Онлайн Мой продукт Вячэра ужин решён Планировщик ужинов на неделю с ценами пяти сетей Беларуси." [ref=f15e100] [cursor=pointer]:
+            - /url: "#/work/viachera"
+            - generic [ref=f15e101]: Онлайн
+            - generic [ref=f15e104]:
+              - generic [ref=f15e105]: Мой продукт
+              - heading "Вячэра ужин решён" [level=3] [ref=f15e106]
+              - paragraph [ref=f15e107]: Планировщик ужинов на неделю с ценами пяти сетей Беларуси.
+      - generic [ref=f15e108]:
+        - generic [ref=f15e109]:
+          - heading "Ч е м п о м о г у" [level=2] [ref=f15e110]:
+            - generic [ref=f15e111]:
+              - generic [ref=f15e112]:
+                - generic [ref=f15e113]: Ч
+                - generic [ref=f15e114]: е
+                - generic [ref=f15e115]: м
+              - generic [ref=f15e116]:
+                - generic [ref=f15e117]: п
+                - generic [ref=f15e118]: о
+                - generic [ref=f15e119]: м
+                - generic [ref=f15e120]: о
+                - generic [ref=f15e121]: г
+                - generic [ref=f15e122]: у
+          - link "Все услуги" [ref=f15e123] [cursor=pointer]:
+            - /url: "#/services"
+        - generic [ref=f15e125]:
+          - link [ref=f15e126] [cursor=pointer]:
+            - /url: "#/services"
+            - heading "Автоматизация" [level=3] [ref=f15e130]
+            - paragraph [ref=f15e131]: Заявки, напоминания и отчёты делаются сами, пока вы занимаетесь любимым делом.
+          - link [ref=f15e132] [cursor=pointer]:
+            - /url: "#/services"
+            - heading "Telegram-боты" [level=3] [ref=f15e136]
+            - paragraph [ref=f15e137]: "Добрые помощники в чате: принимают заявки, напоминают и даже правят сайт."
+          - link [ref=f15e138] [cursor=pointer]:
+            - /url: "#/services"
+            - heading "Сайты" [level=3] [ref=f15e142]
+            - paragraph [ref=f15e143]: Красивые и быстрые, с анимацией, которая радует глаз и ведёт к записи.
+      - generic [ref=f15e145]:
+        - heading "Е с т ь и д е я ?" [level=2] [ref=f15e146]:
+          - generic [ref=f15e147]:
+            - generic [ref=f15e148]:
+              - generic [ref=f15e149]: Е
+              - generic [ref=f15e150]: с
+              - generic [ref=f15e151]: т
+              - generic [ref=f15e152]: ь
+            - generic [ref=f15e153]:
+              - generic [ref=f15e154]: и
+              - generic [ref=f15e155]: д
+              - generic [ref=f15e156]: е
+              - generic [ref=f15e157]: я
+              - generic [ref=f15e158]: "?"
+        - paragraph [ref=f15e159]: Расскажите о ней, и вместе придумаем, как сделать её реальностью.
+        - generic [ref=f15e160]:
+          - link "Написать мне" [ref=f15e161] [cursor=pointer]:
+            - /url: "#/contact"
+          - button "Спросить Джарвиса" [ref=f15e163] [cursor=pointer]
+  - button "Джарвис, помощник по сайту" [ref=f15e165] [cursor=pointer]:
+    - generic [ref=f15e166]: J
+  - dialog "Джарвис":
+    - banner:
+      - generic:
+        - generic: Джарвис
+        - generic: помощник Захара, онлайн
+      - button "Озвучивать ответы"
+    - generic:
+      - button "Покажи ботов"
+      - button "Какие есть сайты?"
+      - button "Открой игру"
+      - button "Кто ты?"
+      - button "Как связаться?"
+    - generic:
+      - textbox "Сообщение Джарвису":
+        - /placeholder: "Например: покажи ботов"
+      - button "Сказать голосом"
+      - button "Отправить"

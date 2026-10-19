@@ -1,0 +1,140 @@
+- generic [ref=f8e1]:
+  - banner [ref=f8e3]:
+    - link "Corolla E150 1.6 бензин, робот MMT, 2008" [ref=f8e4] [cursor=pointer]:
+      - /url: "#/car"
+      - generic [ref=f8e9]:
+        - generic [ref=f8e10]: Corolla E150
+        - generic [ref=f8e11]: 1.6 бензин, робот MMT, 2008
+    - navigation [ref=f8e12]:
+      - link "Машина" [ref=f8e13] [cursor=pointer]:
+        - /url: "#/car"
+      - link "Как едет" [ref=f8e14] [cursor=pointer]:
+        - /url: "#/drive"
+      - link "Двигатель" [ref=f8e15] [cursor=pointer]:
+        - /url: "#/engine"
+      - link "Робот MMT" [ref=f8e16] [cursor=pointer]:
+        - /url: "#/mmt"
+      - link "Салон и свет" [ref=f8e17] [cursor=pointer]:
+        - /url: "#/salon"
+      - link "Размеры" [ref=f8e18] [cursor=pointer]:
+        - /url: "#/size"
+      - link "Ништяки" [ref=f8e19] [cursor=pointer]:
+        - /url: "#/mods"
+      - link "Справочник" [ref=f8e20] [cursor=pointer]:
+        - /url: "#/ref"
+      - link "Обслуживание" [ref=f8e21] [cursor=pointer]:
+        - /url: "#/service"
+    - button "Language" [ref=f8e24] [cursor=pointer]: EN
+  - main [ref=f8e25]:
+    - generic [ref=f8e27]:
+      - generic "3D Toyota Corolla E150" [ref=f8e28] [cursor=pointer]
+      - generic: Крути мышью или пальцем, колёсико - приблизить. Наведи на деталь - название, нажми - всё о ней.
+      - toolbar "Системы" [ref=f8e33]:
+        - button "Всё" [ref=f8e34] [cursor=pointer]
+        - button "Кузов 17" [ref=f8e37] [cursor=pointer]:
+          - generic [ref=f8e39]: Кузов
+          - generic [ref=f8e40]: "17"
+        - button "Свет 3" [ref=f8e41] [cursor=pointer]:
+          - generic [ref=f8e43]: Свет
+          - generic [ref=f8e44]: "3"
+        - button "Двигатель 11" [ref=f8e45] [cursor=pointer]:
+          - generic [ref=f8e47]: Двигатель
+          - generic [ref=f8e48]: "11"
+        - button "Охлаждение и климат 8" [ref=f8e49] [cursor=pointer]:
+          - generic [ref=f8e51]: Охлаждение и климат
+          - generic [ref=f8e52]: "8"
+        - button "Электрика 9" [ref=f8e53] [cursor=pointer]:
+          - generic [ref=f8e55]: Электрика
+          - generic [ref=f8e56]: "9"
+        - button "Коробка MMT 6" [ref=f8e57] [cursor=pointer]:
+          - generic [ref=f8e59]: Коробка MMT
+          - generic [ref=f8e60]: "6"
+        - button "Тормоза 4" [ref=f8e61] [cursor=pointer]:
+          - generic [ref=f8e63]: Тормоза
+          - generic [ref=f8e64]: "4"
+        - button "Подвеска и руль 13" [ref=f8e65] [cursor=pointer]:
+          - generic [ref=f8e67]: Подвеска и руль
+          - generic [ref=f8e68]: "13"
+        - button "Топливо и выхлоп 7" [ref=f8e69] [cursor=pointer]:
+          - generic [ref=f8e71]: Топливо и выхлоп
+          - generic [ref=f8e72]: "7"
+        - button "Салон 7" [ref=f8e73] [cursor=pointer]:
+          - generic [ref=f8e75]: Салон
+          - generic [ref=f8e76]: "7"
+      - navigation "Управление" [ref=f8e77]:
+        - button "Рентген" [ref=f8e78] [cursor=pointer]
+        - button "Разобрать" [ref=f8e82] [cursor=pointer]
+        - button "Завести" [ref=f8e86] [cursor=pointer]
+        - button "3/4" [ref=f8e91] [cursor=pointer]
+        - button "Бок" [ref=f8e92] [cursor=pointer]
+        - button "Перед" [ref=f8e94] [cursor=pointer]
+        - button "Зад" [ref=f8e96] [cursor=pointer]
+        - button "Сверху" [ref=f8e98] [cursor=pointer]
+        - button "Днище" [ref=f8e100] [cursor=pointer]
+        - button "Все детали" [ref=f8e103] [cursor=pointer]
+      - generic "Цвет кузова" [ref=f8e105]:
+        - button "Black 202" [ref=f8e106] [cursor=pointer]
+        - button "Super White 040" [ref=f8e107] [cursor=pointer]
+        - button "Silver Metallic 1F7" [ref=f8e108] [cursor=pointer]
+        - button "Grey Metallic 1G3" [ref=f8e109] [cursor=pointer]
+        - button "Dark Blue Mica 8T5" [ref=f8e110] [cursor=pointer]
+        - button "Barcelona Red 3R3" [ref=f8e111] [cursor=pointer]
+  - tooltip "Передний бампер от 80 BYN нажми - подробно":
+    - generic: Передний бампер
+    - generic: от 80 BYN
+    - generic: нажми - подробно
+  - complementary [ref=f8e112]:
+    - button "Закрыть" [active] [ref=f8e113] [cursor=pointer]: ✕
+    - generic [ref=f8e114]:
+      - generic: Свет
+      - heading "Противотуманная фара" [level=2] [ref=f8e115]
+      - paragraph [ref=f8e116]: Лампа H11. Включается кольцом на левом подрулевом рычаге при включённых габаритах.
+      - group [ref=f8e117]:
+        - generic "Лампа и цоколь" [ref=f8e118] [cursor=pointer]
+        - generic [ref=f8e120]:
+          - generic [ref=f8e121]: Противотуманная фара (ПТФ) в бампере
+          - generic [ref=f8e123]:
+            - generic [ref=f8e124] [cursor=pointer]: H11
+            - generic [ref=f8e125]: цоколь PGJ19-2
+            - generic [ref=f8e126]: 55 Вт
+          - generic [ref=f8e127]:
+            - term [ref=f8e128]: Как поменять
+            - definition [ref=f8e129]: "Снизу через подкрылок: вынуть нижние пистоны и саморез 10 мм переднего края подкрылка, отогнуть. Отжать защелку разъема, повернуть лампу против часовой на 1/4 оборота. Левую ПТФ на части машин закрывает блок - тогда проще снять ПТФ (1 саморез 10 мм) или ослабить бампер."
+            - term [ref=f8e130]: Инструмент
+            - definition [ref=f8e131]: Головка 10 мм, съемник пистонов, фонарик
+            - term [ref=f8e132]: Время
+            - definition [ref=f8e133]: 20 мин
+            - term [ref=f8e134]: Пара ламп
+            - definition [ref=f8e135]: 25-110 BYN
+            - term [ref=f8e136]: Бренды
+            - definition [ref=f8e137]: Osram Original 64211/Night Breaker, Philips Vision/LongLife EcoVision, Bosch Eco/Pure Light, Narva
+            - term [ref=f8e138]: Закон
+            - definition [ref=f8e139]: "ПТФ тоже светит на дорогу: LED в галогенной ПТФ без омологации формально нарушение (та же логика, ст.18.11 КоАП). Лучше галоген H11 или ПТФ в сборе с E-маркировкой под LED."
+          - paragraph [ref=f8e140]: "Такая же лампа стоит на:"
+          - generic [ref=f8e141]:
+            - generic [ref=f8e142]: Toyota Auris E150
+            - generic [ref=f8e143]: Toyota Yaris XP90
+            - generic [ref=f8e144]: Toyota RAV4 XA30
+            - generic [ref=f8e145]: Toyota Camry XV40
+            - generic [ref=f8e146]: Mitsubishi Lancer X (ближний)
+            - generic [ref=f8e147]: Toyota Corolla E140 USA 2011-2013 (ПТФ)
+          - paragraph [ref=f8e148]: H11 подтвержден avto-lampa.ru, xenonshop.ru и объявлениями ozon (седан 2006-2013). Один сайт пишет HB4 - это про другое поколение или допоставку.
+      - group [ref=f8e149]:
+        - generic "Номера и крепёж" [ref=f8e150] [cursor=pointer]
+      - heading "Где купить в Беларуси" [level=3] [ref=f8e151]
+      - generic [ref=f8e152]:
+        - generic [ref=f8e153]:
+          - generic [ref=f8e154]: Противотуманки LED (H11)
+          - generic [ref=f8e155]: оценка рынка
+        - generic [ref=f8e157]:
+          - generic [ref=f8e158]: Новая
+          - strong [ref=f8e159]: 60-300 BYN
+        - paragraph [ref=f8e160]:
+          - generic [ref=f8e161]: Аналоги
+          - text: ПТФ в сборе / LED H11
+        - paragraph [ref=f8e162]: Лампы H11 LED 60-150, фары в сборе + кнопка 150-300.
+        - link "kufar.by (б/у)" [ref=f8e164] [cursor=pointer]:
+          - /url: https://auto.kufar.by/listings?cat=2040&query=%D0%BF%D1%82%D1%84%20corolla%20150
+  - generic [aria-hidden]:
+    - generic:
+      - button: ✕

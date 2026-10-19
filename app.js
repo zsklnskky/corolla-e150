@@ -106,6 +106,7 @@ const RAW = [
 ['eps','chassis',['steering_eps'],'Электроусилитель руля','Electric power steering','Мотор на рулевой колонке под панелью помогает крутить руль. Гидравлики и жидкости нет. Иногда стучит карданчик колонки.','A motor on the column under the dash helps you steer. No fluid. The column joint can knock.'],
 ['rear_beam','chassis',[],'Задняя балка','Rear torsion beam','Полузависимая подвеска: колёса связаны упругой балкой. Почти вечная, меняются только сайлентблоки.','Semi-independent: the rear wheels share a twisting beam. Nearly eternal; only bushes wear.'],
 ['shock_rear','chassis',['rear_shocks'],'Задние амортизаторы и пружины','Rear shocks & springs','Пружина и амортизатор стоят отдельно. Подтекание и раскачка на волнах - пора менять.','Spring and shock are separate here. Leaks or wallowing mean replace.'],
+['floor','body',[],'Днище','Underbody','Пол кузова, усилители и защита снизу. Снизу видно выхлопную трубу, бак, заднюю балку и подрамник. Защиту картера стоит поставить, если ездишь по грунтовкам.','Floor pan, rails and undertrays. From below you see the exhaust, fuel tank, rear beam and subframe. Fit a sump guard if you drive on gravel.'],
 ['hub_bearing','chassis',['front_hub_bearing'],'Подшипник ступицы','Wheel bearing','Гул, который растёт со скоростью и меняется в поворотах, - почти наверняка он.','A hum that grows with speed and changes in turns is almost surely this.'],
 ];
 const PR = Object.fromEntries([...PRICES.parts, ...PRICES.upgrades].map(p => [p.id, p]));
@@ -151,7 +152,7 @@ function setLang(l) {
 })();
 
 // ---------- роутер с View Transitions ----------
-const PAGES = ['car', 'drive', 'engine', 'mmt', 'salon', 'size', 'mods', 'service'];
+const PAGES = ['car', 'drive', 'engine', 'mmt', 'salon', 'size', 'mods', 'ref', 'service'];
 let page = null, clickPt = [innerWidth / 2, 80];
 addEventListener('pointerdown', e => clickPt = [e.clientX, e.clientY], true);
 function go(p) {
@@ -207,132 +208,62 @@ function openDrawer(id) {
   const s = SYS[p.sys];
   $('#drawerBody').innerHTML = `<span class="chip" style="--c:${s.c}">${L(s)}</span>
     <h2>${esc(L(p.name))}</h2><p class="what">${esc(L(p.what))}</p>
+    ${window.deepFor ? window.deepFor(id) : ''}
     <h3>${L(T.where)}</h3>
     ${p.prices.length ? p.prices.map(priceBlock).join('') : `<p class="note">${L(T.noprice)}</p><div class="links"><a href="${kufar(p.name.ru)}" target="_blank" rel="noopener">kufar.by</a><a href="https://baraholka.onliner.by/search.php?q=${encodeURIComponent(p.name.ru + ' corolla 150')}" target="_blank" rel="noopener">baraholka.onliner.by</a></div>`}`;
   drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); drawer.dataset.id = id;
   $('#drawerX').focus({ preventScroll: true });
 }
-function closeDrawer() { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); svgCar?.querySelectorAll('.sel').forEach(e => e.classList.remove('sel')) }
+function closeDrawer() { drawer.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); car3d?.clear() }
 $('#drawerX').onclick = closeDrawer;
 addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeSheet() } });
 
-// ---------- машина: зум, рентген, наведение ----------
-const svgCar = $('#carSvg');
-const BASE = { x: 40, y: 40, w: 1500, h: 540 };
-let vb = { ...BASE }, xrayOn = false, anim = 0;
-$$('.part', svgCar).forEach(el => { const p = P[el.dataset.id]; if (!p) return console.warn('нет данных', el.dataset.id); el.classList.add('sys-' + p.sys); el.style.setProperty('--c', SYS[p.sys].c) });
-function apply() {
-  svgCar.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
-  const z = BASE.w / vb.w;
-  svgCar.classList.toggle('xray', xrayOn || z >= 1.45 || !!svgCar.dataset.sys);
-  svgCar.classList.toggle('deep', z >= 2.3);
-  $('#hint').classList.toggle('gone', z > 1.05);
-  svgCar.style.setProperty('--z', z);
+// ---------- машина: 3D-сцена (car3d.js) ----------
+let car3d = null, carIds = null;
+const sysHex = s => SYS[s] ? parseInt(SYS[s].c.slice(1), 16) : 0xffffff;
+function onState(st) {
+  $$('#dock [data-act]').forEach(b => b.setAttribute('aria-pressed', !!st[b.dataset.act]));
+  if ((st.sys || '') !== ($('#legend .on')?.dataset.sys || '')) renderLegend();
 }
-function clampVB() {
-  vb.w = Math.min(Math.max(vb.w, BASE.w / 9), BASE.w); vb.h = vb.w * BASE.h / BASE.w;
-  vb.x = Math.min(Math.max(vb.x, BASE.x - vb.w * .25), BASE.x + BASE.w - vb.w * .75);
-  vb.y = Math.min(Math.max(vb.y, BASE.y - vb.h * .25), BASE.y + BASE.h - vb.h * .75);
-}
-function toSvg(cx, cy) { const p = svgCar.createSVGPoint(); p.x = cx; p.y = cy; return p.matrixTransform(svgCar.getScreenCTM().inverse()) }
-function zoomAt(cx, cy, f) {
-  cancelAnimationFrame(anim); const p = toSvg(cx, cy), nw = Math.min(Math.max(vb.w * f, BASE.w / 9), BASE.w), k = nw / vb.w;
-  vb.x = p.x - (p.x - vb.x) * k; vb.y = p.y - (p.y - vb.y) * k; vb.w = nw; clampVB(); apply();
-}
-function animateTo(t, ms = 650) {
-  cancelAnimationFrame(anim); const s = { ...vb }, t0 = performance.now();
-  const ease = u => 1 - Math.pow(1 - u, 4);
-  const step = now => { const u = RM ? 1 : Math.min(1, (now - t0) / ms), e = ease(u); for (const k in vb) vb[k] = s[k] + (t[k] - s[k]) * e; apply(); if (u < 1) anim = requestAnimationFrame(step) };
-  anim = requestAnimationFrame(step);
-}
-function focusPart(id, el) {
-  el = el || svgCar.querySelector(`[data-id="${id}"]`); if (!el) return;
-  const b = el.getBBox(), p = P[id], internal = !!el.closest('#xrayLayer'), small = el.classList.contains('lod2');
-  let w = Math.max(b.width * 3.2, b.height * 3.2 * BASE.w / BASE.h, 160);
-  if (internal) w = Math.min(w, BASE.w / 1.6); if (small) w = Math.min(w, BASE.w / 2.6);
-  w = Math.min(w, BASE.w);
-  const sideOpen = innerWidth > 820, t = { w, h: w * BASE.h / BASE.w };
-  t.x = b.x + b.width / 2 - w / 2 + (sideOpen ? w * .16 : 0); t.y = b.y + b.height / 2 - t.h / 2 + (sideOpen ? 0 : t.h * .2);
-  animateTo(t);
-  svgCar.querySelectorAll('.sel').forEach(e => e.classList.remove('sel'));
-  svgCar.querySelectorAll(`[data-id="${id}"]`).forEach(e => e.classList.add('sel'));
-  openDrawer(id);
-}
-// жесты
-const ptrs = new Map(); let drag = null, vel = { x: 0, y: 0 }, pinch0 = 0, moved = 0;
-svgCar.addEventListener('wheel', e => { e.preventDefault(); zoomAt(e.clientX, e.clientY, Math.exp(e.deltaY * (e.ctrlKey ? .01 : .0018))) }, { passive: false });
-svgCar.addEventListener('pointerdown', e => {
-  ptrs.set(e.pointerId, e); svgCar.setPointerCapture(e.pointerId); cancelAnimationFrame(anim); moved = 0;
-  if (ptrs.size === 1) drag = { x: e.clientX, y: e.clientY, t: e.timeStamp, target: e.target };
-  if (ptrs.size === 2) { const [a, b] = [...ptrs.values()]; pinch0 = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) }
-});
-svgCar.addEventListener('pointermove', e => {
-  if (!ptrs.has(e.pointerId)) {
-    const el = e.target.closest?.('.part');
-    if (el && P[el.dataset.id] && e.pointerType === 'mouse') { showTip(e, partTip(P[el.dataset.id])); svgCar.querySelectorAll('.hov').forEach(x => x !== el && x.classList.remove('hov')); svgCar.querySelectorAll(`[data-id="${el.dataset.id}"]`).forEach(x => x.classList.add('hov')) }
-    else { hideTip(); svgCar.querySelectorAll('.hov').forEach(x => x.classList.remove('hov')) }
-    return;
-  }
-  ptrs.set(e.pointerId, e); hideTip();
-  if (ptrs.size === 2) {
-    const [a, b] = [...ptrs.values()], d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-    if (pinch0) zoomAt((a.clientX + b.clientX) / 2, (a.clientY + b.clientY) / 2, pinch0 / d); pinch0 = d; moved = 99; return;
-  }
-  if (!drag) return;
-  const dx = e.clientX - drag.x, dy = e.clientY - drag.y, dt = Math.max(1, e.timeStamp - drag.t), k = 1 / svgCar.getScreenCTM().a;
-  moved += Math.abs(dx) + Math.abs(dy);
-  if (moved < 5) return;
-  svgCar.classList.add('grab');
-  vb.x -= dx * k; vb.y -= dy * k; clampVB(); apply();
-  vel = { x: .8 * dx * k / dt + .2 * vel.x, y: .8 * dy * k / dt + .2 * vel.y };
-  drag.x = e.clientX; drag.y = e.clientY; drag.t = e.timeStamp;
-});
-function endPtr(e) {
-  ptrs.delete(e.pointerId); svgCar.classList.remove('grab');
-  if (ptrs.size === 1) { const r = [...ptrs.values()][0]; drag = { x: r.clientX, y: r.clientY, t: r.timeStamp }; pinch0 = 0; return }
-  if (ptrs.size) return;
-  if (moved < 5 && drag) { const el = drag.target.closest?.('.part'); if (el && P[el.dataset.id]) focusPart(el.dataset.id, el); else closeDrawer() }
-  else if (!RM && (Math.abs(vel.x) + Math.abs(vel.y)) > .05) {
-    const glide = () => { vb.x -= vel.x * 16; vb.y -= vel.y * 16; vel.x *= .9; vel.y *= .9; clampVB(); apply(); if (Math.abs(vel.x) + Math.abs(vel.y) > .01) anim = requestAnimationFrame(glide) };
-    anim = requestAnimationFrame(glide);
-  }
-  drag = null; vel = { x: 0, y: 0 };
-}
-svgCar.addEventListener('pointerup', endPtr); svgCar.addEventListener('pointercancel', endPtr);
-svgCar.addEventListener('pointerleave', () => { hideTip(); svgCar.querySelectorAll('.hov').forEach(x => x.classList.remove('hov')) });
-// клавиатура: детали доступны через Tab
-$$('.part', svgCar).forEach(el => { el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button') });
-svgCar.addEventListener('keydown', e => { const el = e.target.closest?.('.part'); if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); focusPart(el.dataset.id, el) } });
-svgCar.addEventListener('focusin', e => { const el = e.target.closest?.('.part'); if (el) el.setAttribute('aria-label', L(P[el.dataset.id]?.name)) });
-
-$('#zIn').onclick = () => { const r = svgCar.getBoundingClientRect(); zoomAt(r.left + r.width / 2, r.top + r.height / 2, .7) };
-$('#zOut').onclick = () => { const r = svgCar.getBoundingClientRect(); zoomAt(r.left + r.width / 2, r.top + r.height / 2, 1.4) };
-$('#zReset').onclick = () => { delete svgCar.dataset.sys; renderLegend(); animateTo({ ...BASE }); closeDrawer() };
-$('#xrayBtn').onclick = () => { xrayOn = !xrayOn; $('#xrayBtn').setAttribute('aria-pressed', xrayOn); apply() };
-
-function renderLegend() {
-  const cnt = {}; for (const id in P) if (svgCar.querySelector(`[data-id="${id}"]`)) cnt[P[id].sys] = (cnt[P[id].sys] || 0) + 1;
-  const cur = svgCar.dataset.sys || '';
-  $('#legend').innerHTML = `<button class="chip ${!cur ? 'on' : ''}" data-sys="">${L(T.all)}</button>` +
-    Object.entries(SYS).filter(([k]) => cnt[k]).map(([k, s]) => `<button class="chip ${cur === k ? 'on' : ''}" data-sys="${k}" style="--c:${s.c}"><i></i>${L(s)}</button>`).join('');
-}
-$('#legend').onclick = e => {
-  const b = e.target.closest('[data-sys]'); if (!b) return;
-  if (b.dataset.sys) svgCar.dataset.sys = b.dataset.sys; else delete svgCar.dataset.sys;
-  renderLegend(); apply();
+import('./car3d.js').then(m => {
+  car3d = m.init($('#c3d'), {
+    sysOf: id => P[id]?.sys, sysColor: sysHex, onState,
+    onHover: (id, e) => { if (id && P[id] && e) showTip(e, partTip(P[id])); else hideTip(); if (id) $('#hint').classList.add('gone') },
+    onPick: id => id && P[id] ? openDrawer(id) : closeDrawer(),
+  });
+  carIds = car3d.ids(); for (const id of carIds) if (!P[id]) console.warn('нет данных', id);
+  car3d.setPaint(store.get('paint') || PAINTS[0][0]); renderLegend();
+  $('#loader').classList.add('done');
+}).catch(err => { console.error(err); $('#loader').innerHTML = `<span>${lang === 'ru' ? 'Браузер не смог запустить 3D (WebGL). Остальные вкладки работают.' : 'Your browser could not start 3D (WebGL). Other pages work.'}</span>` });
+function focusPart(id) { car3d?.focus(id); openDrawer(id) }
+$('#c3d').addEventListener('pointerdown', () => $('#hint').classList.add('gone'), { once: true });
+$('#dock').onclick = e => {
+  const b = e.target.closest('button'); if (!b || !car3d || b.id === 'listBtn') return;
+  const st = car3d.state();
+  if (b.dataset.act === 'xray') car3d.setXray(!st.xray);
+  if (b.dataset.act === 'explode') car3d.explode(!st.explode);
+  if (b.dataset.act === 'drive') car3d.drive(!st.drive);
+  if (b.dataset.view) { car3d.view(b.dataset.view); closeDrawer() }
 };
-const PAINTS = [['#EEF0EE', 'Super White 040'], ['#B9BDC4', 'Silver Metallic 1F7'], ['#5D6168', 'Grey Metallic 1G3'], ['#16171B', 'Black 202'], ['#2C3D63', 'Dark Blue Mica 8T5'], ['#8A1F2A', 'Barcelona Red 3R3']];
+function renderLegend() {
+  const cnt = {}; for (const id in P) if (!carIds || carIds.has(id)) cnt[P[id].sys] = (cnt[P[id].sys] || 0) + 1;
+  const cur = car3d?.state().sys || '';
+  $('#legend').innerHTML = `<button class="rl ${!cur ? 'on' : ''}" data-sys=""><i style="--c:#fff"></i><span>${L(T.all)}</span></button>` +
+    Object.entries(SYS).filter(([k]) => cnt[k]).map(([k, s]) => `<button class="rl ${cur === k ? 'on' : ''}" data-sys="${k}" style="--c:${s.c}"><i></i><span>${L(s)}</span><b>${cnt[k]}</b></button>`).join('');
+}
+$('#legend').onclick = e => { const b = e.target.closest('[data-sys]'); if (b && car3d) { car3d.setSystem(b.dataset.sys); renderLegend() } };
+const PAINTS = [['#0b0c0f', 'Black 202'], ['#EEF0EE', 'Super White 040'], ['#B9BDC4', 'Silver Metallic 1F7'], ['#5D6168', 'Grey Metallic 1G3'], ['#2C3D63', 'Dark Blue Mica 8T5'], ['#8A1F2A', 'Barcelona Red 3R3']];
 function renderPaints() {
-  const cur = store.get('paint') || PAINTS[1][0];
-  $('#stage').style.setProperty('--paint', cur);
-  $('#paints').innerHTML = `<span>${L(T.paint)}</span>` + PAINTS.map(([c, n]) => `<button class="sw ${c === cur ? 'on' : ''}" style="--sw:${c}" data-c="${c}" title="${n}" aria-label="${n}"></button>`).join('');
+  const cur = store.get('paint') || PAINTS[0][0];
+  $('#stage').style.setProperty('--paint', cur); car3d?.setPaint(cur);
+  $('#paints').innerHTML = PAINTS.map(([c, n]) => `<button class="sw ${c === cur ? 'on' : ''}" style="--sw:${c}" data-c="${c}" title="${n}" aria-label="${n}"></button>`).join('');
 }
 $('#paints').onclick = e => { const b = e.target.closest('[data-c]'); if (b) { store.set('paint', b.dataset.c); renderPaints() } };
 
 // список всех деталей
 const sheet = $('#sheet');
 function openSheet() {
-  const groups = {}; for (const id in P) if (svgCar.querySelector(`[data-id="${id}"]`)) (groups[P[id].sys] ||= []).push(P[id]);
+  const groups = {}; for (const id in P) if (!carIds || carIds.has(id)) (groups[P[id].sys] ||= []).push(P[id]);
   $('#sheetBody').innerHTML = Object.entries(groups).map(([k, arr]) => `<h3 style="--c:${SYS[k].c}"><i></i>${L(SYS[k])}</h3><div class="plist">${arr.map(p => `<button data-id="${p.id}">${esc(L(p.name))}${minPrice(p) != null ? `<small>${L(T.from)} ${minPrice(p)}</small>` : ''}</button>`).join('')}</div>`).join('');
   sheet.classList.add('open'); sheet.setAttribute('aria-hidden', 'false');
 }
@@ -594,7 +525,7 @@ $('#partSearch').oninput = renderPartsTbl;
 $('#partsTbl').onclick = e => { const b = e.target.closest('[data-show]'); if (b) { location.hash = '#/car'; setTimeout(() => focusPart(b.dataset.show), 120) } };
 
 // ---------- сборка ----------
-const RENDER = { drive: renderDrive, engine: renderEngine, mmt: renderMMT, salon: renderSalon, size: renderSize, mods: renderMods, service: renderService };
+const RENDER = { ref: () => window.renderRef(), drive: renderDrive, engine: renderEngine, mmt: renderMMT, salon: renderSalon, size: renderSize, mods: renderMods, service: renderService };
 const rendered = new Set();
 function onPage(p) { if (!rendered.has(p) && RENDER[p]) { RENDER[p](); rendered.add(p) } if (p !== 'drive') clearInterval(flowTimer) }
 function renderAll() {
@@ -603,6 +534,6 @@ function renderAll() {
   if (sheet.classList.contains('open')) openSheet();
   moveBlob();
 }
-setLang(lang); apply();
+setLang(lang);
 go(location.hash.slice(2) || 'car');
 requestAnimationFrame(() => document.body.classList.add('ready'));
