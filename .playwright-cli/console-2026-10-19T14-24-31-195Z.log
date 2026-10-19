@@ -1,6 +1,0 @@
-[     438ms] [WARNING] GSAP target .nav .bar not found. https://gsap.com @ http://localhost:8790/index.html:565
-[     700ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://localhost:8790/favicon.ico:0
-[   13569ms] [WARNING] GSAP target .nav .bar not found. https://gsap.com @ http://localhost:8790/index.html:565
-[   18231ms] [WARNING] GSAP target .nav .bar not found. https://gsap.com @ http://localhost:8790/index.html:565
-[   20930ms] [WARNING] GSAP target .nav .bar not found. https://gsap.com @ http://localhost:8790/index.html:565
-[   24556ms] [WARNING] GSAP target .nav .bar not found. https://gsap.com @ http://localhost:8790/index.html:565
