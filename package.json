@@ -1,0 +1,6 @@
+{
+  "name": "corolla-e150",
+  "private": true,
+  "description": "Офлайн-сборка: python build_offline.py",
+  "devDependencies": { "three": "0.169.0", "esbuild": "0.24.0" }
+}

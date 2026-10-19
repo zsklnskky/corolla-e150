@@ -11,6 +11,8 @@
 
 ## Как обновить цены
 
+Без интернета и без сервера: `npm i`, потом `python build_offline.py` - получится один файл `dist/Corolla-E150.html`, он открывается двойным кликом.
+
 Правишь `data/*.json` (prices, specs, deep_lights, deep_wheels, deep_drive), потом `python build.py` (пересобирает `data.js`), коммит, пуш.
 Описания деталей - в `app.js` (массив `RAW`), 3D-модель - `car3d.js` (кузов по сечениям в мм, внутренности примитивами), блоки данных по деталям - `deep.js`.
 
