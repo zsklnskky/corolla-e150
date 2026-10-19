@@ -442,3 +442,12 @@ body[data-page=car] .foot{display:none}
 .loc p{margin:4px 0 0;font-size:13px;color:#dcd7f2}
 .lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px;margin-top:10px}
 .drawer .dd-in .table-wrap{border-radius:12px}
+
+/* ================= 3D-окна на вкладках ================= */
+.vp{position:relative;height:clamp(380px,64vh,680px);margin:0 0 22px;border-radius:30px;overflow:hidden;background:#0b0b10;border:1px solid var(--line);box-shadow:0 40px 90px -40px #000;isolation:isolate}
+.vp canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:none}
+.vp-ctl{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);z-index:3;display:flex;gap:4px;padding:6px;border-radius:999px;background:linear-gradient(160deg,rgba(40,32,80,.62),rgba(12,10,28,.62));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12);max-width:calc(100% - 20px);overflow-x:auto;scrollbar-width:none}
+.vp-ctl .dk{flex:none;height:38px}
+.flow-grid .flow-card{padding:0}
+.flow-grid .vp{height:clamp(380px,70vh,720px);margin:0}
+@media (max-width:820px){ .vp{height:62vh;border-radius:22px} .vp-ctl{bottom:8px} }

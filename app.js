@@ -116,6 +116,10 @@ const fmt = r => r ? (r[0] === r[1] ? r[0] : r[0] + '-' + r[1]) + ' BYN' : '';
 const minPrice = p => { const v = p.prices.flatMap(x => [x.new_byn?.[0], x.used_byn?.[0]]).filter(n => n != null); return v.length ? Math.min(...v) : null };
 const kufar = q => 'https://auto.kufar.by/listings?cat=2040&query=' + encodeURIComponent(q + ' corolla 150');
 
+const D = Object.fromEntries(SPECS.dimensions.map(d => [d.key, d]));
+const MM = () => lang === 'ru' ? 'мм' : 'mm';
+const num = k => parseInt(D[k]?.value) || 0;
+
 // ---------- язык ----------
 const T = {
   from: { ru: 'от', en: 'from' }, tap: { ru: 'нажми - подробно', en: 'tap for details' }, newp: { ru: 'Новая', en: 'New' }, used: { ru: 'Б/у', en: 'Used' },
@@ -163,7 +167,7 @@ function go(p) {
     $$('#nav a').forEach(a => a.classList.toggle('on', a.dataset.go === p));
     page = p; moveBlob(); closeDrawer(); document.body.dataset.page = p;
     document.body.classList.remove('menu'); $('#menuBtn').setAttribute('aria-expanded', 'false');
-    scrollTo(0, 0); onPage(p);
+    scrollTo(0, 0); onPage(p); place3d(p);
   };
   if (!document.startViewTransition || RM || !page) return swap();
   document.documentElement.style.setProperty('--cx', clickPt[0] + 'px');
@@ -227,15 +231,38 @@ function onState(st) {
 }
 import('./car3d.js').then(m => {
   car3d = m.init($('#c3d'), {
-    sysOf: id => P[id]?.sys, sysColor: sysHex, onState,
+    sysOf: id => P[id]?.sys, sysColor: sysHex, onState: st => { onState(st); syncVp() },
+    dims: { length: num('length') + ' ' + MM(), width: num('width') + ' ' + MM(), height: num('height') + ' ' + MM(), wheelbase: num('wheelbase') + ' ' + MM(), clearance: num('ground_clearance') + ' ' + MM(), mirrors: (D.width_mirrors?.value || '') },
     onHover: (id, e) => { if (id && P[id] && e) showTip(e, partTip(P[id])); else hideTip(); if (id) $('#hint').classList.add('gone') },
     onPick: id => id && P[id] ? openDrawer(id) : closeDrawer(),
   });
   carIds = car3d.ids(); for (const id of carIds) if (!P[id]) console.warn('нет данных', id);
   car3d.setPaint(store.get('paint') || PAINTS[0][0]); renderLegend();
-  $('#loader').classList.add('done');
+  $('#loader').classList.add('done'); place3d(page);
 }).catch(err => { console.error(err); $('#loader').innerHTML = `<span>${lang === 'ru' ? 'Браузер не смог запустить 3D (WebGL). Остальные вкладки работают.' : 'Your browser could not start 3D (WebGL). Other pages work.'}</span>` });
 function focusPart(id) { car3d?.focus(id); openDrawer(id) }
+const VP_PAGES = { car: 'car', drive: 'drive', engine: 'engine', mmt: 'mmt', salon: 'salon', size: 'size' };
+function place3d(p) {
+  if (!car3d) return; const k = VP_PAGES[p]; if (!k) return;
+  car3d.mount(k === 'car' ? $('#c3d') : $(`[data-vp="${k}"]`)); car3d.preset(k); syncVp();
+}
+function syncVp() { const st = car3d?.state() || {}; $$('[data-vact]').forEach(b => { if (b.hasAttribute('aria-pressed')) b.setAttribute('aria-pressed', !!(b.dataset.vact === 'go' ? st.drive : b.dataset.vact === 'domeT' ? st.dome : st[b.dataset.vact])) }) }
+const FLOW_IDS = { 1: ['fuel_tank'], 2: ['fuel_pump'], 3: ['injector'], 4: ['engine_block', 'spark_plug', 'ign_coil'], 5: ['engine_block', 'oil_pan'], 6: ['clutch'], 7: ['clutch', 'clutch_actuator'], 8: ['gearbox', 'shift_actuator'], 9: ['gearbox'], 10: ['cv_joint'], 11: ['wheel', 'tyre'] };
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-vact]'); if (!b || !car3d) return;
+  const a = b.dataset.vact, st = car3d.state();
+  if (a === 'go') car3d.drive(!st.drive);
+  if (a === 'xray') car3d.setXray(!st.xray);
+  if (a === 'explode') car3d.explode(!st.explode);
+  if (a === 'chase') car3d.camTo([5.6, 1.7, 4.4], [-.4, .6, 0]);
+  if (a === 'sidecam') car3d.camTo([0, 1.1, 7.6], [0, .6, 0]);
+  if (a === 'topcam') car3d.camTo([.6, 9, 3], [0, .4, 0]);
+  if (['driver', 'passenger', 'rear'].includes(a)) car3d.seat(a);
+  if (a === 'domeT') car3d.dome(!st.dome);
+  if (a === 'outside') { car3d.preset('car'); car3d.camTo([-4.6, 1.5, 4.9], [0, .55, 0]) }
+  if (['q', 'side', 'front', 'top'].includes(a)) car3d.view(a);
+  syncVp();
+});
 $('#c3d').addEventListener('pointerdown', () => $('#hint').classList.add('gone'), { once: true });
 $('#dock').onclick = e => {
   const b = e.target.closest('button'); if (!b || !car3d || b.id === 'listBtn') return;
@@ -303,16 +330,17 @@ const FLOW_EL = [
 const FLOW_EXTRA = `<g class="fl-static"><rect x="150" y="190" width="18" height="380" rx="6"/><path d="M338,300 C500,360 700,400 1300,420 L1450,500" fill="none" stroke-width="7" stroke-dasharray="2 10"/><rect x="1300" y="470" width="150" height="56" rx="22"/><path d="M1185,170 L1185,590" stroke-width="12"/></g>`;
 let flowStep = 0, flowTimer = 0;
 function renderDrive() {
-  $('#topSvg').innerHTML = topCar(FLOW_EXTRA + FLOW_EL.join(''));
+  if ($('#topSvg')) $('#topSvg').innerHTML = topCar(FLOW_EXTRA + FLOW_EL.join(''));
   $('#steps').innerHTML = SPECS.drive_flow.map(s => `<button class="step" data-s="${s.step}"><b>${s.step}</b><span>${esc(L(s))}</span></button>`).join('');
   setFlow(flowStep);
 }
 function setFlow(n) {
-  flowStep = n;
+  flowStep = n; flow3d(n);
   $$('#topSvg .fl').forEach(e => { const s = +e.dataset.s; e.classList.toggle('on', n ? s === n : true); e.classList.toggle('done', n && s < n) });
   $$('#steps .step').forEach(b => b.classList.toggle('on', +b.dataset.s === n));
 }
 $('#steps').onclick = e => { const b = e.target.closest('.step'); if (b) { clearInterval(flowTimer); setFlow(+b.dataset.s === flowStep ? 0 : +b.dataset.s) } };
+function flow3d(n) { if (!car3d) return; n ? car3d.flow(FLOW_IDS[n]) : car3d.clearFlow(); syncVp() }
 $('#flowPlay').onclick = () => { clearInterval(flowTimer); setFlow(1); flowTimer = setInterval(() => { if (flowStep >= 11) { clearInterval(flowTimer); return setTimeout(() => setFlow(0), 1600) } setFlow(flowStep + 1) }, 1700) };
 
 // ---------- двигатель: анимация цилиндра ----------
@@ -467,15 +495,13 @@ function bulbHover(e) {
 $('#salonSvg').addEventListener('focusin', e => { const r = e.target.getBoundingClientRect(); bulbHover({ target: e.target, clientX: r.right, clientY: r.top }) });
 
 // ---------- размеры ----------
-const D = Object.fromEntries(SPECS.dimensions.map(d => [d.key, d]));
-const MM = () => lang === 'ru' ? 'мм' : 'mm';
-const num = k => parseInt(D[k]?.value) || 0;
 function dimLine(x1, y1, x2, y2, label, vert) {
   const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
   return `<g class="dim"><path d="M${x1},${y1} L${x2},${y2}"/><path d="M${x1 - (vert ? 10 : 0)},${y1 - (vert ? 0 : 10)} l${vert ? 20 : 0},${vert ? 0 : 20} M${x2 - (vert ? 10 : 0)},${y2 - (vert ? 0 : 10)} l${vert ? 20 : 0},${vert ? 0 : 20}"/>
   <text x="${vert ? mx - 14 : mx}" y="${vert ? my : my - 12}" ${vert ? `transform="rotate(-90 ${mx - 14} ${my})"` : ''} text-anchor="middle">${label}</text></g>`;
 }
 function renderSize() {
+  if (!$('#dimSide')) return renderSizeSpecs();
   const body = $('#bodyLayer').cloneNode(true); body.removeAttribute('id'); body.querySelectorAll('.part').forEach(e => { e.classList.remove('part'); e.removeAttribute('data-id') });
   // id из скрытой страницы не рисуются: копия defs получает свои id с префиксом d
   const side = $('#dimSide'), ren = h => h.replace(/id="(\w+)"/g, 'id="d$1"').replace(/#(paintG|glassG|tyreG|rimG|soft|bodyClip|wheelArt)/g, '#d$1');
@@ -491,6 +517,11 @@ function renderSize() {
     <rect x="${cx - hw + 20}" y="${gy - 62}" width="62" height="62" rx="12" class="fc-tyre"/><rect x="${cx + hw - 82}" y="${gy - 62}" width="62" height="62" rx="12" class="fc-tyre"/></g>
     <path class="ground" d="M20,${gy} L680,${gy}"/>` +
     dimLine(cx - hw, gy + 34, cx + hw, gy + 34, W + ' '+MM()) + dimLine(cx - hw - 50, top - 30, cx + hw + 50, top - 30, (D.width_mirrors?.value || '') ) + dimLine(cx + hw + 80, gy, cx + hw + 80, top, H + ' '+MM(), true);
+  $('#dimSpecs').innerHTML = SPECS.dimensions.filter(d => !['bolt_pattern', 'center_bore', 'offset', 'rim_width', 'wheel_nut', 'wheel_torque', 'tyre_pressure', 'tyres'].includes(d.key)).map(d => `<div class="spec"><small>${esc(L(d))}</small><b>${esc(d.value)}${d.verified === false ? ' *' : ''}</b></div>`).join('');
+  $('#wheelSpecs').innerHTML = ['tyres', 'bolt_pattern', 'center_bore', 'offset', 'rim_width', 'wheel_nut', 'wheel_torque', 'tyre_pressure'].filter(k => D[k]).map(k => `<div class="spec"><small>${esc(L(D[k]))}</small><b>${esc(D[k].value)}</b></div>`).join('');
+}
+
+function renderSizeSpecs() {
   $('#dimSpecs').innerHTML = SPECS.dimensions.filter(d => !['bolt_pattern', 'center_bore', 'offset', 'rim_width', 'wheel_nut', 'wheel_torque', 'tyre_pressure', 'tyres'].includes(d.key)).map(d => `<div class="spec"><small>${esc(L(d))}</small><b>${esc(d.value)}${d.verified === false ? ' *' : ''}</b></div>`).join('');
   $('#wheelSpecs').innerHTML = ['tyres', 'bolt_pattern', 'center_bore', 'offset', 'rim_width', 'wheel_nut', 'wheel_torque', 'tyre_pressure'].filter(k => D[k]).map(k => `<div class="spec"><small>${esc(L(D[k]))}</small><b>${esc(D[k].value)}</b></div>`).join('');
 }

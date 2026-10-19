@@ -79,9 +79,7 @@
     <h1 class="h-big"><t-ru>Как Corolla едет</t-ru><t-en>How the Corolla moves</t-en></h1>
     <p class="lead"><t-ru>Бензин сгорает в цилиндрах и толкает поршни. Поршни крутят коленвал, коробка подбирает передачу, а приводы передают вращение на передние колёса. Задние колёса просто катятся следом. Нажми на любой шаг или включи показ.</t-ru><t-en>Petrol burns in the cylinders and pushes the pistons. The pistons spin the crankshaft, the gearbox picks a gear, and the drive shafts turn the front wheels. The rear wheels just roll along. Tap any step or press play.</t-en></p>
     <div class="flow-grid">
-      <div class="card glass flow-card">
-        <svg id="topSvg" class="topsvg" viewBox="60 80 1480 600" role="img" aria-label="Вид сверху"></svg>
-      </div>
+      <div class="flow-card"><div class="vp" data-vp="drive"><div class="vp-ctl"><button class="dk sm" data-vact="go" aria-pressed="false"><t-ru>Ехать / стоп</t-ru><t-en>Drive / stop</t-en></button><button class="dk sm" data-vact="xray" aria-pressed="false"><t-ru>Рентген</t-ru><t-en>X-ray</t-en></button><button class="dk sm" data-vact="chase"><t-ru>Сзади</t-ru><t-en>Chase</t-en></button><button class="dk sm" data-vact="sidecam"><t-ru>Сбоку</t-ru><t-en>Side</t-en></button><button class="dk sm" data-vact="topcam"><t-ru>Сверху</t-ru><t-en>Top</t-en></button></div></div></div>
       <div class="steps" id="steps"></div>
     </div>
     <div class="flow-play"><button class="pill accent" id="flowPlay"><t-ru>Показать по шагам</t-ru><t-en>Play step by step</t-en></button></div>
@@ -93,6 +91,7 @@
   <div class="wrap">
     <h1 class="h-big">1ZR-FE <span class="h-sub">1.6 Dual VVT-i</span></h1>
     <p class="lead"><t-ru>Четыре цилиндра в ряд. В каждом поршень ходит вверх-вниз и проходит четыре такта. Двигай ползунок оборотов и смотри, что происходит внутри одного цилиндра.</t-ru><t-en>Four cylinders in a row. In each, a piston goes up and down through four strokes. Move the rpm slider and watch what happens inside one cylinder.</t-en></p>
+    <div class="vp" data-vp="engine"><div class="vp-ctl"><button class="dk sm" data-vact="xray" aria-pressed="false"><t-ru>Рентген</t-ru><t-en>X-ray</t-en></button><button class="dk sm" data-vact="explode" aria-pressed="false"><t-ru>Разобрать</t-ru><t-en>Explode</t-en></button></div></div>
     <div class="engine-grid">
       <div class="card glass engine-card">
         <svg id="cylSvg" viewBox="0 0 400 520" aria-label="Цилиндр"></svg>
@@ -115,6 +114,7 @@
   <div class="wrap">
     <h1 class="h-big"><t-ru>Робот MMT</t-ru><t-en>MMT robot gearbox</t-en></h1>
     <p class="lead"><t-ru>Внутри обычная механика на 5 передач и одно сухое сцепление. Педали сцепления нет: вместо ноги работает электромотор, вместо руки на рычаге - второй мотор. Компьютер решает, когда выжать сцепление и какую передачу включить.</t-ru><t-en>Inside is an ordinary 5-speed manual with a single dry clutch. There is no clutch pedal: an electric motor does the foot's job, and a second motor does the hand's job on the lever. A computer decides when to release the clutch and which gear to select.</t-en></p>
+    <div class="vp" data-vp="mmt"><div class="vp-ctl"><button class="dk sm" data-vact="xray" aria-pressed="false"><t-ru>Рентген</t-ru><t-en>X-ray</t-en></button><button class="dk sm" data-vact="explode" aria-pressed="false"><t-ru>Разобрать</t-ru><t-en>Explode</t-en></button></div></div>
     <div class="mmt-grid">
       <div class="card glass mmt-card">
         <svg id="mmtSvg" viewBox="0 0 640 380" aria-label="Схема MMT"></svg>
@@ -131,7 +131,9 @@
 <section class="page" data-page="salon">
   <div class="wrap">
     <h1 class="h-big"><t-ru>Салон и свет</t-ru><t-en>Cabin & lights</t-en></h1>
-    <p class="lead"><t-ru>Вид сверху. Светящиеся точки - лампочки: наведи, чтобы узнать цоколь и мощность. Ниже таблица всех ламп, лампочки приборки и что можно перешить.</t-ru><t-en>Top view. Glowing dots are bulbs: hover to see the socket type and wattage. Below: all bulbs, the dashboard warning lights and what you can reupholster.</t-en></p>
+    <p class="lead"><t-ru>Ты внутри машины: крути мышью или пальцем, как будто поворачиваешь голову. Нажми на руль, приборку, магнитолу, селектор, плафон или кресло - откроется всё о детали. Ниже карта ламп, таблица цоколей, лампы приборки и перетяжка салона.</t-ru><t-en>You are inside the car: drag to look around. Tap the steering wheel, cluster, radio, selector, dome light or a seat for details. Below: bulb map, bulb table, warning lights and reupholstery.</t-en></p>
+    <div class="vp" data-vp="salon"><div class="vp-ctl"><button class="dk sm" data-vact="driver"><t-ru>Водитель</t-ru><t-en>Driver</t-en></button><button class="dk sm" data-vact="passenger"><t-ru>Пассажир</t-ru><t-en>Passenger</t-en></button><button class="dk sm" data-vact="rear"><t-ru>Сзади</t-ru><t-en>Rear seat</t-en></button><button class="dk sm" data-vact="domeT" aria-pressed="false"><t-ru>Плафон</t-ru><t-en>Dome light</t-en></button><button class="dk sm" data-vact="outside"><t-ru>Выйти наружу</t-ru><t-en>Step outside</t-en></button></div></div>
+    <h2 class="h-mid"><t-ru>Где какие лампы, вид сверху</t-ru><t-en>Bulb map, top view</t-en></h2>
     <div class="card glass flow-card"><svg id="salonSvg" class="topsvg" viewBox="60 80 1480 600" aria-label="Салон сверху"></svg></div>
     <h2 class="h-mid"><t-ru>Все лампочки</t-ru><t-en>All bulbs</t-en></h2>
     <div class="table-wrap"><table class="tbl" id="bulbTbl"></table></div>
@@ -147,10 +149,7 @@
   <div class="wrap">
     <h1 class="h-big"><t-ru>Размеры</t-ru><t-en>Dimensions</t-en></h1>
     <p class="lead"><t-ru>Сколько машина в длину, ширину и высоту, влезет ли в гараж и на какой парковке не потеряет зеркало.</t-ru><t-en>Length, width and height: will it fit your garage, and where will the mirrors survive.</t-en></p>
-    <div class="dims-grid">
-      <div class="card glass"><svg id="dimSide" viewBox="40 0 1500 620" aria-label="Размеры сбоку"></svg></div>
-      <div class="card glass"><svg id="dimFront" viewBox="0 0 700 620" aria-label="Размеры спереди"></svg></div>
-    </div>
+    <div class="vp" data-vp="size"><div class="vp-ctl"><button class="dk sm" data-vact="q"><t-ru>3/4</t-ru><t-en>3/4</t-en></button><button class="dk sm" data-vact="side"><t-ru>Бок</t-ru><t-en>Side</t-en></button><button class="dk sm" data-vact="front"><t-ru>Перед</t-ru><t-en>Front</t-en></button><button class="dk sm" data-vact="top"><t-ru>Сверху</t-ru><t-en>Top</t-en></button></div></div>
     <div class="specs" id="dimSpecs"></div>
     <h2 class="h-mid"><t-ru>Колёса</t-ru><t-en>Wheels</t-en></h2>
     <div class="specs" id="wheelSpecs"></div>
